@@ -19,6 +19,8 @@
       <parameter key="AppBundle">AppBundle\AppBundle</parameter>
       <parameter key="FOSUserBundle">FOS\UserBundle\FOSUserBundle</parameter>
       <parameter key="UserBundle">UserBundle\UserBundle</parameter>
+      <parameter key="CovoiturageBundle">CovoiturageBundle\CovoiturageBundle</parameter>
+      <parameter key="EntitiesBundle">EntitiesBundle\EntitiesBundle</parameter>
       <parameter key="DebugBundle">Symfony\Bundle\DebugBundle\DebugBundle</parameter>
       <parameter key="WebProfilerBundle">Symfony\Bundle\WebProfilerBundle\WebProfilerBundle</parameter>
       <parameter key="SensioDistributionBundle">Sensio\Bundle\DistributionBundle\SensioDistributionBundle</parameter>
@@ -76,6 +78,16 @@
         <parameter key="path">C:\wamp64\www\untitled2\src\UserBundle</parameter>
         <parameter key="namespace">UserBundle</parameter>
       </parameter>
+      <parameter key="CovoiturageBundle" type="collection">
+        <parameter key="parent">null</parameter>
+        <parameter key="path">C:\wamp64\www\untitled2\src\CovoiturageBundle</parameter>
+        <parameter key="namespace">CovoiturageBundle</parameter>
+      </parameter>
+      <parameter key="EntitiesBundle" type="collection">
+        <parameter key="parent">null</parameter>
+        <parameter key="path">C:\wamp64\www\untitled2\src\EntitiesBundle</parameter>
+        <parameter key="namespace">EntitiesBundle</parameter>
+      </parameter>
       <parameter key="DebugBundle" type="collection">
         <parameter key="parent">null</parameter>
         <parameter key="path">C:\wamp64\www\untitled2\vendor\symfony\symfony\src\Symfony\Bundle\DebugBundle</parameter>
@@ -108,7 +120,7 @@
     <parameter key="container.dumper.inline_class_loader">true</parameter>
     <parameter key="database_host">127.0.0.1</parameter>
     <parameter key="database_port">null</parameter>
-    <parameter key="database_name">projetPiWeb</parameter>
+    <parameter key="database_name">projetpi</parameter>
     <parameter key="database_user">root</parameter>
     <parameter key="database_password">null</parameter>
     <parameter key="mailer_transport">smtp</parameter>
@@ -656,6 +668,7 @@
       <argument type="tagged" tag="kernel.cache_warmer"/>
     </service>
     <service id="kernel.class_cache.cache_warmer" class="Symfony\Bundle\FrameworkBundle\CacheWarmer\ClassCacheCacheWarmer">
+      <tag name="kernel.cache_warmer"/>
       <argument type="collection">
         <argument>Symfony\Component\HttpFoundation\ParameterBag</argument>
         <argument>Symfony\Component\HttpFoundation\HeaderBag</argument>
@@ -664,7 +677,6 @@
         <argument>Symfony\Component\HttpFoundation\Request</argument>
         <argument>Symfony\Component\HttpKernel\Kernel</argument>
       </argument>
-      <deprecated>The "%service_id%" option is deprecated since version 3.3, to be removed in 4.0.</deprecated>
     </service>
     <service id="cache_clearer" class="Symfony\Component\HttpKernel\CacheClearer\ChainCacheClearer" public="true">
       <argument type="tagged" tag="kernel.cache_clearer"/>
@@ -3891,6 +3903,22 @@
         <argument>!User</argument>
       </call>
       <call method="addPath">
+        <argument>C:\wamp64\www\untitled2\src\CovoiturageBundle/Resources/views</argument>
+        <argument>Covoiturage</argument>
+      </call>
+      <call method="addPath">
+        <argument>C:\wamp64\www\untitled2\src\CovoiturageBundle/Resources/views</argument>
+        <argument>!Covoiturage</argument>
+      </call>
+      <call method="addPath">
+        <argument>C:\wamp64\www\untitled2\src\EntitiesBundle/Resources/views</argument>
+        <argument>Entities</argument>
+      </call>
+      <call method="addPath">
+        <argument>C:\wamp64\www\untitled2\src\EntitiesBundle/Resources/views</argument>
+        <argument>!Entities</argument>
+      </call>
+      <call method="addPath">
         <argument>C:\wamp64\www\untitled2\vendor\symfony\symfony\src\Symfony\Bundle\DebugBundle/Resources/views</argument>
         <argument>Debug</argument>
       </call>
@@ -4080,6 +4108,22 @@
       <call method="addPath">
         <argument>C:\wamp64\www\untitled2\src\UserBundle/Resources/views</argument>
         <argument>!User</argument>
+      </call>
+      <call method="addPath">
+        <argument>C:\wamp64\www\untitled2\src\CovoiturageBundle/Resources/views</argument>
+        <argument>Covoiturage</argument>
+      </call>
+      <call method="addPath">
+        <argument>C:\wamp64\www\untitled2\src\CovoiturageBundle/Resources/views</argument>
+        <argument>!Covoiturage</argument>
+      </call>
+      <call method="addPath">
+        <argument>C:\wamp64\www\untitled2\src\EntitiesBundle/Resources/views</argument>
+        <argument>Entities</argument>
+      </call>
+      <call method="addPath">
+        <argument>C:\wamp64\www\untitled2\src\EntitiesBundle/Resources/views</argument>
+        <argument>!Entities</argument>
       </call>
       <call method="addPath">
         <argument>C:\wamp64\www\untitled2\vendor\symfony\symfony\src\Symfony\Bundle\DebugBundle/Resources/views</argument>
@@ -4421,7 +4465,7 @@
         <argument key="driver">pdo_mysql</argument>
         <argument key="host">127.0.0.1</argument>
         <argument key="port">null</argument>
-        <argument key="dbname">projetPiWeb</argument>
+        <argument key="dbname">projetpi</argument>
         <argument key="user">root</argument>
         <argument key="password">null</argument>
         <argument key="charset">UTF8</argument>

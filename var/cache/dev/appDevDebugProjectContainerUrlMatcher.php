@@ -107,6 +107,36 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
 
         }
 
+        // entities_homepage
+        if ('' === $trimmedPathinfo) {
+            $ret = array (  '_controller' => 'EntitiesBundle\\Controller\\DefaultController::indexAction',  '_route' => 'entities_homepage',);
+            if ('/' === substr($pathinfo, -1)) {
+                // no-op
+            } elseif ('GET' !== $canonicalMethod) {
+                goto not_entities_homepage;
+            } else {
+                return array_replace($ret, $this->redirect($rawPathinfo.'/', 'entities_homepage'));
+            }
+
+            return $ret;
+        }
+        not_entities_homepage:
+
+        // covoiturage_homepage
+        if ('' === $trimmedPathinfo) {
+            $ret = array (  '_controller' => 'CovoiturageBundle\\Controller\\DefaultController::indexAction',  '_route' => 'covoiturage_homepage',);
+            if ('/' === substr($pathinfo, -1)) {
+                // no-op
+            } elseif ('GET' !== $canonicalMethod) {
+                goto not_covoiturage_homepage;
+            } else {
+                return array_replace($ret, $this->redirect($rawPathinfo.'/', 'covoiturage_homepage'));
+            }
+
+            return $ret;
+        }
+        not_covoiturage_homepage:
+
         // user_default_index
         if ('' === $trimmedPathinfo) {
             $ret = array (  '_controller' => 'UserBundle\\Controller\\DefaultController::indexAction',  '_route' => 'user_default_index',);
