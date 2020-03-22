@@ -67,3 +67,8 @@ c824d3,::1,GET,http://localhost/untitled2/web/app_dev.php/login,1584813979,,200
 bba704,::1,GET,http://localhost/untitled2/web/app_dev.php/login,1584883460,,200
 5970c7,::1,GET,http://localhost/untitled2/web/app_dev.php/register/,1584883461,,200
 488467,::1,GET,http://localhost/untitled2/web/app_dev.php/register/,1584883462,,200
+c2f858,::1,GET,http://localhost/untitled2/web/app_dev.php/login,1584884236,,200
+b16db7,::1,GET,http://localhost/untitled2/web/app_dev.php/register/confirmed,1584884238,,302
+889469,::1,GET,http://localhost/untitled2/web/app_dev.php/login,1584884238,,200
+1d6718,::1,GET,http://localhost/untitled2/web/app_dev.php/login,1584889082,,200
+971f5c,::1,GET,http://localhost/untitled2/web/app_dev.php/login,1584889083,,200
