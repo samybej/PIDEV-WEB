@@ -1,15 +1,15 @@
 entities:
     resource: "@EntitiesBundle/Resources/config/routing.yml"
-    prefix:   /
+    prefix:   /entities
 
 covoiturage:
     resource: "@CovoiturageBundle/Resources/config/routing.yml"
-    prefix:   /
+    prefix:   /covoiturage
 
 user:
     resource: "@UserBundle/Controller/"
     type:     annotation
-    prefix:   /
+    prefix:   /user
 
 app:
     resource: '@AppBundle/Controller/'

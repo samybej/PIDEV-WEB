@@ -108,7 +108,7 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
         }
 
         // entities_homepage
-        if ('' === $trimmedPathinfo) {
+        if ('/entities' === $trimmedPathinfo) {
             $ret = array (  '_controller' => 'EntitiesBundle\\Controller\\DefaultController::indexAction',  '_route' => 'entities_homepage',);
             if ('/' === substr($pathinfo, -1)) {
                 // no-op
@@ -123,7 +123,7 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
         not_entities_homepage:
 
         // covoiturage_homepage
-        if ('' === $trimmedPathinfo) {
+        if ('/covoiturage' === $trimmedPathinfo) {
             $ret = array (  '_controller' => 'CovoiturageBundle\\Controller\\DefaultController::indexAction',  '_route' => 'covoiturage_homepage',);
             if ('/' === substr($pathinfo, -1)) {
                 // no-op
@@ -138,7 +138,7 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
         not_covoiturage_homepage:
 
         // user_default_index
-        if ('' === $trimmedPathinfo) {
+        if ('/user' === $trimmedPathinfo) {
             $ret = array (  '_controller' => 'UserBundle\\Controller\\DefaultController::indexAction',  '_route' => 'user_default_index',);
             if ('/' === substr($pathinfo, -1)) {
                 // no-op
