@@ -1,3 +1,8 @@
+vehicule:
+    resource: "@VehiculeBundle/Resources/config/routing.yml"
+    prefix:   /vehicule
+
+
 entities:
     resource: "@EntitiesBundle/Resources/config/routing.yml"
     prefix:   /entities

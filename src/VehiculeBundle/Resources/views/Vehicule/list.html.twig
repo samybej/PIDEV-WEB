@@ -1,0 +1,10 @@
+{% extends "VehiculeBundle:Default:index.html.twig" %}
+{% block body %}
+<ul>
+    {% for l in list %}
+        <li>
+                {{ l.immatriculation }} - {{ l.numeroAssurance}} - {{ l.marque }} - {{ l.type }} - {{ l.etat }}
+        </li>
+    {% endfor %}
+</ul>
+{% endblock %}

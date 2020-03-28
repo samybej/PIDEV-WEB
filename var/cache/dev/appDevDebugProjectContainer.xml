@@ -21,6 +21,7 @@
       <parameter key="UserBundle">UserBundle\UserBundle</parameter>
       <parameter key="CovoiturageBundle">CovoiturageBundle\CovoiturageBundle</parameter>
       <parameter key="EntitiesBundle">EntitiesBundle\EntitiesBundle</parameter>
+      <parameter key="VehiculeBundle">VehiculeBundle\VehiculeBundle</parameter>
       <parameter key="DebugBundle">Symfony\Bundle\DebugBundle\DebugBundle</parameter>
       <parameter key="WebProfilerBundle">Symfony\Bundle\WebProfilerBundle\WebProfilerBundle</parameter>
       <parameter key="SensioDistributionBundle">Sensio\Bundle\DistributionBundle\SensioDistributionBundle</parameter>
@@ -87,6 +88,11 @@
         <parameter key="parent">null</parameter>
         <parameter key="path">C:\wamp64\www\untitled2\src\EntitiesBundle</parameter>
         <parameter key="namespace">EntitiesBundle</parameter>
+      </parameter>
+      <parameter key="VehiculeBundle" type="collection">
+        <parameter key="parent">null</parameter>
+        <parameter key="path">C:\wamp64\www\untitled2\src\VehiculeBundle</parameter>
+        <parameter key="namespace">VehiculeBundle</parameter>
       </parameter>
       <parameter key="DebugBundle" type="collection">
         <parameter key="parent">null</parameter>
@@ -3919,6 +3925,14 @@
         <argument>!Entities</argument>
       </call>
       <call method="addPath">
+        <argument>C:\wamp64\www\untitled2\src\VehiculeBundle/Resources/views</argument>
+        <argument>Vehicule</argument>
+      </call>
+      <call method="addPath">
+        <argument>C:\wamp64\www\untitled2\src\VehiculeBundle/Resources/views</argument>
+        <argument>!Vehicule</argument>
+      </call>
+      <call method="addPath">
         <argument>C:\wamp64\www\untitled2\vendor\symfony\symfony\src\Symfony\Bundle\DebugBundle/Resources/views</argument>
         <argument>Debug</argument>
       </call>
@@ -4124,6 +4138,14 @@
       <call method="addPath">
         <argument>C:\wamp64\www\untitled2\src\EntitiesBundle/Resources/views</argument>
         <argument>!Entities</argument>
+      </call>
+      <call method="addPath">
+        <argument>C:\wamp64\www\untitled2\src\VehiculeBundle/Resources/views</argument>
+        <argument>Vehicule</argument>
+      </call>
+      <call method="addPath">
+        <argument>C:\wamp64\www\untitled2\src\VehiculeBundle/Resources/views</argument>
+        <argument>!Vehicule</argument>
       </call>
       <call method="addPath">
         <argument>C:\wamp64\www\untitled2\vendor\symfony\symfony\src\Symfony\Bundle\DebugBundle/Resources/views</argument>

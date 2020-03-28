@@ -17,7 +17,7 @@ class CovoiturageController extends Controller
     public function AjoutAction(Request $request)
     {
         $offre = new Offre();
-        $form = $this->createForm(OffreType::class,$offre);
+        $form = $this->createForm(OffreType::class, $offre);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid())
