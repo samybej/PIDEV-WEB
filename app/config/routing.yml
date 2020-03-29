@@ -1,3 +1,11 @@
+taxi:
+    resource: "@TaxiBundle/Resources/config/routing.yml"
+    prefix:   /
+
+transport:
+    resource: "@TransportBundle/Resources/config/routing.yml"
+    prefix:   /transport
+
 vehicule:
     resource: "@VehiculeBundle/Resources/config/routing.yml"
     prefix:   /vehicule

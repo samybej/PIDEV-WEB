@@ -107,30 +107,192 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
 
         }
 
-        elseif (0 === strpos($pathinfo, '/vehicule')) {
-            // vehicule_homepage
-            if ('/vehicule' === $trimmedPathinfo) {
-                $ret = array (  '_controller' => 'VehiculeBundle\\Controller\\DefaultController::indexAction',  '_route' => 'vehicule_homepage',);
+        // taxi_homepage
+        if ('' === $trimmedPathinfo) {
+            $ret = array (  '_controller' => 'TaxiBundle\\Controller\\DefaultController::indexAction',  '_route' => 'taxi_homepage',);
+            if ('/' === substr($pathinfo, -1)) {
+                // no-op
+            } elseif ('GET' !== $canonicalMethod) {
+                goto not_taxi_homepage;
+            } else {
+                return array_replace($ret, $this->redirect($rawPathinfo.'/', 'taxi_homepage'));
+            }
+
+            return $ret;
+        }
+        not_taxi_homepage:
+
+        if (0 === strpos($pathinfo, '/transport')) {
+            // transport_homepage
+            if ('/transport' === $trimmedPathinfo) {
+                $ret = array (  '_controller' => 'TransportBundle\\Controller\\ReservationController::indexAction',  '_route' => 'transport_homepage',);
                 if ('/' === substr($pathinfo, -1)) {
                     // no-op
                 } elseif ('GET' !== $canonicalMethod) {
-                    goto not_vehicule_homepage;
+                    goto not_transport_homepage;
                 } else {
-                    return array_replace($ret, $this->redirect($rawPathinfo.'/', 'vehicule_homepage'));
+                    return array_replace($ret, $this->redirect($rawPathinfo.'/', 'transport_homepage'));
                 }
 
                 return $ret;
             }
-            not_vehicule_homepage:
+            not_transport_homepage:
 
-            // vehicule_add
-            if ('/vehicule/add' === $pathinfo) {
-                return array (  '_controller' => 'VehiculeBundle\\Controller\\VehiculeController::addAction',  '_route' => 'vehicule_add',);
+            if (0 === strpos($pathinfo, '/transport/reservation')) {
+                // reservation_index
+                if ('/transport/reservation' === $trimmedPathinfo) {
+                    $ret = array (  '_controller' => 'TransportBundle\\Controller\\ReservationController::indexAction',  '_route' => 'reservation_index',);
+                    if ('/' === substr($pathinfo, -1)) {
+                        // no-op
+                    } elseif ('GET' !== $canonicalMethod) {
+                        goto not_reservation_index;
+                    } else {
+                        return array_replace($ret, $this->redirect($rawPathinfo.'/', 'reservation_index'));
+                    }
+
+                    if (!in_array($canonicalMethod, ['GET'])) {
+                        $allow = array_merge($allow, ['GET']);
+                        goto not_reservation_index;
+                    }
+
+                    return $ret;
+                }
+                not_reservation_index:
+
+                // reservation_show
+                if (preg_match('#^/transport/reservation/(?P<id>[^/]++)/show$#sD', $pathinfo, $matches)) {
+                    $ret = $this->mergeDefaults(array_replace($matches, ['_route' => 'reservation_show']), array (  '_controller' => 'TransportBundle\\Controller\\ReservationController::showAction',));
+                    if (!in_array($canonicalMethod, ['GET'])) {
+                        $allow = array_merge($allow, ['GET']);
+                        goto not_reservation_show;
+                    }
+
+                    return $ret;
+                }
+                not_reservation_show:
+
+                // reservation_new
+                if ('/transport/reservation/new' === $pathinfo) {
+                    $ret = array (  '_controller' => 'TransportBundle\\Controller\\ReservationController::newAction',  '_route' => 'reservation_new',);
+                    if (!in_array($canonicalMethod, ['GET', 'POST'])) {
+                        $allow = array_merge($allow, ['GET', 'POST']);
+                        goto not_reservation_new;
+                    }
+
+                    return $ret;
+                }
+                not_reservation_new:
+
+                // reservation_edit
+                if (preg_match('#^/transport/reservation/(?P<id>[^/]++)/edit$#sD', $pathinfo, $matches)) {
+                    $ret = $this->mergeDefaults(array_replace($matches, ['_route' => 'reservation_edit']), array (  '_controller' => 'TransportBundle\\Controller\\ReservationController::editAction',));
+                    if (!in_array($canonicalMethod, ['GET', 'POST'])) {
+                        $allow = array_merge($allow, ['GET', 'POST']);
+                        goto not_reservation_edit;
+                    }
+
+                    return $ret;
+                }
+                not_reservation_edit:
+
+                // reservation_delete
+                if (preg_match('#^/transport/reservation/(?P<id>[^/]++)/delete$#sD', $pathinfo, $matches)) {
+                    $ret = $this->mergeDefaults(array_replace($matches, ['_route' => 'reservation_delete']), array (  '_controller' => 'TransportBundle\\Controller\\ReservationController::deleteAction',));
+                    if (!in_array($requestMethod, ['DELETE'])) {
+                        $allow = array_merge($allow, ['DELETE']);
+                        goto not_reservation_delete;
+                    }
+
+                    return $ret;
+                }
+                not_reservation_delete:
+
             }
 
-            // vehicule_list
-            if ('/vehicule/list' === $pathinfo) {
-                return array (  '_controller' => 'VehiculeBundle\\Controller\\VehiculeController::listVehiculeAction',  '_route' => 'vehicule_list',);
+            elseif (0 === strpos($pathinfo, '/transport/meuble')) {
+                // meuble_index
+                if ('/transport/meuble' === $trimmedPathinfo) {
+                    $ret = array (  '_controller' => 'EntitiesBundle:Meuble:index',  '_route' => 'meuble_index',);
+                    if ('/' === substr($pathinfo, -1)) {
+                        // no-op
+                    } elseif ('GET' !== $canonicalMethod) {
+                        goto not_meuble_index;
+                    } else {
+                        return array_replace($ret, $this->redirect($rawPathinfo.'/', 'meuble_index'));
+                    }
+
+                    if (!in_array($canonicalMethod, ['GET'])) {
+                        $allow = array_merge($allow, ['GET']);
+                        goto not_meuble_index;
+                    }
+
+                    return $ret;
+                }
+                not_meuble_index:
+
+                // meuble_show
+                if (preg_match('#^/transport/meuble/(?P<id>[^/]++)/show$#sD', $pathinfo, $matches)) {
+                    $ret = $this->mergeDefaults(array_replace($matches, ['_route' => 'meuble_show']), array (  '_controller' => 'TransportBundle\\Controller\\MeubleController::showAction',));
+                    if (!in_array($canonicalMethod, ['GET'])) {
+                        $allow = array_merge($allow, ['GET']);
+                        goto not_meuble_show;
+                    }
+
+                    return $ret;
+                }
+                not_meuble_show:
+
+                if (0 === strpos($pathinfo, '/transport/meuble/new')) {
+                    // meuble_new
+                    if ('/transport/meuble/new' === $pathinfo) {
+                        $ret = array (  '_controller' => 'TransportBundle\\Controller\\MeubleController::newAction',  '_route' => 'meuble_new',);
+                        if (!in_array($canonicalMethod, ['GET', 'POST'])) {
+                            $allow = array_merge($allow, ['GET', 'POST']);
+                            goto not_meuble_new;
+                        }
+
+                        return $ret;
+                    }
+                    not_meuble_new:
+
+                    // meuble_newRes
+                    if (preg_match('#^/transport/meuble/new/(?P<res>[^/]++)$#sD', $pathinfo, $matches)) {
+                        $ret = $this->mergeDefaults(array_replace($matches, ['_route' => 'meuble_newRes']), array (  '_controller' => 'TransportBundle\\Controller\\MeubleController::newResAction',));
+                        if (!in_array($canonicalMethod, ['GET', 'POST'])) {
+                            $allow = array_merge($allow, ['GET', 'POST']);
+                            goto not_meuble_newRes;
+                        }
+
+                        return $ret;
+                    }
+                    not_meuble_newRes:
+
+                }
+
+                // meuble_edit
+                if (preg_match('#^/transport/meuble/(?P<id>[^/]++)/edit$#sD', $pathinfo, $matches)) {
+                    $ret = $this->mergeDefaults(array_replace($matches, ['_route' => 'meuble_edit']), array (  '_controller' => 'TransportBundle\\Controller\\MeubleController::editAction',));
+                    if (!in_array($canonicalMethod, ['GET', 'POST'])) {
+                        $allow = array_merge($allow, ['GET', 'POST']);
+                        goto not_meuble_edit;
+                    }
+
+                    return $ret;
+                }
+                not_meuble_edit:
+
+                // meuble_delete
+                if (preg_match('#^/transport/meuble/(?P<id>[^/]++)/delete$#sD', $pathinfo, $matches)) {
+                    $ret = $this->mergeDefaults(array_replace($matches, ['_route' => 'meuble_delete']), array (  '_controller' => 'TransportBundle\\Controller\\MeubleController::deleteAction',));
+                    if (!in_array($requestMethod, ['DELETE'])) {
+                        $allow = array_merge($allow, ['DELETE']);
+                        goto not_meuble_delete;
+                    }
+
+                    return $ret;
+                }
+                not_meuble_delete:
+
             }
 
         }

@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Meubles list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Taille</th>
+                <th>Prix</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for meuble in meubles %}
+            <tr>
+                <td><a href="{{ path('meuble_show', { 'id': meuble.id }) }}">{{ meuble.id }}</a></td>
+                <td>{{ meuble.taille }}</td>
+                <td>{{ meuble.prix }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('meuble_show', { 'id': meuble.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('meuble_edit', { 'id': meuble.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('meuble_new') }}">Create a new meuble</a>
+        </li>
+    </ul>
+{% endblock %}

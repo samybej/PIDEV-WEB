@@ -45,6 +45,72 @@ class Meuble
      */
     private $idReservation;
 
+    /**
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * @param int $id
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+    }
+
+    /**
+     * @return string
+     */
+    public function getTaille()
+    {
+        return $this->taille;
+    }
+
+    /**
+     * @param string $taille
+     */
+    public function setTaille($taille)
+    {
+        $this->taille = $taille;
+    }
+
+    /**
+     * @return float
+     */
+    public function getPrix()
+    {
+        return $this->prix;
+    }
+
+    /**
+     * @param float $prix
+     */
+    public function setPrix($prix)
+    {
+        $this->prix = $prix;
+    }
+
+    /**
+     * @return \Reservation
+     */
+    public function getIdReservation()
+    {
+        return $this->idReservation;
+    }
+
+    /**
+     * @param \Reservation $idReservation
+     */
+    public function setIdReservation($idReservation)
+    {
+        $this->idReservation = $idReservation;
+    }
+
+
+
 
 }
 

@@ -1,0 +1,13 @@
+transport_homepage:
+    path:     /
+    defaults: { _controller: TransportBundle:Reservation:index }
+
+entities_reservation:
+    resource: "@TransportBundle/Resources/config/routing/reservation.yml"
+    prefix:   /reservation
+
+entities_meuble:
+    resource: "@TransportBundle/Resources/config/routing/meuble.yml"
+    prefix:   /meuble
+
+

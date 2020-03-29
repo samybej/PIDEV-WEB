@@ -1,0 +1,29 @@
+meuble_index:
+    path:     /
+    defaults: { _controller: "EntitiesBundle:Meuble:index" }
+    methods:  GET
+
+meuble_show:
+    path:     /{id}/show
+    defaults: { _controller: "TransportBundle:Meuble:show" }
+    methods:  GET
+
+meuble_new:
+    path:     /new
+    defaults: { _controller: "TransportBundle:Meuble:new" }
+    methods:  [GET, POST]
+
+meuble_newRes:
+    path:     /new/{res}
+    defaults: { _controller: "TransportBundle:Meuble:newRes" }
+    methods:  [GET, POST]
+
+meuble_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "TransportBundle:Meuble:edit" }
+    methods:  [GET, POST]
+
+meuble_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "TransportBundle:Meuble:delete" }
+    methods:  DELETE

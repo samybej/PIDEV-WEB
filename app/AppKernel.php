@@ -21,6 +21,8 @@ class AppKernel extends Kernel
             new UserBundle\UserBundle(),
             new CovoiturageBundle\CovoiturageBundle(),
             new EntitiesBundle\EntitiesBundle(),
+            new TransportBundle\TransportBundle(),
+            new TaxiBundle\TaxiBundle(),
             new VehiculeBundle\VehiculeBundle(),
         ];
 

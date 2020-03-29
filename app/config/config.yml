@@ -5,6 +5,9 @@ imports:
     - { resource: "@UserBundle/Resources/config/services.yml" }
     - { resource: "@CovoiturageBundle/Resources/config/services.yml" }
     - { resource: "@EntitiesBundle/Resources/config/services.yml" }
+    - { resource: "@TransportBundle/Resources/config/services.yml" }
+    - { resource: "@TaxiBundle/Resources/config/services.yml" }
+
     - { resource: "@VehiculeBundle/Resources/config/services.yml" }
 
 
