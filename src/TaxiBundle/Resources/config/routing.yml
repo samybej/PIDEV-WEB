@@ -2,6 +2,6 @@ taxi_homepage:
     path:     /
     defaults: { _controller: TaxiBundle:Default:index }
 
-entities_reservation:
-    resource: "@TransportBundle/Resources/config/routing/reservation.yml"
-    prefix:   /reservation
+ajout_reservation_taxi:
+    path:   /ajout
+    defaults: { _controller: TaxiBundle:Default:ajout }

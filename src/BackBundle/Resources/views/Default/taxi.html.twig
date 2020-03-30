@@ -1,0 +1,54 @@
+{% extends 'back.html.twig' %}
+
+{% block body %}
+    <table>
+        <tbody>
+        <tr>
+            <th>Distance</th>
+            <td>{{ reservation.distance }}</td>
+        </tr>
+        <tr>
+            <th>Depart</th>
+            <td>{{ reservation.depart }}</td>
+        </tr>
+        <tr>
+            <th>Arrive</th>
+            <td>{{ reservation.arrive }}</td>
+        </tr>
+        <tr>
+            <th>Date</th>
+            <td>{% if reservation.date %}{{ reservation.date|date('Y-m-d') }}{% endif %}</td>
+        </tr>
+        <tr>
+            <th>Type</th>
+            <td>{{ reservation.type }}</td>
+        </tr>
+        <tr>
+            <th>Tarif</th>
+            <td>{{ reservation.tarif }}</td>
+        </tr>
+        <tr>
+            <th>Etat</th>
+            <td>{{ reservation.etat }}</td>
+        </tr>
+        <tr>
+            <th>Chauffeur</th>
+            <td>{{ reservation.idChauffeur.nom }}</td>
+        </tr>
+        <tr>
+            <th>Voiture</th>
+            <td>{{ reservation.idChauffeur.idVehicule.marque }}</td>
+        </tr>
+        <tr>
+            <th>Immatriculation</th>
+            <td>{{ reservation.idChauffeur.idVehicule.immatriculation }}</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('taxis_back') }}">Retour vers la liste des reservations des taxis</a>
+        </li>
+    </ul>
+{% endblock %}

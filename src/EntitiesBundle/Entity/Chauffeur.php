@@ -129,6 +129,264 @@ class Chauffeur
      */
     private $idVehicule;
 
+    /**
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * @param int $id
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+    }
+
+    /**
+     * @return int
+     */
+    public function getCin()
+    {
+        return $this->cin;
+    }
+
+    /**
+     * @param int $cin
+     */
+    public function setCin($cin)
+    {
+        $this->cin = $cin;
+    }
+
+    /**
+     * @return string
+     */
+    public function getNom()
+    {
+        return $this->nom;
+    }
+
+    /**
+     * @param string $nom
+     */
+    public function setNom($nom)
+    {
+        $this->nom = $nom;
+    }
+
+    /**
+     * @return string
+     */
+    public function getPrenom()
+    {
+        return $this->prenom;
+    }
+
+    /**
+     * @param string $prenom
+     */
+    public function setPrenom($prenom)
+    {
+        $this->prenom = $prenom;
+    }
+
+    /**
+     * @return int
+     */
+    public function getTel()
+    {
+        return $this->tel;
+    }
+
+    /**
+     * @param int $tel
+     */
+    public function setTel($tel)
+    {
+        $this->tel = $tel;
+    }
+
+    /**
+     * @return string
+     */
+    public function getSexe()
+    {
+        return $this->sexe;
+    }
+
+    /**
+     * @param string $sexe
+     */
+    public function setSexe($sexe)
+    {
+        $this->sexe = $sexe;
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getDateNaissance()
+    {
+        return $this->dateNaissance;
+    }
+
+    /**
+     * @param \DateTime $dateNaissance
+     */
+    public function setDateNaissance($dateNaissance)
+    {
+        $this->dateNaissance = $dateNaissance;
+    }
+
+    /**
+     * @return float
+     */
+    public function getSalaire()
+    {
+        return $this->salaire;
+    }
+
+    /**
+     * @param float $salaire
+     */
+    public function setSalaire($salaire)
+    {
+        $this->salaire = $salaire;
+    }
+
+    /**
+     * @return float
+     */
+    public function getNote()
+    {
+        return $this->note;
+    }
+
+    /**
+     * @param float $note
+     */
+    public function setNote($note)
+    {
+        $this->note = $note;
+    }
+
+    /**
+     * @return binary
+     */
+    public function getImage()
+    {
+        return $this->image;
+    }
+
+    /**
+     * @param binary $image
+     */
+    public function setImage($image)
+    {
+        $this->image = $image;
+    }
+
+    /**
+     * @return int
+     */
+    public function getEtatCompte()
+    {
+        return $this->etatCompte;
+    }
+
+    /**
+     * @param int $etatCompte
+     */
+    public function setEtatCompte($etatCompte)
+    {
+        $this->etatCompte = $etatCompte;
+    }
+
+    /**
+     * @return string
+     */
+    public function getRole()
+    {
+        return $this->role;
+    }
+
+    /**
+     * @param string $role
+     */
+    public function setRole($role)
+    {
+        $this->role = $role;
+    }
+
+    /**
+     * @return int
+     */
+    public function getNumPermis()
+    {
+        return $this->numPermis;
+    }
+
+    /**
+     * @param int $numPermis
+     */
+    public function setNumPermis($numPermis)
+    {
+        $this->numPermis = $numPermis;
+    }
+
+    /**
+     * @return string
+     */
+    public function getMdp()
+    {
+        return $this->mdp;
+    }
+
+    /**
+     * @param string $mdp
+     */
+    public function setMdp($mdp)
+    {
+        $this->mdp = $mdp;
+    }
+
+    /**
+     * @return int
+     */
+    public function getNbreclamation()
+    {
+        return $this->nbreclamation;
+    }
+
+    /**
+     * @param int $nbreclamation
+     */
+    public function setNbreclamation($nbreclamation)
+    {
+        $this->nbreclamation = $nbreclamation;
+    }
+
+    /**
+     * @return \Vehicule
+     */
+    public function getIdVehicule()
+    {
+        return $this->idVehicule;
+    }
+
+    /**
+     * @param \Vehicule $idVehicule
+     */
+    public function setIdVehicule($idVehicule)
+    {
+        $this->idVehicule = $idVehicule;
+    }
+
+
+
 
 }
 
