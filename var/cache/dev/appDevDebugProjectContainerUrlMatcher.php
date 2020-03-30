@@ -297,6 +297,44 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
 
         }
 
+        elseif (0 === strpos($pathinfo, '/vehicule')) {
+            // vehicule_homepage
+            if ('/vehicule' === $trimmedPathinfo) {
+                $ret = array (  '_controller' => 'VehiculeBundle\\Controller\\DefaultController::indexAction',  '_route' => 'vehicule_homepage',);
+                if ('/' === substr($pathinfo, -1)) {
+                    // no-op
+                } elseif ('GET' !== $canonicalMethod) {
+                    goto not_vehicule_homepage;
+                } else {
+                    return array_replace($ret, $this->redirect($rawPathinfo.'/', 'vehicule_homepage'));
+                }
+
+                return $ret;
+            }
+            not_vehicule_homepage:
+
+            // vehicule_add
+            if ('/vehicule/add' === $pathinfo) {
+                return array (  '_controller' => 'VehiculeBundle\\Controller\\VehiculeController::addAction',  '_route' => 'vehicule_add',);
+            }
+
+            // vehicule_list
+            if ('/vehicule/list' === $pathinfo) {
+                return array (  '_controller' => 'VehiculeBundle\\Controller\\VehiculeController::listVehiculeAction',  '_route' => 'vehicule_list',);
+            }
+
+            // vehicule_delete
+            if (0 === strpos($pathinfo, '/vehicule/delete') && preg_match('#^/vehicule/delete/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, ['_route' => 'vehicule_delete']), array (  '_controller' => 'VehiculeBundle\\Controller\\VehiculeController::deleteAction',));
+            }
+
+            // vehicule_update
+            if (0 === strpos($pathinfo, '/vehicule/update') && preg_match('#^/vehicule/update/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, ['_route' => 'vehicule_update']), array (  '_controller' => 'VehiculeBundle\\Controller\\VehiculeController::updateAction',));
+            }
+
+        }
+
         // entities_homepage
         if ('/entities' === $trimmedPathinfo) {
             $ret = array (  '_controller' => 'EntitiesBundle\\Controller\\DefaultController::indexAction',  '_route' => 'entities_homepage',);

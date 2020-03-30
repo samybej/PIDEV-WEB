@@ -23,6 +23,7 @@
       <parameter key="EntitiesBundle">EntitiesBundle\EntitiesBundle</parameter>
       <parameter key="TransportBundle">TransportBundle\TransportBundle</parameter>
       <parameter key="TaxiBundle">TaxiBundle\TaxiBundle</parameter>
+      <parameter key="VehiculeBundle">VehiculeBundle\VehiculeBundle</parameter>
       <parameter key="DebugBundle">Symfony\Bundle\DebugBundle\DebugBundle</parameter>
       <parameter key="WebProfilerBundle">Symfony\Bundle\WebProfilerBundle\WebProfilerBundle</parameter>
       <parameter key="SensioDistributionBundle">Sensio\Bundle\DistributionBundle\SensioDistributionBundle</parameter>
@@ -100,6 +101,11 @@
         <parameter key="path">C:\wamp64\www\untitled2\src\TaxiBundle</parameter>
         <parameter key="namespace">TaxiBundle</parameter>
       </parameter>
+      <parameter key="VehiculeBundle" type="collection">
+        <parameter key="parent">null</parameter>
+        <parameter key="path">C:\wamp64\www\untitled2\src\VehiculeBundle</parameter>
+        <parameter key="namespace">VehiculeBundle</parameter>
+      </parameter>
       <parameter key="DebugBundle" type="collection">
         <parameter key="parent">null</parameter>
         <parameter key="path">C:\wamp64\www\untitled2\vendor\symfony\symfony\src\Symfony\Bundle\DebugBundle</parameter>
@@ -131,7 +137,7 @@
     <parameter key="container.autowiring.strict_mode">true</parameter>
     <parameter key="container.dumper.inline_class_loader">true</parameter>
     <parameter key="database_host">127.0.0.1</parameter>
-    <parameter key="database_port">3308</parameter>
+    <parameter key="database_port">null</parameter>
     <parameter key="database_name">projetpi</parameter>
     <parameter key="database_user">root</parameter>
     <parameter key="database_password">null</parameter>
@@ -3947,6 +3953,14 @@
         <argument>!Taxi</argument>
       </call>
       <call method="addPath">
+        <argument>C:\wamp64\www\untitled2\src\VehiculeBundle/Resources/views</argument>
+        <argument>Vehicule</argument>
+      </call>
+      <call method="addPath">
+        <argument>C:\wamp64\www\untitled2\src\VehiculeBundle/Resources/views</argument>
+        <argument>!Vehicule</argument>
+      </call>
+      <call method="addPath">
         <argument>C:\wamp64\www\untitled2\vendor\symfony\symfony\src\Symfony\Bundle\DebugBundle/Resources/views</argument>
         <argument>Debug</argument>
       </call>
@@ -4168,6 +4182,14 @@
       <call method="addPath">
         <argument>C:\wamp64\www\untitled2\src\TaxiBundle/Resources/views</argument>
         <argument>!Taxi</argument>
+      </call>
+      <call method="addPath">
+        <argument>C:\wamp64\www\untitled2\src\VehiculeBundle/Resources/views</argument>
+        <argument>Vehicule</argument>
+      </call>
+      <call method="addPath">
+        <argument>C:\wamp64\www\untitled2\src\VehiculeBundle/Resources/views</argument>
+        <argument>!Vehicule</argument>
       </call>
       <call method="addPath">
         <argument>C:\wamp64\www\untitled2\vendor\symfony\symfony\src\Symfony\Bundle\DebugBundle/Resources/views</argument>
@@ -4508,7 +4530,7 @@
       <argument type="collection">
         <argument key="driver">pdo_mysql</argument>
         <argument key="host">127.0.0.1</argument>
-        <argument key="port">3308</argument>
+        <argument key="port">null</argument>
         <argument key="dbname">projetpi</argument>
         <argument key="user">root</argument>
         <argument key="password">null</argument>

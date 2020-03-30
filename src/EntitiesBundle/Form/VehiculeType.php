@@ -14,7 +14,12 @@ class VehiculeType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('immatriculation')->add('numeroAssurance')->add('marque')->add('type')->add('etat') -> add('Ajouter', SubmitType::class);
+        $builder->add('immatriculation',null,['attr'=>['class'=>'form-control' ]])
+            ->add('numeroAssurance',null,['attr'=>['class'=>'form-control' ]])
+            ->add('marque',null,['attr'=>['class'=>'form-control' ]])
+            ->add('type',null,['attr'=>['class'=>'form-control' ]])
+            ->add('etat',null,['attr'=>['class'=>'form-control' ]])
+            ->add('Ajouter', SubmitType::class,['attr'=>['class'=>'btn btn-primary' ]]);
     }/**
      * {@inheritdoc}
      */
