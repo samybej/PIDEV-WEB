@@ -5,3 +5,7 @@ taxi_homepage:
 ajout_reservation_taxi:
     path:   /ajout
     defaults: { _controller: TaxiBundle:Default:ajout }
+
+taxi_modifier:
+    path:   /modifier/{id}
+    defaults: { _controller: TaxiBundle:Default:modifier }

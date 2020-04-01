@@ -23,6 +23,36 @@ class DefaultController extends Controller
         ));
     }
 
+    public function modifierAction(Request $request, Reservation $reservation)
+    {
+        $deleteForm = $this->createDeleteForm($reservation);
+        $editForm = $this->createForm('TaxiBundle\Form\ReservationType', $reservation);
+        $editForm->add('idChauffeur', EntityType::class, [
+            'class' => Chauffeur::class,
+            'choice_label' => function ($category) {
+                $noms = $category->getIdVehicule();
+                if ($noms == null)
+                {
+                    return 'On ne connait pas cette Marque';
+                }
+                return $noms->getMarque();
+            },
+            'label' => 'Choisissez la Marque de la voiture'
+        ]);
+        $editForm->handleRequest($request);
+
+        if ($editForm->isSubmitted() && $editForm->isValid()) {
+            $this->getDoctrine()->getManager()->flush();
+            return $this->redirectToRoute('taxi_homepage');
+        }
+
+        return $this->render('TaxiBundle:Default:edit.html.twig', array(
+            'reservation' => $reservation,
+            'edit_form' => $editForm->createView(),
+            'delete_form' => $deleteForm->createView(),
+        ));
+    }
+
     public function ajoutAction(Request $request)
     {
         $em = $this->getDoctrine()->getManager();
@@ -35,7 +65,7 @@ class DefaultController extends Controller
                 $noms = $category->getIdVehicule();
                 if ($noms == null)
                 {
-                    return 'aa';
+                    return 'On ne connait pas cette Marque';
                 }
                 return $noms->getMarque();
             },
@@ -66,12 +96,42 @@ class DefaultController extends Controller
             $em->flush();
 
 
-            return $this->redirectToRoute('taxi_homepage', array('res' => $reservation->getId()));
+            return $this->redirectToRoute('taxi_homepage');
         }
 
         return $this->render('reservation/new.html.twig', array(
             'reservation' => $reservation,
             'form' => $form->createView(),
         ));
+    }
+
+    public function deleteAction(Request $request, Reservation $reservation)
+    {
+        $form = $this->createDeleteForm($reservation);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $em = $this->getDoctrine()->getManager();
+            $em->remove($reservation);
+            $em->flush();
+        }
+
+        return $this->redirectToRoute('reservation_index');
+    }
+
+    /**
+     * Creates a form to delete a reservation entity.
+     *
+     * @param Reservation $reservation The reservation entity
+     *
+     * @return \Symfony\Component\Form\Form The form
+     */
+    private function createDeleteForm(Reservation $reservation)
+    {
+        return $this->createFormBuilder()
+            ->setAction($this->generateUrl('reservation_delete', array('id' => $reservation->getId())))
+            ->setMethod('DELETE')
+            ->getForm()
+            ;
     }
 }
