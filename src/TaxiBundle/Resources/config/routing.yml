@@ -9,3 +9,13 @@ ajout_reservation_taxi:
 taxi_modifier:
     path:   /modifier/{id}
     defaults: { _controller: TaxiBundle:Default:modifier }
+
+taxi_show:
+    path:     /{id}/show
+    defaults: { _controller: TaxiBundle:Default:show }
+    methods:  GET
+
+taxi_delete:
+    path:     /{id}/delete
+    defaults: { _controller: TaxiBundle:Default:delete }
+    methods:  DELETE

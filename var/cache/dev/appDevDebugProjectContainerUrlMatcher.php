@@ -107,22 +107,111 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
 
         }
 
-        // taxi_homepage
-        if ('' === $trimmedPathinfo) {
-            $ret = array (  '_controller' => 'TaxiBundle\\Controller\\DefaultController::indexAction',  '_route' => 'taxi_homepage',);
-            if ('/' === substr($pathinfo, -1)) {
-                // no-op
-            } elseif ('GET' !== $canonicalMethod) {
-                goto not_taxi_homepage;
-            } else {
-                return array_replace($ret, $this->redirect($rawPathinfo.'/', 'taxi_homepage'));
+        elseif (0 === strpos($pathinfo, '/Back')) {
+            // back_homepage
+            if ('/Back' === $trimmedPathinfo) {
+                $ret = array (  '_controller' => 'BackBundle\\Controller\\DefaultController::reservations_allAction',  '_route' => 'back_homepage',);
+                if ('/' === substr($pathinfo, -1)) {
+                    // no-op
+                } elseif ('GET' !== $canonicalMethod) {
+                    goto not_back_homepage;
+                } else {
+                    return array_replace($ret, $this->redirect($rawPathinfo.'/', 'back_homepage'));
+                }
+
+                return $ret;
+            }
+            not_back_homepage:
+
+            // taxis_back
+            if ('/Back/taxi' === $pathinfo) {
+                return array (  '_controller' => 'BackBundle\\Controller\\DefaultController::taxisAction',  '_route' => 'taxis_back',);
             }
 
-            return $ret;
-        }
-        not_taxi_homepage:
+            // taxibackshow
+            if (preg_match('#^/Back/(?P<id>[^/]++)/showT$#sD', $pathinfo, $matches)) {
+                $ret = $this->mergeDefaults(array_replace($matches, ['_route' => 'taxibackshow']), array (  '_controller' => 'BackBundle\\Controller\\DefaultController::taxiAction',));
+                if (!in_array($canonicalMethod, ['GET'])) {
+                    $allow = array_merge($allow, ['GET']);
+                    goto not_taxibackshow;
+                }
 
-        if (0 === strpos($pathinfo, '/transport')) {
+                return $ret;
+            }
+            not_taxibackshow:
+
+            // transports_back
+            if ('/Back/transport' === $pathinfo) {
+                return array (  '_controller' => 'BackBundle\\Controller\\DefaultController::transportsAction',  '_route' => 'transports_back',);
+            }
+
+            // transportbackshow
+            if (preg_match('#^/Back/(?P<id>[^/]++)/showTr$#sD', $pathinfo, $matches)) {
+                $ret = $this->mergeDefaults(array_replace($matches, ['_route' => 'transportbackshow']), array (  '_controller' => 'BackBundle\\Controller\\DefaultController::transportAction',));
+                if (!in_array($canonicalMethod, ['GET'])) {
+                    $allow = array_merge($allow, ['GET']);
+                    goto not_transportbackshow;
+                }
+
+                return $ret;
+            }
+            not_transportbackshow:
+
+        }
+
+        elseif (0 === strpos($pathinfo, '/taxi')) {
+            // taxi_homepage
+            if ('/taxi' === $trimmedPathinfo) {
+                $ret = array (  '_controller' => 'TaxiBundle\\Controller\\DefaultController::indexAction',  '_route' => 'taxi_homepage',);
+                if ('/' === substr($pathinfo, -1)) {
+                    // no-op
+                } elseif ('GET' !== $canonicalMethod) {
+                    goto not_taxi_homepage;
+                } else {
+                    return array_replace($ret, $this->redirect($rawPathinfo.'/', 'taxi_homepage'));
+                }
+
+                return $ret;
+            }
+            not_taxi_homepage:
+
+            // ajout_reservation_taxi
+            if ('/taxi/ajout' === $pathinfo) {
+                return array (  '_controller' => 'TaxiBundle\\Controller\\DefaultController::ajoutAction',  '_route' => 'ajout_reservation_taxi',);
+            }
+
+            // taxi_modifier
+            if (0 === strpos($pathinfo, '/taxi/modifier') && preg_match('#^/taxi/modifier/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, ['_route' => 'taxi_modifier']), array (  '_controller' => 'TaxiBundle\\Controller\\DefaultController::modifierAction',));
+            }
+
+            // taxi_show
+            if (preg_match('#^/taxi/(?P<id>[^/]++)/show$#sD', $pathinfo, $matches)) {
+                $ret = $this->mergeDefaults(array_replace($matches, ['_route' => 'taxi_show']), array (  '_controller' => 'TaxiBundle\\Controller\\DefaultController::showAction',));
+                if (!in_array($canonicalMethod, ['GET'])) {
+                    $allow = array_merge($allow, ['GET']);
+                    goto not_taxi_show;
+                }
+
+                return $ret;
+            }
+            not_taxi_show:
+
+            // taxi_delete
+            if (preg_match('#^/taxi/(?P<id>[^/]++)/delete$#sD', $pathinfo, $matches)) {
+                $ret = $this->mergeDefaults(array_replace($matches, ['_route' => 'taxi_delete']), array (  '_controller' => 'TaxiBundle\\Controller\\DefaultController::deleteAction',));
+                if (!in_array($requestMethod, ['DELETE'])) {
+                    $allow = array_merge($allow, ['DELETE']);
+                    goto not_taxi_delete;
+                }
+
+                return $ret;
+            }
+            not_taxi_delete:
+
+        }
+
+        elseif (0 === strpos($pathinfo, '/transport')) {
             // transport_homepage
             if ('/transport' === $trimmedPathinfo) {
                 $ret = array (  '_controller' => 'TransportBundle\\Controller\\ReservationController::indexAction',  '_route' => 'transport_homepage',);

@@ -3,12 +3,15 @@
 namespace TaxiBundle\Controller;
 
 use EntitiesBundle\Entity\Chauffeur;
+use EntitiesBundle\Entity\Client;
 use EntitiesBundle\Entity\Reservation;
 use EntitiesBundle\Entity\Vehicule;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Bundle\SwiftmailerBundle\SwiftmailerBundle;
+
 
 class DefaultController extends Controller
 {
@@ -59,24 +62,14 @@ class DefaultController extends Controller
         $reservation = new Reservation();
         $form = $this->createForm('TaxiBundle\Form\ReservationType', $reservation);
 
-        $form->add('idChauffeur', EntityType::class, [
-            'class' => Chauffeur::class,
-            'choice_label' => function ($category) {
-                $noms = $category->getIdVehicule();
-                if ($noms == null)
-                {
-                    return 'On ne connait pas cette Marque';
-                }
-                return $noms->getMarque();
-            },
-            'label' => 'Choisissez la Marque de la voiture'
-        ]);
+
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
 
-            /**** Edheya bech tetbadel ki taamlou user bel user connected tawa bech nhot client par defaut ***/
-            $client1 = $em->getRepository('EntitiesBundle:Client')->find(48);
+            /**** Get current connected user ***/
+            $client1 = new Client();
+            $client1 = $em->getRepository('EntitiesBundle:Client')->find(2);
             $reservation->setIdClient($client1);
 
             /********* *****/
@@ -92,9 +85,32 @@ class DefaultController extends Controller
             $reservation->setEtat(1);
             $reservation->setType("Taxi");
 
+
+            /* send Mail */
+        // Create the Transport
+            $transport = (new \Swift_SmtpTransport('smtp.googlemail.com', 465, 'ssl'))
+                ->setUsername('mohamediyadhtajouri@gmail.com')
+                ->setPassword('zdjmnucybjqoezmb')
+            ;
+
+// Create the Mailer using your created Transport
+            $mailer = new \Swift_Mailer($transport);
+
+// Create a message
+            $body = 'Hello '. $client1->getNom(). ', <p>Votre réservation a été accepté <span style="color:#ff0010;">Driver</span>.</p>';
+
+            $message = (new \Swift_Message('Driver Application'))
+                ->setFrom(['mohamediyadhtajouri@gmail.com' => 'Driver'])
+                ->setTo([$client1->getMail()])
+                ->setBody($body)
+                ->setContentType('text/html')
+            ;
+
+// Send the message
+            $mailer->send($message);
+
             $em->persist($reservation);
             $em->flush();
-
 
             return $this->redirectToRoute('taxi_homepage');
         }
@@ -116,7 +132,7 @@ class DefaultController extends Controller
             $em->flush();
         }
 
-        return $this->redirectToRoute('reservation_index');
+        return $this->redirectToRoute('taxi_homepage');
     }
 
     /**
@@ -129,9 +145,18 @@ class DefaultController extends Controller
     private function createDeleteForm(Reservation $reservation)
     {
         return $this->createFormBuilder()
-            ->setAction($this->generateUrl('reservation_delete', array('id' => $reservation->getId())))
+            ->setAction($this->generateUrl('taxi_delete', array('id' => $reservation->getId())))
             ->setMethod('DELETE')
             ->getForm()
             ;
+    }
+    public function showAction(Reservation $reservation)
+    {
+        $deleteForm = $this->createDeleteForm($reservation);
+
+        return $this->render('TaxiBundle:Default:show.html.twig', array(
+            'reservation' => $reservation,
+            'delete_form' => $deleteForm->createView(),
+        ));
     }
 }

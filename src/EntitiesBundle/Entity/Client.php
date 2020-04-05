@@ -98,6 +98,201 @@ class Client
      */
     private $cadeau = '0';
 
+    /**
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * @param int $id
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+    }
+
+    /**
+     * @return string
+     */
+    public function getNom()
+    {
+        return $this->nom;
+    }
+
+    /**
+     * @param string $nom
+     */
+    public function setNom($nom)
+    {
+        $this->nom = $nom;
+    }
+
+    /**
+     * @return string
+     */
+    public function getPrenom()
+    {
+        return $this->prenom;
+    }
+
+    /**
+     * @param string $prenom
+     */
+    public function setPrenom($prenom)
+    {
+        $this->prenom = $prenom;
+    }
+
+    /**
+     * @return int
+     */
+    public function getTel()
+    {
+        return $this->tel;
+    }
+
+    /**
+     * @param int $tel
+     */
+    public function setTel($tel)
+    {
+        $this->tel = $tel;
+    }
+
+    /**
+     * @return string
+     */
+    public function getAdresse()
+    {
+        return $this->adresse;
+    }
+
+    /**
+     * @param string $adresse
+     */
+    public function setAdresse($adresse)
+    {
+        $this->adresse = $adresse;
+    }
+
+    /**
+     * @return string
+     */
+    public function getMdp()
+    {
+        return $this->mdp;
+    }
+
+    /**
+     * @param string $mdp
+     */
+    public function setMdp($mdp)
+    {
+        $this->mdp = $mdp;
+    }
+
+    /**
+     * @return int
+     */
+    public function getEtatCompte()
+    {
+        return $this->etatCompte;
+    }
+
+    /**
+     * @param int $etatCompte
+     */
+    public function setEtatCompte($etatCompte)
+    {
+        $this->etatCompte = $etatCompte;
+    }
+
+    /**
+     * @return binary
+     */
+    public function getImage()
+    {
+        return $this->image;
+    }
+
+    /**
+     * @param binary $image
+     */
+    public function setImage($image)
+    {
+        $this->image = $image;
+    }
+
+    /**
+     * @return string
+     */
+    public function getMail()
+    {
+        return $this->mail;
+    }
+
+    /**
+     * @param string $mail
+     */
+    public function setMail($mail)
+    {
+        $this->mail = $mail;
+    }
+
+    /**
+     * @return int
+     */
+    public function getPoint()
+    {
+        return $this->point;
+    }
+
+    /**
+     * @param int $point
+     */
+    public function setPoint($point)
+    {
+        $this->point = $point;
+    }
+
+    /**
+     * @return int
+     */
+    public function getAvertissement()
+    {
+        return $this->avertissement;
+    }
+
+    /**
+     * @param int $avertissement
+     */
+    public function setAvertissement($avertissement)
+    {
+        $this->avertissement = $avertissement;
+    }
+
+    /**
+     * @return int
+     */
+    public function getCadeau()
+    {
+        return $this->cadeau;
+    }
+
+    /**
+     * @param int $cadeau
+     */
+    public function setCadeau($cadeau)
+    {
+        $this->cadeau = $cadeau;
+    }
+
+
+
+
 
 }
 
