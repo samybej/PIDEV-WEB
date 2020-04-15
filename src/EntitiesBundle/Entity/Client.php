@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Client
  *
  * @ORM\Table(name="client")
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="EntitiesBundle\Repository\ClientRepository")
  */
 class Client
 {
@@ -26,6 +26,15 @@ class Client
      *
      * @ORM\Column(name="nom", type="string", length=20, nullable=false)
      */
+
+
+    /**
+     *@ORM\OneToOne(targetEntity="UserBundle\Entity\User")
+     *@ORM\JoinColumn(name="id_fos", referencedColumnName="id")
+     */
+    private $idFOS;
+
+
     private $nom;
 
     /**
@@ -184,6 +193,22 @@ class Client
     public function getMdp()
     {
         return $this->mdp;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getIdFOS()
+    {
+        return $this->idFOS;
+    }
+
+    /**
+     * @param mixed $idFOS
+     */
+    public function setIdFOS($idFOS)
+    {
+        $this->idFOS = $idFOS;
     }
 
     /**

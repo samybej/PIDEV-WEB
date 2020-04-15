@@ -1,8 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f478919a-a688-4300-ac7e-583e24eecf4d" name="Default Changelist" comment="zedt route mteii ena w iyadh">
+    <list default="true" id="f478919a-a688-4300-ac7e-583e24eecf4d" name="Default Changelist" comment="travail presque kemel ne9es chwaya graphique">
+      <change afterPath="$PROJECT_DIR$/web/js/ControleSaisie.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/commandlinetools/Composer_01_04_2020_2_18_PM_c.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/commandlinetools/Composer_13_04_2020_18_07_c.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/commandlinetools/Symfony_01_04_2020_2_18_PM_s.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/commandlinetools/Symfony_13_04_2020_18_08_s.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Resources/views/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Resources/views/reservation/new.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/reservation/new.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/config/security.yml" beforeDir="false" afterPath="$PROJECT_DIR$/app/config/security.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/EntitiesBundle/Entity/Admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/EntitiesBundle/Entity/Admin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/EntitiesBundle/Entity/Adminrh.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/EntitiesBundle/Entity/Adminrh.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/EntitiesBundle/Entity/Client.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/EntitiesBundle/Entity/Client.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/EntitiesBundle/Entity/User.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TaxiBundle/Controller/DefaultController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/TaxiBundle/Controller/DefaultController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TaxiBundle/Form/ReservationType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/TaxiBundle/Form/ReservationType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TaxiBundle/Resources/views/Default/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/TaxiBundle/Resources/views/Default/edit.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainer.php" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainer.php.meta" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainer.php.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainer.xml" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainer.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainer.xml.meta" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainer.xml.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainerCompiler.log" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainerCompiler.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/pools/89NYJE2qva/R/R/7vrQAyI-J66fICP0-HVd" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/pools/89NYJE2qva/R/R/7vrQAyI-J66fICP0-HVd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/pools/89NYJE2qva/V/F/geIusAz-S+yrNxBvgjbW" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/pools/89NYJE2qva/V/F/geIusAz-S+yrNxBvgjbW" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/index.csv" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/profiler/index.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/twig/35/35240fa6a01f67c02a67796464edabad2aed38968098f60bbf6d6a207d211a2e.php" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/twig/35/35240fa6a01f67c02a67796464edabad2aed38968098f60bbf6d6a207d211a2e.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/logs/dev.log" beforeDir="false" afterPath="$PROJECT_DIR$/var/logs/dev.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/friendsofsymfony/user-bundle/Controller/RegistrationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/friendsofsymfony/user-bundle/Controller/RegistrationController.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -14,6 +38,13 @@
     <execution>
       <phar pharPath="$PROJECT_DIR$/composer.phar" interpreterId="70688deb-bead-41ba-b0f9-2ca62bd679e8" />
     </execution>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -85,15 +116,15 @@
     <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php.zend.framework.tool" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\wamp64\www\untitled2\src\TransportBundle\Resources\config" />
-      <recent name="C:\wamp64\www\untitled2\src\TransportBundle\Form" />
-      <recent name="C:\wamp64\www\untitled2\src\TransportBundle\Controller" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\wamp64\www\untitled2\src\TaxiBundle\Resources\views\Default" />
       <recent name="C:\wamp64\www\untitled2\src\TaxiBundle\Resources\config\routing" />
       <recent name="C:\wamp64\www\untitled2\app\Resources" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\wamp64\www\untitled2\src\TransportBundle\Resources\config" />
+      <recent name="C:\wamp64\www\untitled2\src\TransportBundle\Form" />
+      <recent name="C:\wamp64\www\untitled2\src\TransportBundle\Controller" />
     </key>
   </component>
   <component name="RunAnythingCache">
@@ -108,7 +139,6 @@
       <command value="s doctrine:generate:entities" />
       <command value="s doctrine:generate:entities UserBundle:User" />
       <command value="doctrine:schema:update --force" />
-      <command value="s doctrine:schema:update --force" />
       <command value="s doctrine:mapping:import --force EntitiesBundle annotation" />
       <command value="s doctrine:generate:form EntitiesBundle:Offre" />
       <command value="c dump-autoload" />
@@ -117,6 +147,7 @@
       <command value="s generate:bundle" />
       <command value="c dump-autoload --optimize" />
       <command value="s cache:clear" />
+      <command value="s doctrine:schema:update --force" />
     </option>
   </component>
   <component name="ServiceViewManager">
@@ -153,7 +184,9 @@
       <workItem from="1585746300380" duration="1206000" />
       <workItem from="1585757632587" duration="4741000" />
       <workItem from="1585770934174" duration="1154000" />
-      <workItem from="1586102999996" duration="9006000" />
+      <workItem from="1586102999996" duration="9657000" />
+      <workItem from="1586781694652" duration="21034000" />
+      <workItem from="1586968156106" duration="1440000" />
     </task>
     <task id="LOCAL-00001" summary="zedt route mteii ena w iyadh">
       <created>1585760662831</created>
@@ -171,14 +204,15 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="backBundle + khedma f transporteur w taxi" />
     <MESSAGE value="zedt route mteii ena w iyadh" />
-    <option name="LAST_COMMIT_MESSAGE" value="zedt route mteii ena w iyadh" />
+    <MESSAGE value="travail presque kemel ne9es chwaya graphique" />
+    <option name="LAST_COMMIT_MESSAGE" value="travail presque kemel ne9es chwaya graphique" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="612" y="164" key="#com.intellij.ide.util.MemberChooser" timestamp="1586108706552">
+    <state x="612" y="164" key="#com.intellij.ide.util.MemberChooser" timestamp="1586804354161">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="544" y="145" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1585322413557" />
-    <state x="612" y="164" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1586108706552" />
+    <state x="612" y="164" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1586804354161" />
     <state x="765" y="207" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1584533994104" />
     <state x="363" y="101" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1585604577653">
       <screen x="0" y="0" width="1366" height="728" />
@@ -189,62 +223,75 @@
     </state>
     <state x="552" y="220" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.824@0.0.1536.824" timestamp="1586107019247" />
     <state x="690" y="278" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1584889889453" />
-    <state x="308" y="0" key="CommitChangelistDialog2" timestamp="1585760777650">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state x="310" y="10" key="CommitChangelistDialog2" timestamp="1586971116210">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="308" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1585760777650" />
-    <state x="489" y="243" key="ComposerCompositePathDialog" timestamp="1585747122483">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state x="310" y="10" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1586971116210" />
+    <state x="550" y="275" key="ComposerCompositePathDialog" timestamp="1586797665707">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="489" y="243" key="ComposerCompositePathDialog/0.0.1366.728@0.0.1366.728" timestamp="1585747122483" />
+    <state x="550" y="275" key="ComposerCompositePathDialog/0.0.1536.824@0.0.1536.824" timestamp="1586797665707" />
     <state x="687" y="347" key="ComposerCompositePathDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1584813231104" />
-    <state x="528" y="140" key="FileChooserDialogImpl" timestamp="1585747135366">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state x="594" y="158" key="FileChooserDialogImpl" timestamp="1586797681738">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="528" y="140" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1585747135366" />
+    <state x="594" y="158" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1586797681738" />
     <state x="742" y="200" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1584813682523" />
-    <state width="1323" height="179" key="GridCell.Tab.0.bottom" timestamp="1585760510500">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state width="1493" height="127" key="GridCell.Tab.0.bottom" timestamp="1586864208493">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1323" height="179" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1585760510500" />
+    <state width="1493" height="127" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1586864208493" />
     <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1584896318324" />
-    <state width="1323" height="179" key="GridCell.Tab.0.center" timestamp="1585760510500">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state width="1493" height="127" key="GridCell.Tab.0.center" timestamp="1586864208492">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1323" height="179" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1585760510500" />
+    <state width="1493" height="127" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1586864208492" />
     <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1584896318324" />
-    <state width="1323" height="179" key="GridCell.Tab.0.left" timestamp="1585760510500">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state width="1493" height="127" key="GridCell.Tab.0.left" timestamp="1586864208491">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1323" height="179" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1585760510500" />
+    <state width="1493" height="127" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1586864208491" />
     <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1584896318324" />
-    <state width="1323" height="179" key="GridCell.Tab.0.right" timestamp="1585760510500">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state width="1493" height="127" key="GridCell.Tab.0.right" timestamp="1586864208492">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1323" height="179" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1585760510500" />
+    <state width="1493" height="127" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1586864208492" />
     <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1584896318324" />
     <state x="395" y="81" key="MultipleFileMergeDialog" timestamp="1585604494040">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="395" y="81" key="MultipleFileMergeDialog/0.0.1366.728@0.0.1366.728" timestamp="1585604494040" />
-    <state x="332" y="13" key="SettingsEditor" timestamp="1585747141839">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state x="522" y="227" key="NewPhpClassDialog" timestamp="1586798402114">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="522" y="227" key="NewPhpClassDialog/0.0.1536.824@0.0.1536.824" timestamp="1586798402114" />
+    <state x="185" y="110" key="SettingsEditor" timestamp="1586807356562">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="332" y="13" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1585747141839" />
+    <state x="185" y="110" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1586807356562" />
     <state x="466" y="101" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1584813330076" />
-    <state x="523" y="259" key="SymfonyPathDialog" timestamp="1585747138017">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state x="588" y="293" key="SymfonyPathDialog" timestamp="1586797685053">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="523" y="259" key="SymfonyPathDialog/0.0.1366.728@0.0.1366.728" timestamp="1585747138017" />
+    <state x="588" y="293" key="SymfonyPathDialog/0.0.1536.824@0.0.1536.824" timestamp="1586797685053" />
     <state x="735" y="370" key="SymfonyPathDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1584813243536" />
     <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1585760678369">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1585760678369" />
-    <state x="534" y="276" key="com.intellij.ide.util.TipDialog" timestamp="1586103007868">
+    <state x="534" y="276" key="com.intellij.ide.util.TipDialog" timestamp="1586968156510">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="534" y="276" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1586103007868" />
+    <state x="534" y="276" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1586968156510" />
     <state x="667" y="348" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1584813215260" />
     <state x="492" y="282" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1585487448090">
       <screen x="0" y="0" width="1366" height="728" />
@@ -254,11 +301,11 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="379" y="96" width="607" height="536" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1585317922302" />
-    <state x="726" y="222" width="756" height="537" key="run.anything.popup" timestamp="1586108680937">
+    <state x="726" y="222" width="756" height="537" key="run.anything.popup" timestamp="1586797753500">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="646" y="196" width="672" height="474" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1585757735496" />
-    <state x="726" y="222" width="756" height="537" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1586108680937" />
+    <state x="726" y="222" width="756" height="537" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1586797753500" />
     <state x="908" y="280" width="672" height="677" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1585248796165" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1584889652796">
       <screen x="0" y="0" width="1920" height="1040" />

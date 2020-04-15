@@ -27,6 +27,7 @@ class __TwigTemplate_84910564641f341476d283527aeaa133a64666aed6698b2c99b2f7942e3
             'body' => [$this, 'block_body'],
             'footer' => [$this, 'block_footer'],
             'javascripts' => [$this, 'block_javascripts'],
+            'myJs' => [$this, 'block_myJs'],
         ];
     }
 
@@ -75,6 +76,9 @@ class __TwigTemplate_84910564641f341476d283527aeaa133a64666aed6698b2c99b2f7942e3
         echo "        ";
         $this->displayBlock('javascripts', $context, $blocks);
         // line 258
+        echo "    ";
+        $this->displayBlock('myJs', $context, $blocks);
+        // line 260
         echo "    </body>
 </html>
 ";
@@ -523,6 +527,25 @@ class __TwigTemplate_84910564641f341476d283527aeaa133a64666aed6698b2c99b2f7942e3
 
     }
 
+    // line 258
+    public function block_myJs($context, array $blocks = [])
+    {
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "myJs"));
+
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "myJs"));
+
+        // line 259
+        echo "    ";
+        
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
+
+        
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
+
+    }
+
     public function getTemplateName()
     {
         return "base.html.twig";
@@ -535,7 +558,7 @@ class __TwigTemplate_84910564641f341476d283527aeaa133a64666aed6698b2c99b2f7942e3
 
     public function getDebugInfo()
     {
-        return array (  515 => 256,  509 => 253,  504 => 251,  499 => 249,  494 => 247,  489 => 245,  484 => 243,  479 => 241,  474 => 239,  469 => 237,  464 => 235,  459 => 233,  454 => 231,  448 => 229,  439 => 228,  341 => 140,  329 => 130,  320 => 129,  310 => 126,  301 => 125,  257 => 90,  250 => 86,  244 => 83,  240 => 82,  225 => 70,  178 => 25,  169 => 24,  156 => 17,  152 => 16,  148 => 15,  144 => 14,  140 => 13,  136 => 12,  132 => 11,  128 => 10,  124 => 9,  121 => 8,  117 => 7,  108 => 6,  90 => 5,  78 => 258,  75 => 228,  73 => 129,  69 => 127,  67 => 125,  64 => 124,  62 => 24,  54 => 20,  52 => 6,  48 => 5,  42 => 1,);
+        return array (  540 => 259,  531 => 258,  519 => 256,  513 => 253,  508 => 251,  503 => 249,  498 => 247,  493 => 245,  488 => 243,  483 => 241,  478 => 239,  473 => 237,  468 => 235,  463 => 233,  458 => 231,  452 => 229,  443 => 228,  345 => 140,  333 => 130,  324 => 129,  314 => 126,  305 => 125,  261 => 90,  254 => 86,  248 => 83,  244 => 82,  229 => 70,  182 => 25,  173 => 24,  160 => 17,  156 => 16,  152 => 15,  148 => 14,  144 => 13,  140 => 12,  136 => 11,  132 => 10,  128 => 9,  125 => 8,  121 => 7,  112 => 6,  94 => 5,  82 => 260,  79 => 258,  76 => 228,  74 => 129,  70 => 127,  68 => 125,  65 => 124,  63 => 24,  55 => 20,  53 => 6,  49 => 5,  43 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -805,6 +828,8 @@ class __TwigTemplate_84910564641f341476d283527aeaa133a64666aed6698b2c99b2f7942e3
             <!--=== Mian Js ===-->
             <script src=\"{{ asset('js/main.js') }}\"></script>
         {% endblock %}
+    {% block myJs %}
+    {% endblock %}
     </body>
 </html>
 ", "base.html.twig", "C:\\wamp64\\www\\untitled2\\app\\Resources\\views\\base.html.twig");
