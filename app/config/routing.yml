@@ -1,3 +1,7 @@
+garage:
+    resource: "@GarageBundle/Resources/config/routing.yml"
+    prefix:   /garage
+
 taxi:
     resource: "@TaxiBundle/Resources/config/routing.yml"
     prefix:   /

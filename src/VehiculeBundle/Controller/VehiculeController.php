@@ -28,9 +28,32 @@ class VehiculeController extends Controller
 
     }
 
-    function listVehiculeAction() {
-        $vehicule=$this->getDoctrine()->getRepository(Vehicule::class)->findAll();
-        return $this->render('@Vehicule/Vehicule/list.html.twig', array('list'=>$vehicule));
+    function listVehiculeAction(Request $request) {
+        $vehicule=$this->getDoctrine()->getManager();
+        $queryBuilder = $vehicule->getRepository(Vehicule::class)->createQueryBuilder('bp');
+        if ($request->query->getAlnum('filter')) {
+            $queryBuilder
+                ->where('bp.immatriculation LIKE :immatriculation')
+                ->setParameter('immatriculation', '%' . $request->query->getAlnum('filter') . '%');
+        }
+
+        $query= $queryBuilder->getQuery();
+
+
+
+        /**
+         * @var $paginator \Knp\Component\Pager\Paginator
+         *
+         */
+        $paginator = $this->get('knp_paginator');
+        $result= $paginator->paginate(
+            $query,
+            $request->query->getInt('page',1),
+            $request->query->getInt('limit',5)
+
+        );
+
+        return $this->render('@Vehicule/Vehicule/list.html.twig', array('list'=>$result));
 
     }
 

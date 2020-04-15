@@ -107,6 +107,29 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
 
         }
 
+        elseif (0 === strpos($pathinfo, '/garage')) {
+            // garage_homepage
+            if ('/garage' === $trimmedPathinfo) {
+                $ret = array (  '_controller' => 'GarageBundle\\Controller\\DefaultController::indexAction',  '_route' => 'garage_homepage',);
+                if ('/' === substr($pathinfo, -1)) {
+                    // no-op
+                } elseif ('GET' !== $canonicalMethod) {
+                    goto not_garage_homepage;
+                } else {
+                    return array_replace($ret, $this->redirect($rawPathinfo.'/', 'garage_homepage'));
+                }
+
+                return $ret;
+            }
+            not_garage_homepage:
+
+            // garage_add
+            if ('/garage/addVtoG' === $pathinfo) {
+                return array (  '_controller' => 'GarageBundle\\Controller\\GarageController::addAction',  '_route' => 'garage_add',);
+            }
+
+        }
+
         // taxi_homepage
         if ('' === $trimmedPathinfo) {
             $ret = array (  '_controller' => 'TaxiBundle\\Controller\\DefaultController::indexAction',  '_route' => 'taxi_homepage',);

@@ -29,6 +29,12 @@ class Adminrh
     private $mdp;
 
     /**
+     *@ORM\OneToOne(targetEntity="UserBundle\Entity\User")
+     *@ORM\JoinColumn(name="id_fos", referencedColumnName="id")
+     */
+    private $idFOS;
+
+    /**
      * @var integer
      *
      * @ORM\Column(name="etat_compte", type="integer", nullable=false)

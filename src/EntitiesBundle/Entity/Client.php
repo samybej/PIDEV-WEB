@@ -36,6 +36,12 @@ class Client
     private $prenom;
 
     /**
+     *@ORM\OneToOne(targetEntity="UserBundle\Entity\User")
+     *@ORM\JoinColumn(name="id_fos", referencedColumnName="id")
+     */
+    private $idFOS;
+
+    /**
      * @var integer
      *
      * @ORM\Column(name="tel", type="integer", nullable=false)
