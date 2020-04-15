@@ -1,10 +1,14 @@
+back:
+    resource: "@BackBundle/Resources/config/routing.yml"
+    prefix:   /Back
+
 garage:
     resource: "@GarageBundle/Resources/config/routing.yml"
     prefix:   /garage
 
 taxi:
     resource: "@TaxiBundle/Resources/config/routing.yml"
-    prefix:   /
+    prefix:   /taxi
 
 transport:
     resource: "@TransportBundle/Resources/config/routing.yml"

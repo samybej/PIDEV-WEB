@@ -28,3 +28,5 @@ security:
         - { path: ^/admin/, role: ROLE_ADMIN }
         - { path: ^/garage/, role: ROLE_ADMIN }
         - { path: ^/vehicule/, role: ROLE_ADMIN}
+        - { path: ^/taxi/, role: ROLE_USER }
+    #  - { path: ^/Back/, role: ROLE_ADMIN}

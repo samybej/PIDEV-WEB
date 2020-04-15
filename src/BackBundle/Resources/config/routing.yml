@@ -1,0 +1,20 @@
+back_homepage:
+    path:     /
+    defaults: { _controller: BackBundle:Default:reservations_all }
+
+taxis_back:
+    path:   /taxi
+    defaults: { _controller: BackBundle:Default:taxis }
+
+taxibackshow:
+    path:     /{id}/showT
+    defaults: { _controller: BackBundle:Default:taxi }
+    methods:  GET
+transports_back:
+    path:   /transport
+    defaults: { _controller: BackBundle:Default:transports }
+
+transportbackshow:
+    path:     /{id}/showTr
+    defaults: { _controller: BackBundle:Default:transport }
+    methods:  GET

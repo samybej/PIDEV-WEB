@@ -1,0 +1,41 @@
+{% extends 'back.html.twig' %}
+{% block body %}
+ <table class="table     table-bordered">
+  <thead class="thead-dark">
+  <tr>
+   <th>Distance</th>
+   <th>Depart</th>
+   <th>Arrive</th>
+   <th>Date</th>
+   <th>Type</th>
+   <th>Tarif</th>
+   <th>Etat</th>
+   <th>Actions</th>
+  </tr>
+  </thead>
+  <tbody>
+  {% for reservation in reservations %}
+    <tr>
+     <td>{{ reservation.distance }}</td>
+     <td>{{ reservation.depart }}</td>
+     <td>{{ reservation.arrive }}</td>
+     <td>{% if reservation.date %}{{ reservation.date|date('Y-m-d') }}{% endif %}</td>
+     <td>{{ reservation.type }}</td>
+     <td>{{ reservation.tarif }}</td>
+     <td>{{ reservation.etat }}</td>
+     <td>
+      <ul>
+       <li>
+        <a class="btn btn-success" href="{{ path('reservation_show', { 'id': reservation.id }) }}">show</a>
+       </li>
+       <li>
+        <a class="btn btn-warning" href="{{ path('reservation_edit', { 'id': reservation.id }) }}">edit</a>
+       </li>
+      </ul>
+     </td>
+    </tr>
+  {% endfor %}
+  </tbody>
+ </table>
+
+{% endblock %}

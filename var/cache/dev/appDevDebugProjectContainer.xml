@@ -6,7 +6,7 @@
     <parameter key="kernel.environment">dev</parameter>
     <parameter key="kernel.debug">true</parameter>
     <parameter key="kernel.name">app</parameter>
-    <parameter key="kernel.cache_dir">C:/wamp64/www/untitled2/var/cache/dev</parameter>
+    <parameter key="kernel.cache_dir">C:\wamp64\www\untitled2\var\cache\dev</parameter>
     <parameter key="kernel.logs_dir">C:\wamp64\www\untitled2\var\logs</parameter>
     <parameter key="kernel.bundles" type="collection">
       <parameter key="FrameworkBundle">Symfony\Bundle\FrameworkBundle\FrameworkBundle</parameter>
@@ -26,6 +26,7 @@
       <parameter key="VehiculeBundle">VehiculeBundle\VehiculeBundle</parameter>
       <parameter key="GarageBundle">GarageBundle\GarageBundle</parameter>
       <parameter key="KnpPaginatorBundle">Knp\Bundle\PaginatorBundle\KnpPaginatorBundle</parameter>
+      <parameter key="BackBundle">BackBundle\BackBundle</parameter>
       <parameter key="DebugBundle">Symfony\Bundle\DebugBundle\DebugBundle</parameter>
       <parameter key="WebProfilerBundle">Symfony\Bundle\WebProfilerBundle\WebProfilerBundle</parameter>
       <parameter key="SensioDistributionBundle">Sensio\Bundle\DistributionBundle\SensioDistributionBundle</parameter>
@@ -118,6 +119,11 @@
         <parameter key="path">C:\wamp64\www\untitled2\vendor\knplabs\knp-paginator-bundle</parameter>
         <parameter key="namespace">Knp\Bundle\PaginatorBundle</parameter>
       </parameter>
+      <parameter key="BackBundle" type="collection">
+        <parameter key="parent">null</parameter>
+        <parameter key="path">C:\wamp64\www\untitled2\src\BackBundle</parameter>
+        <parameter key="namespace">BackBundle</parameter>
+      </parameter>
       <parameter key="DebugBundle" type="collection">
         <parameter key="parent">null</parameter>
         <parameter key="path">C:\wamp64\www\untitled2\vendor\symfony\symfony\src\Symfony\Bundle\DebugBundle</parameter>
@@ -184,15 +190,15 @@
       <parameter>twig</parameter>
     </parameter>
     <parameter key="validator.mapping.cache.prefix"></parameter>
-    <parameter key="validator.mapping.cache.file">C:/wamp64/www/untitled2/var/cache/dev/validation.php</parameter>
+    <parameter key="validator.mapping.cache.file">C:\wamp64\www\untitled2\var\cache\dev/validation.php</parameter>
     <parameter key="validator.translation_domain">validators</parameter>
     <parameter key="translator.logging">true</parameter>
     <parameter key="translator.default_path">C:\wamp64\www\untitled2/translations</parameter>
     <parameter key="profiler_listener.only_exceptions">false</parameter>
     <parameter key="profiler_listener.only_master_requests">false</parameter>
-    <parameter key="profiler.storage.dsn">file:C:/wamp64/www/untitled2/var/cache/dev/profiler</parameter>
+    <parameter key="profiler.storage.dsn">file:C:\wamp64\www\untitled2\var\cache\dev/profiler</parameter>
     <parameter key="debug.error_handler.throw_at">-1</parameter>
-    <parameter key="debug.container.dump">C:/wamp64/www/untitled2/var/cache/dev/appDevDebugProjectContainer.xml</parameter>
+    <parameter key="debug.container.dump">C:\wamp64\www\untitled2\var\cache\dev/appDevDebugProjectContainer.xml</parameter>
     <parameter key="router.options.generator_class">Symfony\Component\Routing\Generator\UrlGenerator</parameter>
     <parameter key="router.options.generator_base_class">Symfony\Component\Routing\Generator\UrlGenerator</parameter>
     <parameter key="router.options.generator_dumper_class">Symfony\Component\Routing\Generator\Dumper\PhpGeneratorDumper</parameter>
@@ -271,7 +277,7 @@
     <parameter key="swiftmailer.mailer.default.transport.smtp.timeout">30</parameter>
     <parameter key="swiftmailer.mailer.default.transport.smtp.source_ip">null</parameter>
     <parameter key="swiftmailer.mailer.default.transport.smtp.local_domain">null</parameter>
-    <parameter key="swiftmailer.spool.default.memory.path">C:/wamp64/www/untitled2/var/cache/dev/swiftmailer/spool/default</parameter>
+    <parameter key="swiftmailer.spool.default.memory.path">C:\wamp64\www\untitled2\var\cache\dev/swiftmailer/spool/default</parameter>
     <parameter key="swiftmailer.mailer.default.spool.enabled">true</parameter>
     <parameter key="swiftmailer.mailer.default.plugin.impersonate">null</parameter>
     <parameter key="swiftmailer.mailer.default.single_address">null</parameter>
@@ -390,7 +396,7 @@
     <parameter key="doctrine.orm.second_level_cache.cache_configuration.class">Doctrine\ORM\Cache\CacheConfiguration</parameter>
     <parameter key="doctrine.orm.second_level_cache.regions_configuration.class">Doctrine\ORM\Cache\RegionsConfiguration</parameter>
     <parameter key="doctrine.orm.auto_generate_proxy_classes">true</parameter>
-    <parameter key="doctrine.orm.proxy_dir">C:/wamp64/www/untitled2/var/cache/dev/doctrine/orm/Proxies</parameter>
+    <parameter key="doctrine.orm.proxy_dir">C:\wamp64\www\untitled2\var\cache\dev/doctrine/orm/Proxies</parameter>
     <parameter key="doctrine.orm.proxy_namespace">Proxies</parameter>
     <parameter key="fos_user.backend_type_orm">true</parameter>
     <parameter key="fos_user.security.interactive_login_listener.class">FOS\UserBundle\EventListener\LastLoginListener</parameter>
@@ -993,7 +999,7 @@
       <argument></argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:/wamp64/www/untitled2/var/cache/dev/pools</argument>
+      <argument>C:\wamp64\www\untitled2\var\cache\dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -1022,7 +1028,7 @@
       <tag name="monolog.logger" channel="cache"/>
       <argument></argument>
       <argument>0</argument>
-      <argument>C:/wamp64/www/untitled2/var/cache/dev/pools</argument>
+      <argument>C:\wamp64\www\untitled2\var\cache\dev/pools</argument>
       <call method="setLogger">
         <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       </call>
@@ -1110,7 +1116,7 @@
     <service id="session.flash_bag" class="Symfony\Component\HttpFoundation\Session\Flash\FlashBag" public="false"/>
     <service id="session.attribute_bag" class="Symfony\Component\HttpFoundation\Session\Attribute\AttributeBag" public="false"/>
     <service id="session.storage.mock_file" class="Symfony\Component\HttpFoundation\Session\Storage\MockFileSessionStorage" public="false">
-      <argument>C:/wamp64/www/untitled2/var/cache/dev/sessions</argument>
+      <argument>C:\wamp64\www\untitled2\var\cache\dev/sessions</argument>
       <argument>MOCKSESSID</argument>
       <argument type="service" id="session.storage.metadata_bag"/>
     </service>
@@ -1377,7 +1383,7 @@
     <service id="templating.filename_parser" class="Symfony\Bundle\FrameworkBundle\Templating\TemplateFilenameParser"/>
     <service id="templating.locator" class="Symfony\Bundle\FrameworkBundle\Templating\Loader\TemplateLocator" public="false">
       <argument type="service" id="file_locator"/>
-      <argument>C:/wamp64/www/untitled2/var/cache/dev</argument>
+      <argument>C:\wamp64\www\untitled2\var\cache\dev</argument>
     </service>
     <service id="templating.finder" class="Symfony\Bundle\FrameworkBundle\CacheWarmer\TemplateFinder" public="false">
       <argument type="service" id="kernel"/>
@@ -1412,7 +1418,7 @@
       </call>
     </service>
     <service id="1_PhpArrayAdapter~_dk0qym" class="Symfony\Component\Cache\Adapter\PhpArrayAdapter" public="false">
-      <argument>C:/wamp64/www/untitled2/var/cache/dev/validation.php</argument>
+      <argument>C:\wamp64\www\untitled2\var\cache\dev/validation.php</argument>
       <argument type="service" id="cache.validator"/>
       <factory class="Symfony\Component\Cache\Adapter\PhpArrayAdapter" method="create"/>
     </service>
@@ -1452,7 +1458,7 @@
     <service id="validator.mapping.cache_warmer" class="Symfony\Bundle\FrameworkBundle\CacheWarmer\ValidatorCacheWarmer" public="false">
       <tag name="kernel.cache_warmer"/>
       <argument type="service" id="validator.builder"/>
-      <argument>C:/wamp64/www/untitled2/var/cache/dev/validation.php</argument>
+      <argument>C:\wamp64\www\untitled2\var\cache\dev/validation.php</argument>
       <argument type="service" id="cache.validator"/>
     </service>
     <service id="validator.mapping.cache.symfony" class="Symfony\Component\Validator\Mapping\Cache\Psr6Cache" public="false">
@@ -1520,7 +1526,7 @@
         </argument>
       </argument>
       <argument type="collection">
-        <argument key="cache_dir">C:/wamp64/www/untitled2/var/cache/dev/translations</argument>
+        <argument key="cache_dir">C:\wamp64\www\untitled2\var\cache\dev/translations</argument>
         <argument key="debug">true</argument>
         <argument key="resource_files" type="collection">
           <argument key="af" type="collection">
@@ -2305,7 +2311,7 @@
       </call>
     </service>
     <service id="profiler.storage" class="Symfony\Component\HttpKernel\Profiler\FileProfilerStorage" public="false">
-      <argument>file:C:/wamp64/www/untitled2/var/cache/dev/profiler</argument>
+      <argument>file:C:\wamp64\www\untitled2\var\cache\dev/profiler</argument>
     </service>
     <service id="profiler_listener" class="Symfony\Component\HttpKernel\EventListener\ProfilerListener">
       <tag name="kernel.event_subscriber"/>
@@ -2342,7 +2348,7 @@
       <tag name="data_collector" template="@WebProfiler/Collector/logger.html.twig" id="logger" priority="300"/>
       <tag name="monolog.logger" channel="profiler"/>
       <argument type="service" id="monolog.logger.profiler" on-invalid="ignore"/>
-      <argument>C:/wamp64/www/untitled2/var/cache/dev/appDevDebugProjectContainer</argument>
+      <argument>C:\wamp64\www\untitled2\var\cache\dev/appDevDebugProjectContainer</argument>
     </service>
     <service id="data_collector.time" class="Symfony\Component\HttpKernel\DataCollector\TimeDataCollector" public="false">
       <tag name="data_collector" template="@WebProfiler/Collector/time.html.twig" id="time" priority="330"/>
@@ -3061,7 +3067,7 @@
       <argument type="service" id="service_container"/>
       <argument>C:\wamp64\www\untitled2/app/config/routing_dev.yml</argument>
       <argument type="collection">
-        <argument key="cache_dir">C:/wamp64/www/untitled2/var/cache/dev</argument>
+        <argument key="cache_dir">C:\wamp64\www\untitled2\var\cache\dev</argument>
         <argument key="debug">true</argument>
         <argument key="generator_class">Symfony\Component\Routing\Generator\UrlGenerator</argument>
         <argument key="generator_base_class">Symfony\Component\Routing\Generator\UrlGenerator</argument>
@@ -3127,7 +3133,7 @@
       <argument type="service" id="routing.loader.annotation"/>
     </service>
     <service id="2_PhpArrayAdapter~qgfozm_" class="Symfony\Component\Cache\Adapter\PhpArrayAdapter" public="false">
-      <argument>C:/wamp64/www/untitled2/var/cache/dev/annotations.php</argument>
+      <argument>C:\wamp64\www\untitled2\var\cache\dev/annotations.php</argument>
       <argument type="service" id="cache.annotations"/>
       <factory class="Symfony\Component\Cache\Adapter\PhpArrayAdapter" method="create"/>
     </service>
@@ -3156,7 +3162,7 @@
     <service id="annotations.cache_warmer" class="Symfony\Bundle\FrameworkBundle\CacheWarmer\AnnotationsCacheWarmer" public="false">
       <tag name="kernel.cache_warmer"/>
       <argument type="service" id="annotations.reader"/>
-      <argument>C:/wamp64/www/untitled2/var/cache/dev/annotations.php</argument>
+      <argument>C:\wamp64\www\untitled2\var\cache\dev/annotations.php</argument>
       <argument type="service" id="cache.annotations"/>
       <argument>#^Symfony\\(?:Component\\HttpKernel\\|Bundle\\FrameworkBundle\\Controller\\(?!.*Controller$))#</argument>
       <argument>true</argument>
@@ -3371,6 +3377,13 @@
         <argument type="service" id="security.request_matcher.p44_8by"/>
         <argument type="collection">
           <argument>ROLE_ADMIN</argument>
+        </argument>
+        <argument>null</argument>
+      </call>
+      <call method="add">
+        <argument type="service" id="security.request_matcher.t4ks7qz"/>
+        <argument type="collection">
+          <argument>ROLE_USER</argument>
         </argument>
         <argument>null</argument>
       </call>
@@ -3855,6 +3868,9 @@
     <service id="security.request_matcher.p44_8by" class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
       <argument>^/vehicule/</argument>
     </service>
+    <service id="security.request_matcher.t4ks7qz" class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
+      <argument>^/taxi/</argument>
+    </service>
     <service id="security.command.user_password_encoder" class="Symfony\Bundle\SecurityBundle\Command\UserPasswordEncoderCommand" public="false">
       <tag name="console.command" command="security:encode-password"/>
       <argument type="service" id="security.encoder_factory.generic"/>
@@ -3871,7 +3887,7 @@
         <argument key="debug">true</argument>
         <argument key="strict_variables">true</argument>
         <argument key="autoescape">name</argument>
-        <argument key="cache">C:/wamp64/www/untitled2/var/cache/dev/twig</argument>
+        <argument key="cache">C:\wamp64\www\untitled2\var\cache\dev/twig</argument>
         <argument key="charset">UTF-8</argument>
       </argument>
       <call method="addExtension">
@@ -4089,6 +4105,14 @@
       <call method="addPath">
         <argument>C:\wamp64\www\untitled2\vendor\knplabs\knp-paginator-bundle/Resources/views</argument>
         <argument>!KnpPaginator</argument>
+      </call>
+      <call method="addPath">
+        <argument>C:\wamp64\www\untitled2\src\BackBundle/Resources/views</argument>
+        <argument>Back</argument>
+      </call>
+      <call method="addPath">
+        <argument>C:\wamp64\www\untitled2\src\BackBundle/Resources/views</argument>
+        <argument>!Back</argument>
       </call>
       <call method="addPath">
         <argument>C:\wamp64\www\untitled2\vendor\symfony\symfony\src\Symfony\Bundle\DebugBundle/Resources/views</argument>
@@ -4336,6 +4360,14 @@
       <call method="addPath">
         <argument>C:\wamp64\www\untitled2\vendor\knplabs\knp-paginator-bundle/Resources/views</argument>
         <argument>!KnpPaginator</argument>
+      </call>
+      <call method="addPath">
+        <argument>C:\wamp64\www\untitled2\src\BackBundle/Resources/views</argument>
+        <argument>Back</argument>
+      </call>
+      <call method="addPath">
+        <argument>C:\wamp64\www\untitled2\src\BackBundle/Resources/views</argument>
+        <argument>!Back</argument>
       </call>
       <call method="addPath">
         <argument>C:\wamp64\www\untitled2\vendor\symfony\symfony\src\Symfony\Bundle\DebugBundle/Resources/views</argument>
@@ -4848,7 +4880,7 @@
         <argument type="service" id="doctrine.orm.default_metadata_driver"/>
       </call>
       <call method="setProxyDir">
-        <argument>C:/wamp64/www/untitled2/var/cache/dev/doctrine/orm/Proxies</argument>
+        <argument>C:\wamp64\www\untitled2\var\cache\dev/doctrine/orm/Proxies</argument>
       </call>
       <call method="setProxyNamespace">
         <argument>Proxies</argument>
@@ -5824,7 +5856,7 @@
     <service id="cache.app.recorder_inner" class="Symfony\Component\Cache\Adapter\FilesystemAdapter" public="false">
       <argument>1Sh8NaHNL1</argument>
       <argument>0</argument>
-      <argument>C:/wamp64/www/untitled2/var/cache/dev/pools</argument>
+      <argument>C:\wamp64\www\untitled2\var\cache\dev/pools</argument>
       <call method="setLogger">
         <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       </call>
@@ -5833,7 +5865,7 @@
       <argument>Tb+qWIVZ+q</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:/wamp64/www/untitled2/var/cache/dev/pools</argument>
+      <argument>C:\wamp64\www\untitled2\var\cache\dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -5841,7 +5873,7 @@
       <argument>fdEWycgs4b</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:/wamp64/www/untitled2/var/cache/dev/pools</argument>
+      <argument>C:\wamp64\www\untitled2\var\cache\dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -5849,7 +5881,7 @@
       <argument>2z6IzzxiYq</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:/wamp64/www/untitled2/var/cache/dev/pools</argument>
+      <argument>C:\wamp64\www\untitled2\var\cache\dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -5857,7 +5889,7 @@
       <argument>89NYJE2qva</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:/wamp64/www/untitled2/var/cache/dev/pools</argument>
+      <argument>C:\wamp64\www\untitled2\var\cache\dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>

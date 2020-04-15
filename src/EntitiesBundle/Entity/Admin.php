@@ -22,17 +22,19 @@ class Admin
     private $login;
 
     /**
+     *@ORM\OneToOne(targetEntity="UserBundle\Entity\User")
+     *@ORM\JoinColumn(name="id_fos", referencedColumnName="id")
+     */
+    private $idFOS;
+
+    /**
      * @var string
      *
      * @ORM\Column(name="mdp", type="string", length=20, nullable=false)
      */
     private $mdp;
 
-    /**
-     *@ORM\OneToOne(targetEntity="UserBundle\Entity\User")
-     *@ORM\JoinColumn(name="id_fos", referencedColumnName="id")
-     */
-    private $idFOS;
+
 
     /**
      * @var integer

@@ -26,7 +26,7 @@ class AppKernel extends Kernel
             new VehiculeBundle\VehiculeBundle(),
             new GarageBundle\GarageBundle(),
             new Knp\Bundle\PaginatorBundle\KnpPaginatorBundle(),
-
+            new BackBundle\BackBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {
