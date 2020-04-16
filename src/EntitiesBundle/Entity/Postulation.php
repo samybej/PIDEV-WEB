@@ -94,6 +94,182 @@ class Postulation
      */
     private $idClient;
 
+    /**
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * @param int $id
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getDateDemande()
+    {
+        return $this->dateDemande;
+    }
+
+    /**
+     * @param \DateTime $dateDemande
+     */
+    public function setDateDemande($dateDemande)
+    {
+        $this->dateDemande = $dateDemande;
+    }
+
+    /**
+     * @return int
+     */
+    public function getNumPermis()
+    {
+        return $this->numPermis;
+    }
+
+    /**
+     * @param int $numPermis
+     */
+    public function setNumPermis($numPermis)
+    {
+        $this->numPermis = $numPermis;
+    }
+
+    /**
+     * @return int
+     */
+    public function getCin()
+    {
+        return $this->cin;
+    }
+
+    /**
+     * @param int $cin
+     */
+    public function setCin($cin)
+    {
+        $this->cin = $cin;
+    }
+
+    /**
+     * @return string
+     */
+    public function getSexe()
+    {
+        return $this->sexe;
+    }
+
+    /**
+     * @param string $sexe
+     */
+    public function setSexe($sexe)
+    {
+        $this->sexe = $sexe;
+    }
+
+    /**
+     * @return string
+     */
+    public function getExperience()
+    {
+        return $this->experience;
+    }
+
+    /**
+     * @param string $experience
+     */
+    public function setExperience($experience)
+    {
+        $this->experience = $experience;
+    }
+
+    /**
+     * @return string
+     */
+    public function getLangue()
+    {
+        return $this->langue;
+    }
+
+    /**
+     * @param string $langue
+     */
+    public function setLangue($langue)
+    {
+        $this->langue = $langue;
+    }
+
+    /**
+     * @return int
+     */
+    public function getTel()
+    {
+        return $this->tel;
+    }
+
+    /**
+     * @param int $tel
+     */
+    public function setTel($tel)
+    {
+        $this->tel = $tel;
+    }
+
+    /**
+     * @return string
+     */
+    public function getNom()
+    {
+        return $this->nom;
+    }
+
+    /**
+     * @param string $nom
+     */
+    public function setNom($nom)
+    {
+        $this->nom = $nom;
+    }
+
+    /**
+     * @return string
+     */
+    public function getPrenom()
+    {
+        return $this->prenom;
+    }
+
+    /**
+     * @param string $prenom
+     */
+    public function setPrenom($prenom)
+    {
+        $this->prenom = $prenom;
+    }
+
+    /**
+     * @return \Client
+     */
+    public function getIdClient()
+    {
+        return $this->idClient;
+    }
+
+    /**
+     * @param \Client $idClient
+     */
+    public function setIdClient($idClient)
+    {
+        $this->idClient = $idClient;
+    }
+
 
 }
 

@@ -1,25 +1,29 @@
+formation:
+    resource: "@FormationBundle/Resources/config/routing.yml"
+    prefix:   /formation
+
 back:
-    resource: "@BackBundle/Resources/config/routing.yml"
-    prefix:   /Back
+  resource: "@BackBundle/Resources/config/routing.yml"
+  prefix:   /Back
 
 type:
-    resource: "@TypeBundle/Resources/config/routing.yml"
-    prefix:   /
+  resource: "@TypeBundle/Resources/config/routing.yml"
+  prefix:   /
 
 inscriptions_covoiturage:
-    resource: "@InscriptionsCovoiturageBundle/Resources/config/routing.yml"
-    prefix:   /InscriptionsCovoiturage
+  resource: "@InscriptionsCovoiturageBundle/Resources/config/routing.yml"
+  prefix:   /InscriptionsCovoiturage
 garage:
-    resource: "@GarageBundle/Resources/config/routing.yml"
-    prefix:   /garage
+  resource: "@GarageBundle/Resources/config/routing.yml"
+  prefix:   /garage
 
 taxi:
-    resource: "@TaxiBundle/Resources/config/routing.yml"
-    prefix:   /taxi
+  resource: "@TaxiBundle/Resources/config/routing.yml"
+  prefix:   /taxi
 
 transport:
-    resource: "@TransportBundle/Resources/config/routing.yml"
-    prefix:   /transport
+  resource: "@TransportBundle/Resources/config/routing.yml"
+  prefix:   /transport
 
 vehicule:
     resource: "@VehiculeBundle/Resources/config/routing.yml"

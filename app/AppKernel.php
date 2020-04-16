@@ -24,6 +24,7 @@ class AppKernel extends Kernel
             new TransportBundle\TransportBundle(),
             new TaxiBundle\TaxiBundle(),
             new VehiculeBundle\VehiculeBundle(),
+            new FormationBundle\FormationBundle(),
             new BackBundle\BackBundle(),
             new TypeBundle\TypeBundle(),
             new CMEN\GoogleChartsBundle\CMENGoogleChartsBundle(),
