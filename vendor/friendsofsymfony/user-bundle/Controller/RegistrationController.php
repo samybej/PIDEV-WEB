@@ -11,6 +11,7 @@
 
 namespace FOS\UserBundle\Controller;
 
+use EntitiesBundle\Entity\Client;
 use FOS\UserBundle\Event\FilterUserResponseEvent;
 use FOS\UserBundle\Event\FormEvent;
 use FOS\UserBundle\Event\GetResponseUserEvent;
@@ -27,8 +28,8 @@ use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorageInterface;
 use Symfony\Component\Security\Core\Exception\AccessDeniedException;
-use EntitiesBundle\Entity\Client;
 use UserBundle\Entity\User;
+
 /**
  * Controller managing the registration.
  *
@@ -58,7 +59,7 @@ class RegistrationController extends Controller
     public function registerAction(Request $request)
     {
         $user = new User();
-        //$user = $this->userManager->createUser();
+       // $user = $this->userManager->createUser();
         $user->setEnabled(true);
 
         $event = new GetResponseUserEvent($user, $request);
@@ -77,6 +78,9 @@ class RegistrationController extends Controller
             if ($form->isValid()) {
                 $event = new FormEvent($form, $request);
                 $this->eventDispatcher->dispatch(FOSUserEvents::REGISTRATION_SUCCESS, $event);
+
+                $this->userManager->updateUser($user);
+
                 $this->userManager->updateUser($user);
                 $client = new Client();
                 $client->setNom($user->getNom());
@@ -93,7 +97,6 @@ class RegistrationController extends Controller
 
                 $em->persist($client);
                 $em->flush();
-                //$this->userManager->updateUser($user);
 
                 if (null === $response = $event->getResponse()) {
                     $url = $this->generateUrl('fos_user_registration_confirmed');

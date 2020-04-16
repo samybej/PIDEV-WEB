@@ -28,6 +28,11 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
             $canonicalMethod = 'GET';
         }
 
+        // _assetic_b9d69e8
+        if ('/js/fp_js_formvalidator.js' === $pathinfo) {
+            return array (  '_controller' => 'assetic.controller:render',  'name' => 'b9d69e8',  'pos' => NULL,  '_format' => 'js',  '_route' => '_assetic_b9d69e8',);
+        }
+
         if (0 === strpos($pathinfo, '/_')) {
             // _wdt
             if (0 === strpos($pathinfo, '/_wdt') && preg_match('#^/_wdt/(?P<token>[^/]++)$#sD', $pathinfo, $matches)) {
@@ -156,6 +161,281 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
                 return $ret;
             }
             not_transportbackshow:
+
+        }
+
+        // type_homepage
+        if ('' === $trimmedPathinfo) {
+            $ret = array (  '_controller' => 'TypeBundle\\Controller\\DefaultController::indexAction',  '_route' => 'type_homepage',);
+            if ('/' === substr($pathinfo, -1)) {
+                // no-op
+            } elseif ('GET' !== $canonicalMethod) {
+                goto not_type_homepage;
+            } else {
+                return array_replace($ret, $this->redirect($rawPathinfo.'/', 'type_homepage'));
+            }
+
+            return $ret;
+        }
+        not_type_homepage:
+
+        // type_ajout
+        if (0 === strpos($pathinfo, '/ajout') && preg_match('#^/ajout/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
+            return $this->mergeDefaults(array_replace($matches, ['_route' => 'type_ajout']), array (  '_controller' => 'TypeBundle\\Controller\\TypeController::AjoutAction',));
+        }
+
+        if (0 === strpos($pathinfo, '/api/threads')) {
+            // fos_comment_new_threads
+            if (0 === strpos($pathinfo, '/api/threads/new') && preg_match('#^/api/threads/new(?:\\.(?P<_format>json|xml|html))?$#sD', $pathinfo, $matches)) {
+                $ret = $this->mergeDefaults(array_replace($matches, ['_route' => 'fos_comment_new_threads']), array (  '_controller' => 'fos_comment.controller.thread:newThreadsAction',  '_format' => 'html',));
+                if (!in_array($canonicalMethod, ['GET'])) {
+                    $allow = array_merge($allow, ['GET']);
+                    goto not_fos_comment_new_threads;
+                }
+
+                return $ret;
+            }
+            not_fos_comment_new_threads:
+
+            // fos_comment_edit_thread_commentable
+            if (preg_match('#^/api/threads/(?P<id>[^/]++)/commentable/edit(?:\\.(?P<_format>json|xml|html))?$#sD', $pathinfo, $matches)) {
+                $ret = $this->mergeDefaults(array_replace($matches, ['_route' => 'fos_comment_edit_thread_commentable']), array (  '_controller' => 'fos_comment.controller.thread:editThreadCommentableAction',  '_format' => 'html',));
+                if (!in_array($canonicalMethod, ['GET'])) {
+                    $allow = array_merge($allow, ['GET']);
+                    goto not_fos_comment_edit_thread_commentable;
+                }
+
+                return $ret;
+            }
+            not_fos_comment_edit_thread_commentable:
+
+            // fos_comment_new_thread_comments
+            if (preg_match('#^/api/threads/(?P<id>[^/]++)/comments/new(?:\\.(?P<_format>json|xml|html))?$#sD', $pathinfo, $matches)) {
+                $ret = $this->mergeDefaults(array_replace($matches, ['_route' => 'fos_comment_new_thread_comments']), array (  '_controller' => 'fos_comment.controller.thread:newThreadCommentsAction',  '_format' => 'html',));
+                if (!in_array($canonicalMethod, ['GET'])) {
+                    $allow = array_merge($allow, ['GET']);
+                    goto not_fos_comment_new_thread_comments;
+                }
+
+                return $ret;
+            }
+            not_fos_comment_new_thread_comments:
+
+            // fos_comment_remove_thread_comment
+            if (preg_match('#^/api/threads/(?P<id>[^/]++)/comments/(?P<commentId>[^/]++)/remove(?:\\.(?P<_format>json|xml|html))?$#sD', $pathinfo, $matches)) {
+                $ret = $this->mergeDefaults(array_replace($matches, ['_route' => 'fos_comment_remove_thread_comment']), array (  '_controller' => 'fos_comment.controller.thread:removeThreadCommentAction',  '_format' => 'html',));
+                if (!in_array($canonicalMethod, ['GET'])) {
+                    $allow = array_merge($allow, ['GET']);
+                    goto not_fos_comment_remove_thread_comment;
+                }
+
+                return $ret;
+            }
+            not_fos_comment_remove_thread_comment:
+
+            // fos_comment_edit_thread_comment
+            if (preg_match('#^/api/threads/(?P<id>[^/]++)/comments/(?P<commentId>[^/]++)/edit(?:\\.(?P<_format>json|xml|html))?$#sD', $pathinfo, $matches)) {
+                $ret = $this->mergeDefaults(array_replace($matches, ['_route' => 'fos_comment_edit_thread_comment']), array (  '_controller' => 'fos_comment.controller.thread:editThreadCommentAction',  '_format' => 'html',));
+                if (!in_array($canonicalMethod, ['GET'])) {
+                    $allow = array_merge($allow, ['GET']);
+                    goto not_fos_comment_edit_thread_comment;
+                }
+
+                return $ret;
+            }
+            not_fos_comment_edit_thread_comment:
+
+            // fos_comment_new_thread_comment_votes
+            if (preg_match('#^/api/threads/(?P<id>[^/]++)/comments/(?P<commentId>[^/]++)/votes/new(?:\\.(?P<_format>json|xml|html))?$#sD', $pathinfo, $matches)) {
+                $ret = $this->mergeDefaults(array_replace($matches, ['_route' => 'fos_comment_new_thread_comment_votes']), array (  '_controller' => 'fos_comment.controller.thread:newThreadCommentVotesAction',  '_format' => 'html',));
+                if (!in_array($canonicalMethod, ['GET'])) {
+                    $allow = array_merge($allow, ['GET']);
+                    goto not_fos_comment_new_thread_comment_votes;
+                }
+
+                return $ret;
+            }
+            not_fos_comment_new_thread_comment_votes:
+
+            // fos_comment_get_thread
+            if (preg_match('#^/api/threads/(?P<id>[^/\\.]++)(?:\\.(?P<_format>json|xml|html))?$#sD', $pathinfo, $matches)) {
+                $ret = $this->mergeDefaults(array_replace($matches, ['_route' => 'fos_comment_get_thread']), array (  '_controller' => 'fos_comment.controller.thread:getThreadAction',  '_format' => 'html',));
+                if (!in_array($canonicalMethod, ['GET'])) {
+                    $allow = array_merge($allow, ['GET']);
+                    goto not_fos_comment_get_thread;
+                }
+
+                return $ret;
+            }
+            not_fos_comment_get_thread:
+
+            // fos_comment_get_threads
+            if (preg_match('#^/api/threads(?:\\.(?P<_format>json|xml|html))?$#sD', $pathinfo, $matches)) {
+                $ret = $this->mergeDefaults(array_replace($matches, ['_route' => 'fos_comment_get_threads']), array (  '_controller' => 'fos_comment.controller.thread:getThreadsActions',  '_format' => 'html',));
+                if (!in_array($canonicalMethod, ['GET'])) {
+                    $allow = array_merge($allow, ['GET']);
+                    goto not_fos_comment_get_threads;
+                }
+
+                return $ret;
+            }
+            not_fos_comment_get_threads:
+
+            // fos_comment_post_threads
+            if (preg_match('#^/api/threads(?:\\.(?P<_format>json|xml|html))?$#sD', $pathinfo, $matches)) {
+                $ret = $this->mergeDefaults(array_replace($matches, ['_route' => 'fos_comment_post_threads']), array (  '_controller' => 'fos_comment.controller.thread:postThreadsAction',  '_format' => 'html',));
+                if (!in_array($requestMethod, ['POST'])) {
+                    $allow = array_merge($allow, ['POST']);
+                    goto not_fos_comment_post_threads;
+                }
+
+                return $ret;
+            }
+            not_fos_comment_post_threads:
+
+            // fos_comment_patch_thread_commentable
+            if (preg_match('#^/api/threads/(?P<id>[^/]++)/commentable(?:\\.(?P<_format>json|xml|html))?$#sD', $pathinfo, $matches)) {
+                $ret = $this->mergeDefaults(array_replace($matches, ['_route' => 'fos_comment_patch_thread_commentable']), array (  '_controller' => 'fos_comment.controller.thread:patchThreadCommentableAction',  '_format' => 'html',));
+                if (!in_array($requestMethod, ['PATCH'])) {
+                    $allow = array_merge($allow, ['PATCH']);
+                    goto not_fos_comment_patch_thread_commentable;
+                }
+
+                return $ret;
+            }
+            not_fos_comment_patch_thread_commentable:
+
+            // fos_comment_get_thread_comment
+            if (preg_match('#^/api/threads/(?P<id>[^/]++)/comments/(?P<commentId>[^/\\.]++)(?:\\.(?P<_format>json|xml|html))?$#sD', $pathinfo, $matches)) {
+                $ret = $this->mergeDefaults(array_replace($matches, ['_route' => 'fos_comment_get_thread_comment']), array (  '_controller' => 'fos_comment.controller.thread:getThreadCommentAction',  '_format' => 'html',));
+                if (!in_array($canonicalMethod, ['GET'])) {
+                    $allow = array_merge($allow, ['GET']);
+                    goto not_fos_comment_get_thread_comment;
+                }
+
+                return $ret;
+            }
+            not_fos_comment_get_thread_comment:
+
+            // fos_comment_patch_thread_comment_state
+            if (preg_match('#^/api/threads/(?P<id>[^/]++)/comments/(?P<commentId>[^/]++)/state(?:\\.(?P<_format>json|xml|html))?$#sD', $pathinfo, $matches)) {
+                $ret = $this->mergeDefaults(array_replace($matches, ['_route' => 'fos_comment_patch_thread_comment_state']), array (  '_controller' => 'fos_comment.controller.thread:patchThreadCommentStateAction',  '_format' => 'html',));
+                if (!in_array($requestMethod, ['PATCH'])) {
+                    $allow = array_merge($allow, ['PATCH']);
+                    goto not_fos_comment_patch_thread_comment_state;
+                }
+
+                return $ret;
+            }
+            not_fos_comment_patch_thread_comment_state:
+
+            // fos_comment_put_thread_comments
+            if (preg_match('#^/api/threads/(?P<id>[^/]++)/comments/(?P<commentId>[^/\\.]++)(?:\\.(?P<_format>json|xml|html))?$#sD', $pathinfo, $matches)) {
+                $ret = $this->mergeDefaults(array_replace($matches, ['_route' => 'fos_comment_put_thread_comments']), array (  '_controller' => 'fos_comment.controller.thread:putThreadCommentsAction',  '_format' => 'html',));
+                if (!in_array($requestMethod, ['PUT'])) {
+                    $allow = array_merge($allow, ['PUT']);
+                    goto not_fos_comment_put_thread_comments;
+                }
+
+                return $ret;
+            }
+            not_fos_comment_put_thread_comments:
+
+            // fos_comment_get_thread_comments
+            if (preg_match('#^/api/threads/(?P<id>[^/]++)/comments(?:\\.(?P<_format>json|xml|html))?$#sD', $pathinfo, $matches)) {
+                $ret = $this->mergeDefaults(array_replace($matches, ['_route' => 'fos_comment_get_thread_comments']), array (  '_controller' => 'fos_comment.controller.thread:getThreadCommentsAction',  '_format' => 'html',));
+                if (!in_array($canonicalMethod, ['GET'])) {
+                    $allow = array_merge($allow, ['GET']);
+                    goto not_fos_comment_get_thread_comments;
+                }
+
+                return $ret;
+            }
+            not_fos_comment_get_thread_comments:
+
+            // fos_comment_post_thread_comments
+            if (preg_match('#^/api/threads/(?P<id>[^/]++)/comments(?:\\.(?P<_format>json|xml|html))?$#sD', $pathinfo, $matches)) {
+                $ret = $this->mergeDefaults(array_replace($matches, ['_route' => 'fos_comment_post_thread_comments']), array (  '_controller' => 'fos_comment.controller.thread:postThreadCommentsAction',  '_format' => 'html',));
+                if (!in_array($requestMethod, ['POST'])) {
+                    $allow = array_merge($allow, ['POST']);
+                    goto not_fos_comment_post_thread_comments;
+                }
+
+                return $ret;
+            }
+            not_fos_comment_post_thread_comments:
+
+            // fos_comment_get_thread_comment_votes
+            if (preg_match('#^/api/threads/(?P<id>[^/]++)/comments/(?P<commentId>[^/]++)/votes(?:\\.(?P<_format>json|xml|html))?$#sD', $pathinfo, $matches)) {
+                $ret = $this->mergeDefaults(array_replace($matches, ['_route' => 'fos_comment_get_thread_comment_votes']), array (  '_controller' => 'fos_comment.controller.thread:getThreadCommentVotesAction',  '_format' => 'html',));
+                if (!in_array($canonicalMethod, ['GET'])) {
+                    $allow = array_merge($allow, ['GET']);
+                    goto not_fos_comment_get_thread_comment_votes;
+                }
+
+                return $ret;
+            }
+            not_fos_comment_get_thread_comment_votes:
+
+            // fos_comment_post_thread_comment_votes
+            if (preg_match('#^/api/threads/(?P<id>[^/]++)/comments/(?P<commentId>[^/]++)/votes(?:\\.(?P<_format>json|xml|html))?$#sD', $pathinfo, $matches)) {
+                $ret = $this->mergeDefaults(array_replace($matches, ['_route' => 'fos_comment_post_thread_comment_votes']), array (  '_controller' => 'fos_comment.controller.thread:postThreadCommentVotesAction',  '_format' => 'html',));
+                if (!in_array($requestMethod, ['POST'])) {
+                    $allow = array_merge($allow, ['POST']);
+                    goto not_fos_comment_post_thread_comment_votes;
+                }
+
+                return $ret;
+            }
+            not_fos_comment_post_thread_comment_votes:
+
+        }
+
+        // type_modifier
+        if (0 === strpos($pathinfo, '/modifier') && preg_match('#^/modifier/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
+            return $this->mergeDefaults(array_replace($matches, ['_route' => 'type_modifier']), array (  '_controller' => 'TypeBundle\\Controller\\TypeController::ModifierAction',));
+        }
+
+        if (0 === strpos($pathinfo, '/InscriptionsCovoiturage')) {
+            // inscriptions_covoiturage_homepage
+            if ('/InscriptionsCovoiturage/rechercher' === $pathinfo) {
+                return array (  '_controller' => 'InscriptionsCovoiturageBundle\\Controller\\InscriptionsCovoiturageController::RechercherAction',  '_route' => 'inscriptions_covoiturage_homepage',);
+            }
+
+            // inscriptions_covoiturage_resultat
+            if (0 === strpos($pathinfo, '/InscriptionsCovoiturage/resultat') && preg_match('#^/InscriptionsCovoiturage/resultat/(?P<departLower>[^/]++)/(?P<arriveLower>[^/]++)/(?P<newDate>[^/]++)$#sD', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, ['_route' => 'inscriptions_covoiturage_resultat']), array (  '_controller' => 'InscriptionsCovoiturageBundle\\Controller\\InscriptionsCovoiturageController::ResultatAction',));
+            }
+
+            // ajouter_inscription
+            if (0 === strpos($pathinfo, '/InscriptionsCovoiturage/ajouter') && preg_match('#^/InscriptionsCovoiturage/ajouter/(?P<id_offre>[^/]++)/(?P<id_conducteur>[^/]++)$#sD', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, ['_route' => 'ajouter_inscription']), array (  '_controller' => 'InscriptionsCovoiturageBundle\\Controller\\InscriptionsCovoiturageController::AjoutAction',));
+            }
+
+            // inscriptions_covoiturage_supprimer
+            if (0 === strpos($pathinfo, '/InscriptionsCovoiturage/annuler') && preg_match('#^/InscriptionsCovoiturage/annuler/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, ['_route' => 'inscriptions_covoiturage_supprimer']), array (  '_controller' => 'InscriptionsCovoiturageBundle\\Controller\\InscriptionsCovoiturageController::SupprimerAction',));
+            }
+
+            // inscriptions_covoiturage_mesinscriptions
+            if ('/InscriptionsCovoiturage/mesInscriptions' === $trimmedPathinfo) {
+                $ret = array (  '_controller' => 'InscriptionsCovoiturageBundle\\Controller\\InscriptionsCovoiturageController::ListInscriptionsAction',  '_route' => 'inscriptions_covoiturage_mesinscriptions',);
+                if ('/' === substr($pathinfo, -1)) {
+                    // no-op
+                } elseif ('GET' !== $canonicalMethod) {
+                    goto not_inscriptions_covoiturage_mesinscriptions;
+                } else {
+                    return array_replace($ret, $this->redirect($rawPathinfo.'/', 'inscriptions_covoiturage_mesinscriptions'));
+                }
+
+                return $ret;
+            }
+            not_inscriptions_covoiturage_mesinscriptions:
+
+            // inscriptions_covoiturage_details
+            if (0 === strpos($pathinfo, '/InscriptionsCovoiturage/details') && preg_match('#^/InscriptionsCovoiturage/details/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, ['_route' => 'inscriptions_covoiturage_details']), array (  '_controller' => 'InscriptionsCovoiturageBundle\\Controller\\InscriptionsCovoiturageController::DetailsAction',));
+            }
 
         }
 
@@ -462,20 +742,66 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
         }
         not_entities_homepage:
 
-        // covoiturage_homepage
-        if ('/covoiturage' === $trimmedPathinfo) {
-            $ret = array (  '_controller' => 'CovoiturageBundle\\Controller\\DefaultController::indexAction',  '_route' => 'covoiturage_homepage',);
-            if ('/' === substr($pathinfo, -1)) {
-                // no-op
-            } elseif ('GET' !== $canonicalMethod) {
-                goto not_covoiturage_homepage;
-            } else {
-                return array_replace($ret, $this->redirect($rawPathinfo.'/', 'covoiturage_homepage'));
+        if (0 === strpos($pathinfo, '/covoiturage')) {
+            // covoiturage_homepage
+            if ('/covoiturage' === $trimmedPathinfo) {
+                $ret = array (  '_controller' => 'CovoiturageBundle\\Controller\\DefaultController::indexAction',  '_route' => 'covoiturage_homepage',);
+                if ('/' === substr($pathinfo, -1)) {
+                    // no-op
+                } elseif ('GET' !== $canonicalMethod) {
+                    goto not_covoiturage_homepage;
+                } else {
+                    return array_replace($ret, $this->redirect($rawPathinfo.'/', 'covoiturage_homepage'));
+                }
+
+                return $ret;
+            }
+            not_covoiturage_homepage:
+
+            // covoiturage_ajout
+            if ('/covoiturage/ajout' === $pathinfo) {
+                return array (  '_controller' => 'CovoiturageBundle\\Controller\\CovoiturageController::AjoutAction',  '_route' => 'covoiturage_ajout',);
             }
 
-            return $ret;
+            // covoiturage_modifier
+            if (0 === strpos($pathinfo, '/covoiturage/modifier') && preg_match('#^/covoiturage/modifier/(?P<offree>[^/]++)/(?P<i>[^/]++)$#sD', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, ['_route' => 'covoiturage_modifier']), array (  '_controller' => 'CovoiturageBundle\\Controller\\CovoiturageController::ModifierAction',));
+            }
+
+            // covoiturage_liste
+            if ('/covoiturage/liste' === $pathinfo) {
+                return array (  '_controller' => 'CovoiturageBundle\\Controller\\CovoiturageController::ReadAction',  '_route' => 'covoiturage_liste',);
+            }
+
+            // covoiturage_supprimer
+            if (0 === strpos($pathinfo, '/covoiturage/supprimer') && preg_match('#^/covoiturage/supprimer/(?P<id>[^/]++)/(?P<i>[^/]++)$#sD', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, ['_route' => 'covoiturage_supprimer']), array (  '_controller' => 'CovoiturageBundle\\Controller\\CovoiturageController::SupprimerAction',));
+            }
+
+            // covoiturage_statistiques
+            if ('/covoiturage/statistiques' === $pathinfo) {
+                return array (  '_controller' => 'CovoiturageBundle\\Controller\\CovoiturageController::StatistiquesAction',  '_route' => 'covoiturage_statistiques',);
+            }
+
+            // covoiturage_erreur
+            if ('/covoiturage/erreur' === $pathinfo) {
+                return array (  '_controller' => 'CovoiturageBundle\\Controller\\CovoiturageController::ErreurAction',  '_route' => 'covoiturage_erreur',);
+            }
+
+            if (0 === strpos($pathinfo, '/covoiturage/bloquer')) {
+                // covoiturage_bloquer
+                if (preg_match('#^/covoiturage/bloquer/(?P<offree>[^/]++)$#sD', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, ['_route' => 'covoiturage_bloquer']), array (  '_controller' => 'CovoiturageBundle\\Controller\\CovoiturageController::setAvertissementAction',));
+                }
+
+                // covoiturage_bloquer_delete
+                if (0 === strpos($pathinfo, '/covoiturage/bloquerE') && preg_match('#^/covoiturage/bloquerE/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, ['_route' => 'covoiturage_bloquer_delete']), array (  '_controller' => 'CovoiturageBundle\\Controller\\CovoiturageController::setAvertissementDeleteAction',));
+                }
+
+            }
+
         }
-        not_covoiturage_homepage:
 
         // user_default_index
         if ('/user' === $trimmedPathinfo) {
@@ -704,6 +1030,11 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
             }
             not_fos_user_resetting_check_email:
 
+        }
+
+        // fp_js_form_validator.check_unique_entity
+        if ('/fp_js_form_validator/check_unique_entity' === $pathinfo) {
+            return array (  '_controller' => 'Fp\\JsFormValidatorBundle\\Controller\\AjaxController::checkUniqueEntityAction',  '_route' => 'fp_js_form_validator.check_unique_entity',);
         }
 
         if ('/' === $pathinfo && !$allow) {

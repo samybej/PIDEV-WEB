@@ -4,6 +4,7 @@ security:
 
     role_hierarchy:
         ROLE_ADMIN:       ROLE_USER
+        ROLE_CLIENT:      ROLE_USER
         ROLE_SUPER_ADMIN: ROLE_ADMIN
 
     providers:
@@ -17,8 +18,11 @@ security:
             form_login:
                 provider: fos_userbundle
                 csrf_token_generator: security.csrf.token_manager
+                default_target_path: /InscriptionsCovoiturage/rechercher
 
-            logout:       true
+            logout:
+                path:   fos_user_security_logout
+                target: /login
             anonymous:    true
 
     access_control:
@@ -26,7 +30,13 @@ security:
         - { path: ^/register, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/resetting, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/admin/, role: ROLE_ADMIN }
+        - { path: ^/covoiturage/, role: ROLE_USER }
+        - { path: ^/InscriptionsCovoiturage/ajouter/, role: ROLE_USER}
+        - { path: ^/InscriptionsCovoiturage/annuler/, role: ROLE_USER}
+        - { path: ^/InscriptionsCovoiturage/mesInscriptions/, role: ROLE_USER}
+        - { path: ^/taxi/, role: ROLE_USER }
         - { path: ^/garage/, role: ROLE_ADMIN }
         - { path: ^/vehicule/, role: ROLE_ADMIN}
-        - { path: ^/taxi/, role: ROLE_USER }
-    #  - { path: ^/Back/, role: ROLE_ADMIN}
+
+    acl:
+        connection: default

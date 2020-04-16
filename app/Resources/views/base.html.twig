@@ -47,10 +47,14 @@
                             <!--== Social Icons Start ==-->
                             <div class="col-lg-3 text-right">
                                 <div class="header-social-icons">
+                                    {% if is_granted('ROLE_ADMIN') %}
+                                        <a href="{{ path('covoiturage_statistiques') }}">Backend</a>
+                                    {% endif %}
                                     <a href="#"><i class="fa fa-behance"></i></a>
                                     <a href="#"><i class="fa fa-pinterest"></i></a>
                                     <a href="#"><i class="fa fa-facebook"></i></a>
                                     <a href="#"><i class="fa fa-linkedin"></i></a>
+                                    <a href="{{ logout_path('main') }}">Logout</a>
                                 </div>
                             </div>
                             <!--== Social Icons End ==-->
@@ -75,22 +79,22 @@
                             <div class="col-lg-8 d-none d-xl-block">
                                 <nav class="mainmenu alignright">
                                     <ul>
-
-
-
-                                        <li><a href="{{path('taxi_homepage')}}">Taxi</a></li>
-                                        <li><a href="{{path ('transport_homepage')}}">Transporteur</a>
-
+                                        <li class="active"><a href="#">Home</a>
                                             <ul>
-                                                <li><a href="{{path ('reservation_new')}}">Reserver Transporteur</a></li>
+                                                <li><a href="index.html">Home 1</a></li>
+                                                <li><a href="index2.html">Home 2</a></li>
+                                                <li><a href="index3.html">Home 3</a></li>
                                             </ul>
                                         </li>
+                                        <li><a href="about.html">About</a></li>
 
-                                        <li><a href="{{path('covoiturage_homepage')}}">Covoiturage</a></li>
+                                        <li><a href="#">Covoiturage</a>
+                                            <ul>
+                                                <li><a href="/untitled2/web/app_dev.php/InscriptionsCovoiturage/rechercher">Rechercher</a></li>
+                                                <li><a href="/untitled2/web/app_dev.php/covoiturage/ajout">Ajouter une offre</a></li>
 
-
-
-
+                                            </ul>
+                                        </li>
                                         <li><a href="index.html">Pages</a>
                                             <ul>
                                                 <li><a href="package.html">Pricing</a></li>

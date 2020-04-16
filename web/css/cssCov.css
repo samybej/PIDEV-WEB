@@ -1,0 +1,27 @@
+.container2 {
+    position: relative;
+    text-align: center;
+    color: #b21f2d;
+}
+.centered {
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.centered2 {
+    position: absolute;
+    top: 53%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.select2 {
+    color: black;
+    font-size: 21px;
+}
+.centered3 {
+    position: absolute;
+    top: 32%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

@@ -1,0 +1,90 @@
+{% extends 'base.html.twig' %}
+{% block styles %}
+    {{ parent() }}
+    <link href="{{ asset('css/cssCov.css') }}" rel="stylesheet" />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.css">
+    <link href="{{ asset('css/bootstrap-datepicker.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/bootstrap-datepicker.standalone.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/bootstrap-datepicker3.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/bootstrap-datepicker3.standalone.css') }}" rel="stylesheet">
+
+{% endblock %}
+{% block body %}
+    <div class="container2">
+        <img src="{{ asset('img/covoiturage.jpg') }}" style="width: 100%; height: 140% ;opacity: 0.65">
+        <div class="centered">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="section-title  text-center container2">
+                            <h2 style="size: 70px">Ajouter des details</h2>
+                            <span class="title-line"><i class="fa fa-car"></i></span>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="centered3">
+            <div class="book-a-car" >
+                {{ form_start(form , {'attr': {'id': 'form_Type'}}) }}
+                <div class="form-group">
+                    {{ form_label(form.vitesse," Vitesse Max", { 'label_attr': {'class':'select2'}}) }}
+                    {{ form_widget(form.vitesse,{'id':'nbr2','attr': {'class':'form-control'}}) }}
+                </div>
+                <div class="form-group">
+                    {{ form_label(form.nbrArrets," Nombre d'arrets / Pauses", { 'label_attr': {'class':'select2'}}) }}
+                    {{ form_widget(form.nbrArrets, { 'id':'arret','attr': {'class':'form-control'}}) }}
+                </div>
+                <div class="form-group">
+                    {{ form_label(form.tmpArret," Temps total d'arrets ", { 'label_attr': {'class':'select2'}}) }}
+                    {{ form_widget(form.tmpArret) }}
+                </div>
+
+
+                {{ form_widget(form.Ajouter,  { 'label': 'Ajouter' } ) }}
+
+                {{ form_end(form) }}
+            </div>
+        </div>
+
+    </div>
+
+    </section>
+    {{ parent() }}
+
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+    <script src="https://cdn.rawgit.com/PascaleBeier/bootstrap-validate/v2.2.0/dist/bootstrap-validate.js" ></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.js"></script>
+    <script src="{{ asset('js/bootstrap-datepicker.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.1/dist/jquery.validate.min.js"></script>
+    <script>
+
+
+        jQuery.extend(jQuery.validator.messages, {
+            required: "This field is required.",
+            remote: "Please fix this field.",
+            email: "Please enter a valid email address.",
+            url: "Please enter a valid URL.",
+            date: "Please enter a valid date.",
+            dateISO: "Please enter a valid date (ISO).",
+            number: "Please enter a valid number.",
+            digits: "Please enter only digits.",
+            creditcard: "Please enter a valid credit card number.",
+            equalTo: "Le nombre doit etre = 0 ",
+            accept: "Please enter a value with a valid extension.",
+            maxlength: jQuery.validator.format("Please enter no more than {0} characters."),
+            minlength: jQuery.validator.format("Please enter at least {0} characters."),
+            rangelength: jQuery.validator.format("Please enter a value between {0} and {1} characters long."),
+            range: jQuery.validator.format("Please enter a value between {0} and {1}."),
+            max: jQuery.validator.format("Please enter a value less than or equal to {0}."),
+            min: jQuery.validator.format("Please enter a value greater than or equal to {0}.")
+        });
+
+
+
+    </script>
+
+{% endblock %}

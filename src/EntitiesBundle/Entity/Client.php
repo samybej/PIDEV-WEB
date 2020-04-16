@@ -3,7 +3,7 @@
 namespace EntitiesBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-
+use UserBundle\Entity\User;
 /**
  * Client
  *
@@ -312,7 +312,10 @@ class Client
         $this->cadeau = $cadeau;
     }
 
-
+    public function __toString()
+    {
+        return (string) $this->id;
+    }
 
 
 

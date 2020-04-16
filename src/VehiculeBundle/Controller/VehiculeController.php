@@ -81,7 +81,7 @@ class VehiculeController extends Controller
         $em->flush();
 
         $listeVehicule = $this->getDoctrine()->getRepository(Vehicule::class)->findAll();
-        return $this->render('@Vehicule/Vehicule/list.html.twig',array("list"=>$listeVehicule));
+        return $this->redirectToRoute("vehicule_list");
     }
 
 }

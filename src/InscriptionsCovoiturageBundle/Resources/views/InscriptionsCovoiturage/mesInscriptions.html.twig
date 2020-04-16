@@ -1,0 +1,85 @@
+{% extends 'base.html.twig' %}
+
+{% block styles %}
+{{ parent() }}
+<link rel="stylesheet" type="text/css" href="{{ asset('tableResponsive/vendor/bootstrap/css/bootstrap.min.css') }}">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" href="{{ asset('tableResponsive/fonts/font-awesome-4.7.0/css/font-awesome.min.css') }}">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" href="{{ asset('tableResponsive/vendor/animate/animate.css') }}">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" href="{{ asset('tableResponsive/vendor/select2/select2.min.css') }}">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" href="{{ asset('tableResponsive/vendor/perfect-scrollbar/perfect-scrollbar.css') }}">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" href="{{ asset('tableResponsive/css/util.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ asset('tableResponsive/css/main.css') }}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+{% endblock %}
+
+{% block body %}
+
+<div class="limiter">
+
+    <div class="container-table100">
+
+        <div class="wrap-table100">
+            <div class="table100">
+                {% if mesInscriptions is empty %}
+                    <strong> Tableau vide!</strong>
+                {% else %}
+                    <table>
+                        <thead>
+                        <tr class="table100-head">
+                            <th class="column1">Id De L'offre </th>
+                            <th class="column2">Depart </th>
+                            <th class="column3">Arrivee </th>
+                            <th class="column3">Heure </th>
+                            <th class="column5">Id du conducteur</th>
+
+                            <th class="column6">Annuler</th>
+
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for i in mesInscriptions %}
+                            <tr>
+                                <td class="column1">{{ i.idOffre }}</td>
+                                <td class="column2">{{ i.idOffre.depart }}</td>
+                                <td class="column3">{{ i.idOffre.arrive }}</td>
+                                <td class="column3">{{ i.idOffre.time }}</td>
+                                <td class="column5">{{ i.idOffreur }}</td>
+                                <td class="column6"><a href="{{ path('inscriptions_covoiturage_supprimer', {'id':i.id}) }}"><i class="fa fa-remove" style="font-size:42px"></i></a></td>
+                            </tr>
+                        {% endfor %}
+
+                        </tbody>
+                    </table>
+
+                    <div class="page-pagi">
+                        <nav aria-label="Page navigation example">
+                            {{ knp_pagination_render(mesInscriptions) }}
+                        </nav>
+                    </div>
+
+                {% endif %}
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}
+
+{% block javascripts %}
+{{ parent() }}
+    <script src="{{ asset('tableResponsive/vendor/jquery/jquery-3.2.1.min.js') }}"></script>
+    <!--===============================================================================================-->
+    <script src="{{ asset('tableResponsive/vendor/bootstrap/js/popper.js') }}"></script>
+    <script src="{{ asset('tableResponsive/vendor/bootstrap/js/bootstrap.min.js') }}"></script>
+    <!--===============================================================================================-->
+    <script src="{{ asset('tableResponsive/vendor/bootstrap/js/bootstrap.min.js') }}"></script>
+    <!--===============================================================================================-->
+    <script src="{{ asset('tableResponsive/vendor/bootstrap/js/bootstrap.min.js') }}"></script>
+{% endblock %}

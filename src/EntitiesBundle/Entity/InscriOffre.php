@@ -36,7 +36,7 @@ class InscriOffre
      *
      * @ORM\ManyToOne(targetEntity="Offre")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="id_offre", referencedColumnName="id")
+     *   @ORM\JoinColumn(name="id_offre", referencedColumnName="id", onDelete="CASCADE")
      * })
      */
     private $idOffre;
@@ -50,6 +50,85 @@ class InscriOffre
      * })
      */
     private $idOffreur;
+
+    /**
+     * InscriOffre constructor.
+     * @param \Client $idClient
+     * @param \Offre $idOffre
+     * @param \Client $idOffreur
+     */
+    public function __construct(Client $idClient, Offre $idOffre, Client $idOffreur)
+    {
+        $this->idClient = $idClient;
+        $this->idOffre = $idOffre;
+        $this->idOffreur = $idOffreur;
+    }
+
+    /**
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * @param int $id
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+    }
+
+    /**
+     * @return \Client
+     */
+    public function getIdClient()
+    {
+        return $this->idClient;
+    }
+
+    /**
+     * @param \Client $idClient
+     */
+    public function setIdClient($idClient)
+    {
+        $this->idClient = $idClient;
+    }
+
+    /**
+     * @return \Offre
+     */
+    public function getIdOffre()
+    {
+        return $this->idOffre;
+    }
+
+    /**
+     * @param \Offre $idOffre
+     */
+    public function setIdOffre($idOffre)
+    {
+        $this->idOffre = $idOffre;
+    }
+
+    /**
+     * @return \Client
+     */
+    public function getIdOffreur()
+    {
+        return $this->idOffreur;
+    }
+
+    /**
+     * @param \Client $idOffreur
+     */
+    public function setIdOffreur($idOffreur)
+    {
+        $this->idOffreur = $idOffreur;
+    }
+
+
 
 
 }
