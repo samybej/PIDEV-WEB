@@ -1,0 +1,8 @@
+{% extends 'DefaultTestBundle::layout.html.twig' %}
+
+{% block body %}
+    <form novalidate="novalidate" method="post">
+        <input type="submit" name="form_submit" id="form_submit"/>
+        {{ form_row(form.name) }}
+    </form>
+{% endblock %}
