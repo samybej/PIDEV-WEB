@@ -1,4 +1,4 @@
-{% extends "FormationBundle:Default:index.html.twig" %}
+{% extends 'back.html.twig' %}
 {% block body %}
     <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
     <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
@@ -6,41 +6,21 @@
 
     <div class="box">
         <div class="box-header">
-            <h3 class="box-title">Data Table With Full Features</h3>
+            <h3 class="box-title">Liste des formations</h3>
         </div><!-- /.box-header -->
         <div class="box-body table-responsive">
             <div id="example1_wrapper" class="dataTables_wrapper form-inline" role="grid">
-                <div class="row">
-                    <div class="col-xs-4">
-                        <div id="example1_length" class="dataTables_length">
-                            <label>
-                                <select size="1" name="example1_length" aria-controls="example1">
-                                    <option value="10" selected="selected">10</option>
-                                    <option value="25">25</option>
-                                    <option value="50">50</option>
-                                    <option value="100">100</option>
-                                </select>
-                                records per page
-                            </label>
-                        </div>
-                    </div>
-                    <div class="col-xs-6">
-                        <div class="dataTables_filter" id="example1_filter">
-                            <label>Search: <input type="text" aria-controls="example1"></label>
-                        </div>
-                    </div>
-                </div>
+
                 <table id="example1" class="table table-bordered table-striped dataTable" aria-describedby="example1_info">
                     <thead>
                     <tr role="row">
                         <th class="sorting_desc" role="columnheader" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" style="width: 81px;" aria-sort="descending" aria-label="Rendering engine: activate to sort column ascending">ID</th>
                         <th class="sorting" role="columnheader" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" style="width: 167px;" aria-label="Browser: activate to sort column ascending">Date Debut</th>
                         <th class="sorting" role="columnheader" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" style="width: 110px;" aria-label="Browser: activate to sort column ascending">Date Fin</th>
-                        <th class="sorting" role="columnheader" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" style="width: 84px;" aria-label="Engine version: activate to sort column ascending">theme</th>
+                        <th class="sorting" role="columnheader" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" style="width: 84px;" aria-label="Engine version: activate to sort column ascending">Thème</th>
                         <th class="sorting" role="columnheader" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" style="width: 98px;" aria-label="CSS grade: activate to sort column ascending">Time</th>
                         <th class="sorting" role="columnheader" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" style="width: 98px;" aria-label="CSS grade: activate to sort column ascending">Lieu</th>
-                        <th class="sorting" role="columnheader" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" style="width: 98px;" aria-label="CSS grade: activate to sort column ascending">nbre places</th>
-
+                        <th class="sorting" role="columnheader" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" style="width: 98px;" aria-label="CSS grade: activate to sort column ascending">Nombre de place</th>
                         <th class="sorting" role="columnheader" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" style="width: 78px;" aria-label="CSS grade: activate to sort column ascending">Modifier</th>
                         <th class="sorting" role="columnheader" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" style="width: 78px;" aria-label="CSS grade: activate to sort column ascending">Supprimer</th>
                     </tr>
@@ -52,10 +32,10 @@
                         <th rowspan="1" colspan="1">ID</th>
                         <th rowspan="1" colspan="1">Date Debut</th>
                         <th rowspan="1" colspan="1">Date Fin</th>
-                        <th rowspan="1" colspan="1">theme</th>
-                        <th rowspan="1" colspan="1">Time</th>
+                        <th rowspan="1" colspan="1">Thème</th>
+                        <th rowspan="1" colspan="1">Heure</th>
                         <th rowspan="1" colspan="1">Lieu</th>
-                        <th rowspan="1" colspan="1">nbre places</th>
+                        <th rowspan="1" colspan="1">Nombre de place</th>
 
                         <th rowspan="1" colspan="1">Modifier</th>
                         <th rowspan="1" colspan="1">Supprimer</th>
@@ -76,12 +56,12 @@
 
                         <td class=" ">
                             <a href="{{ path("formation_update", {"id":l.id}) }}" class="btn btn-mini btn-info">
-                                <i class="icon-edit">Modifier </i>
+                                <i class="icon-edit"> </i>
                             </a>
                         </td>
                         <td class=" ">
                             <a href="{{ path("formation_delete", {"id":l.id}) }}" class="btn btn-mini btn-danger">
-                                <i class="icon-trash">Supprimer</i>
+                                <i class="icon-trash"></i>
                             </a>
                         </td>
 
@@ -91,37 +71,7 @@
 
                     </tbody>
                 </table>
-                <div class="row">
-                    <div class="col-xs-6">
-                        <div class="dataTables_info" id="example1_info">Showing 1 to 10 of 57 entries</div>
-                    </div>
-                    <div class="col-xs-6">
-                        <div class="dataTables_paginate paging_bootstrap">
-                            <ul class="pagination"><li class="prev disabled">
-                                    <a href="#">← Previous</a>
-                                </li>
-                                <li class="active">
-                                    <a href="#">1</a>
-                                </li>
-                                <li>
-                                    <a href="#">2</a>
-                                </li>
-                                <li>
-                                    <a href="#">3</a>
-                                </li>
-                                <li>
-                                    <a href="#">4</a>
-                                </li>
-                                <li>
-                                    <a href="#">5</a>
-                                </li>
-                                <li class="next">
-                                    <a href="#">Next → </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+
             </div>
         </div><!-- /.box-body -->
     </div>

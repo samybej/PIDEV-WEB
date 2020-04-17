@@ -1,6 +1,3 @@
-formation_homepage:
-    path:     /
-    defaults: { _controller: FormationBundle:Default:index }
 formation_list:
     path:     /list
     defaults: { _controller: FormationBundle:Formation:listFormation }

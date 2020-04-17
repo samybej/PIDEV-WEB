@@ -38,6 +38,7 @@ security:
         - { path: ^/taxi/, role: ROLE_USER }
         - { path: ^/garage/, role: ROLE_ADMIN }
         - { path: ^/vehicule/, role: ROLE_ADMIN}
+        - { path: ^/Back/, role: ROLE_ADMIN}
 
     acl:
         connection: default

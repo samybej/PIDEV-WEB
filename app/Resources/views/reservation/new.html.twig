@@ -19,14 +19,55 @@
 
     <section id="service-page-wrapper" class="section-padding">
         <div class="container text-center">
-            {{ form_start(form) }}
-            {{ form_widget(form) }}
-            <input type="submit" value="Create" />
-            {{ form_end(form) }}
+            <div class="row">
+                <div class="col-lg-10 m-auto">
+                    <div class="contact-form">
+
+                        {{ form_start(form) }}
+
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6">
+                                <div class="name-input">
+                                    {{ form_widget(form.depart) }}
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6 col-md-6">
+                                <div class="email-input">
+                                    {{ form_widget(form.arrive) }}
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row" style="margin-top: 20px ;">
+                            <div class="col-lg-12 col-md-12">
+
+                                <div class="">
+                                    {{ form_label(form.idChauffeur) }}
+                                    {{ form_widget(form.idChauffeur) }}
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="error_div" >
+                            <p style="color : red ;" id="error_message"></p>
+                        </div>
+
+
+                        <div class="input-submit">
+                            <button  type="submit" onclick="return validerReservation(this.form)">Create</button>
+                        </div>
+
+                        {{ form_end(form) }}
+                    </div>
+                </div>
+            </div>
+
+
 
             <ul>
                 <li>
-                    <a href="{{ path('reservation_index') }}">Retour vers la liste des reservations</a>
+                    <a href="{{ path('taxi_homepage') }}">Retour vers la liste des reservations</a>
                 </li>
             </ul>
         </div>
@@ -61,4 +102,8 @@
             .sf-toolbar { opacity: 0; -webkit-animation: fade-in 1s .2s forwards; animation: fade-in 1s .2s forwards;}
         }
     </style>
+{% endblock %}
+
+{% block myJs %}
+    <script src="{{ asset('js/ControleSaisie.js') }}"></script>
 {% endblock %}

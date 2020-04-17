@@ -1,4 +1,4 @@
-{% extends "VehiculeBundle:Default:index.html.twig" %}
+{% extends 'back.html.twig' %}
 {% block body %}
 
     <section class="content">
@@ -23,7 +23,7 @@
                                         <i class="fa fa-calendar"></i>
                                     </div>
 
-                            {{ form_widget(f.dateDebut , { 'attr': { 'placeholder': 'dateDebut'}}) }}
+                            {{ form_widget(f.dateDebut , { 'attr': { 'placeholder': 'Date Debut'}}) }}
                         </div>
                         <div class="form-group">
                             <label>Date Fin:</label>
@@ -32,24 +32,24 @@
                                 <div class="input-group-addon">
                                     <i class="fa fa-calendar"></i>
                                 </div>
-                            {{ form_widget(f.dateFin , { 'attr': { 'placeholder': 'dateFin'}}) }}
+                            {{ form_widget(f.dateFin , { 'attr': { 'placeholder': 'Date fin'}}) }}
                         </div>
 
                         <div class="form-group">
-                            <label for="exampleInputPassword1">lieu</label>
-                            {{ form_widget(f.lieu , { 'attr': { 'placeholder': 'lieu'}}) }}
+                            <label for="exampleInputPassword1">Lieu</label>
+                            {{ form_widget(f.lieu , { 'attr': { 'placeholder': 'Lieu'}}) }}
                         </div>
                         <div class="form-group">
-                            <label for="exampleInputPassword1">time</label>
-                            {{ form_widget(f.time , { 'attr': { 'placeholder': 'time'} }) }}
+                            <label for="exampleInputPassword1">Heure</label>
+                            {{ form_widget(f.time , { 'attr': { 'placeholder': 'Heure'} }) }}
                         </div>
                         <div class="form-group">
-                            <label for="exampleInputPassword1">nbrPlace</label>
-                            {{ form_widget(f.nbrPlace , { 'attr': { 'placeholder': 'nbrPlace'} }) }}
+                            <label for="exampleInputPassword1">Nombre de place</label>
+                            {{ form_widget(f.nbrPlace , { 'attr': { 'placeholder': 'Nombre Place'} }) }}
                         </div>
                         <div class="form-group">
-                            <label for="exampleInputPassword1">typeTheme</label>
-                            {{ form_widget(f.typeTheme , { 'attr': { 'placeholder': 'titre'}}) }}
+                            <label for="exampleInputPassword1">Type Thème</label>
+                            {{ form_widget(f.typeTheme , { 'attr': { 'class':'form-control' , 'placeholder': 'Titre'}}) }}
                         </div>
                     </div>
                     <!-- /.box-body -->

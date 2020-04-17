@@ -320,6 +320,9 @@
 .fa-book:before {
   content: "\f02d";
 }
+.fa-car:before {
+  content: "\f1b9"; 
+}
 .fa-bookmark:before {
   content: "\f02e";
 }

@@ -10,4 +10,12 @@ namespace EntitiesBundle\Repository;
  */
 class GarageRepository extends \Doctrine\ORM\EntityRepository
 {
+    public function getVehiculeGarage($immatriculation)
+    {
+        $qb = $this->getEntityManager()
+            ->createQuery("select v from EntitiesBundle:Vehicule v where v.immatriculation = :imm")
+            ->setParameter('imm',$immatriculation);
+
+        return $query = $qb->getResult();
+    }
 }

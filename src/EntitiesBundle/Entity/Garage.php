@@ -34,7 +34,7 @@ class Garage
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="date_out", type="date")
+     * @ORM\Column(name="date_out", type="date", nullable=true)
      */
     private $dateOut;
 

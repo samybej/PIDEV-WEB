@@ -1,4 +1,4 @@
-{% extends "VehiculeBundle:Default:index.html.twig" %}
+{% extends 'back.html.twig' %}
 {% block body %}
 
     <section class="content">
@@ -16,16 +16,16 @@
                 <div class="box-body">
 
                     <div class="form-group">
-                        <label for="exampleInputPassword1">titre</label>
-                        {{ form_widget(f.titre , { 'attr': { 'placeholder': 'titre'}}) }}
+                        <label for="exampleInputPassword1">Titre</label>
+                        {{ form_widget(f.titre , { 'attr': { 'placeholder': 'Titre'}}) }}
                     </div>
                     <div class="form-group">
-                        <label for="exampleInputPassword1">formateur</label>
-                        {{ form_widget(f.formateur , { 'attr': { 'placeholder': 'formateur'} }) }}
+                        <label for="exampleInputPassword1">Formateur</label>
+                        {{ form_widget(f.formateur , { 'attr': { 'placeholder': 'Formateur'} }) }}
                     </div>
                     <div class="form-group">
-                        <label for="exampleInputPassword1">cibles</label>
-                        {{ form_widget(f.cibles , { 'attr': { 'placeholder': 'cibles'} }) }}
+                        <label for="exampleInputPassword1">Cibles</label>
+                        {{ form_widget(f.cibles , { 'attr': { 'placeholder': 'Cibles'} }) }}
                     </div>
                 </div>
                 <!-- /.box-body -->
