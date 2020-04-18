@@ -3,6 +3,8 @@
 
 namespace FormationBundle\Repository;
 
+use EntitiesBundle\Entity\Participation;
+
 /**
  * FormationRepository
  *
@@ -29,5 +31,20 @@ class FormationRepository extends \Doctrine\ORM\EntityRepository
 
         return $query = $qb->getResult();
     }
+
+
+
+
+    public function participantparFormation($id)
+    {
+        $qb = $this->getEntityManager()->
+        createQuery(" select p,c from EntitiesBundle:Participation p JOIN p.idChauffeur c Where p.idFormation=:id ")
+            ->setParameters(array('id' => $id));
+
+        return $query = $qb->getResult();
+    }
+
+
+
 
 }

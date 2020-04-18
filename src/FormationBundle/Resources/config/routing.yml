@@ -34,11 +34,14 @@ theemes_update:
     defaults: { _controller: FormationBundle:Theemes:update }
 
 formation_listFront:
-    path:     /list1
+    path:     /list1/{id}
     defaults: { _controller: FormationBundle:Formation:listFormation1}
+
+pdf:
+    path:     /pdf/{id}
+    defaults: { _controller: FormationBundle:Formation:pdf }
+
 
 Postulation_list:
     path:     /listpostulation
     defaults: { _controller: FormationBundle:Postulation:listPostulation }
-
-

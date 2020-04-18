@@ -23,6 +23,9 @@
                         <th class="sorting" role="columnheader" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" style="width: 98px;" aria-label="CSS grade: activate to sort column ascending">Nombre de place</th>
                         <th class="sorting" role="columnheader" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" style="width: 78px;" aria-label="CSS grade: activate to sort column ascending">Modifier</th>
                         <th class="sorting" role="columnheader" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" style="width: 78px;" aria-label="CSS grade: activate to sort column ascending">Supprimer</th>
+                        <th class="sorting" role="columnheader" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" style="width: 78px;" aria-label="CSS grade: activate to sort column ascending">Participants</th>
+                        <th class="sorting" role="columnheader" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" style="width: 78px;" aria-label="CSS grade: activate to sort column ascending">Generer Pdf</th>
+
                     </tr>
 
                     </thead>
@@ -39,6 +42,12 @@
 
                         <th rowspan="1" colspan="1">Modifier</th>
                         <th rowspan="1" colspan="1">Supprimer</th>
+                        <th rowspan="1" colspan="1">Participants</th>
+                        <th rowspan="1" colspan="1"> Generer Pdf</th>
+
+
+
+
                     </tr>
                     </tfoot>
                     <tbody role="alert" aria-live="polite" aria-relevant="all">
@@ -64,7 +73,15 @@
                                 <i class="icon-trash"></i>
                             </a>
                         </td>
+                        <td class=" ">
+                            <a href="{{ path("formation_listFront", {"id":l.id}) }}" class="btn btn-mini btn-info">
+                                <i class="icon-edit">Participants </i>
+                            </a>
+                        </td>
+                        <td class=" ">
+                            <a href="{{ path("pdf",{'id':l.id}) }}" class="btn btn-success">Generer liste Participant</a>
 
+                        </td>
 
                         {% endfor %}  </tr>
                     </tr>

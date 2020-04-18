@@ -41,6 +41,54 @@ class Participation
      */
     private $idFormation;
 
+    /**
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * @param int $id
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+    }
+
+    /**
+     * @return \Chauffeur
+     */
+    public function getIdChauffeur()
+    {
+        return $this->idChauffeur;
+    }
+
+    /**
+     * @param \Chauffeur $idChauffeur
+     */
+    public function setIdChauffeur($idChauffeur)
+    {
+        $this->idChauffeur = $idChauffeur;
+    }
+
+    /**
+     * @return \Formation
+     */
+    public function getIdFormation()
+    {
+        return $this->idFormation;
+    }
+
+    /**
+     * @param \Formation $idFormation
+     */
+    public function setIdFormation($idFormation)
+    {
+        $this->idFormation = $idFormation;
+    }
+
 
 }
 
