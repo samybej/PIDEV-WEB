@@ -36,6 +36,9 @@ class AppKernel extends Kernel
             new InscriptionsCovoiturageBundle\InscriptionsCovoiturageBundle(),
             new Knp\Bundle\PaginatorBundle\KnpPaginatorBundle(),
             new GarageBundle\GarageBundle(),
+            new NoteBundle\NoteBundle(),
+            new ReclamationBundle\ReclamationBundle(),
+            new blackknight467\StarRatingBundle\StarRatingBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {

@@ -20,6 +20,12 @@ garage:
 taxi:
   resource: "@TaxiBundle/Resources/config/routing.yml"
   prefix:   /taxi
+note:
+  resource: "@NoteBundle/Resources/config/routing.yml"
+  prefix:   /note
+reclamation:
+  resource: "@ReclamationBundle/Resources/config/routing.yml"
+  prefix:   /reclamation
 
 transport:
   resource: "@TransportBundle/Resources/config/routing.yml"

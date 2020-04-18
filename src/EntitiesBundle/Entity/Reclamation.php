@@ -62,6 +62,101 @@ class Reclamation
      */
     private $idClient;
 
+    /**
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * @param int $id
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+    }
+
+    /**
+     * @return string
+     */
+    public function getMessage()
+    {
+        return $this->message;
+    }
+
+    /**
+     * @param string $message
+     */
+    public function setMessage($message)
+    {
+        $this->message = $message;
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getDateRec()
+    {
+        return $this->dateRec;
+    }
+
+    /**
+     * @param \DateTime $dateRec
+     */
+    public function setDateRec($dateRec)
+    {
+        $this->dateRec = $dateRec;
+    }
+
+    /**
+     * @return string
+     */
+    public function getType()
+    {
+        return $this->type;
+    }
+
+    /**
+     * @param string $type
+     */
+    public function setType($type)
+    {
+        $this->type = $type;
+    }
+
+    /**
+     * @return \Chauffeur
+     */
+    public function getIdChauffeur()
+    {
+        return $this->idChauffeur;
+    }
+
+    /**
+     * @param \Chauffeur $idChauffeur
+     */
+    public function setIdChauffeur($idChauffeur)
+    {
+        $this->idChauffeur = $idChauffeur;
+    }
+
+    /**
+     * @return \Client
+     */
+    public function getIdClient()
+    {
+        return $this->idClient;
+    }
+
+    /**
+     * @param \Client $idClient
+     */
+    public function setIdClient($idClient)
+    {
+        $this->idClient = $idClient;
+    }
+
 
 }
-

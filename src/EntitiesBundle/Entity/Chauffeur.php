@@ -391,7 +391,10 @@ class Chauffeur
         $this->idVehicule = $idVehicule;
     }
 
-
+    public function __toString()
+    {
+        return $this->nom;
+    }
 
 }
 
