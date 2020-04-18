@@ -249,215 +249,233 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
         }
         not_type_homepage:
 
-        // type_ajout
-        if (0 === strpos($pathinfo, '/ajout') && preg_match('#^/ajout/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
-            return $this->mergeDefaults(array_replace($matches, ['_route' => 'type_ajout']), array (  '_controller' => 'TypeBundle\\Controller\\TypeController::AjoutAction',));
-        }
+        if (0 === strpos($pathinfo, '/a')) {
+            // type_ajout
+            if (0 === strpos($pathinfo, '/ajout') && preg_match('#^/ajout/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, ['_route' => 'type_ajout']), array (  '_controller' => 'TypeBundle\\Controller\\TypeController::AjoutAction',));
+            }
 
-        if (0 === strpos($pathinfo, '/api/threads')) {
-            // fos_comment_new_threads
-            if (0 === strpos($pathinfo, '/api/threads/new') && preg_match('#^/api/threads/new(?:\\.(?P<_format>json|xml|html))?$#sD', $pathinfo, $matches)) {
-                $ret = $this->mergeDefaults(array_replace($matches, ['_route' => 'fos_comment_new_threads']), array (  '_controller' => 'fos_comment.controller.thread:newThreadsAction',  '_format' => 'html',));
-                if (!in_array($canonicalMethod, ['GET'])) {
-                    $allow = array_merge($allow, ['GET']);
-                    goto not_fos_comment_new_threads;
+            // homepage
+            if ('/accueil' === $trimmedPathinfo) {
+                $ret = array (  '_controller' => 'AppBundle\\Controller\\DefaultController::indexAction',  '_route' => 'homepage',);
+                if ('/' === substr($pathinfo, -1)) {
+                    // no-op
+                } elseif ('GET' !== $canonicalMethod) {
+                    goto not_homepage;
+                } else {
+                    return array_replace($ret, $this->redirect($rawPathinfo.'/', 'homepage'));
                 }
 
                 return $ret;
             }
-            not_fos_comment_new_threads:
+            not_homepage:
 
-            // fos_comment_edit_thread_commentable
-            if (preg_match('#^/api/threads/(?P<id>[^/]++)/commentable/edit(?:\\.(?P<_format>json|xml|html))?$#sD', $pathinfo, $matches)) {
-                $ret = $this->mergeDefaults(array_replace($matches, ['_route' => 'fos_comment_edit_thread_commentable']), array (  '_controller' => 'fos_comment.controller.thread:editThreadCommentableAction',  '_format' => 'html',));
-                if (!in_array($canonicalMethod, ['GET'])) {
-                    $allow = array_merge($allow, ['GET']);
-                    goto not_fos_comment_edit_thread_commentable;
+            if (0 === strpos($pathinfo, '/api/threads')) {
+                // fos_comment_new_threads
+                if (0 === strpos($pathinfo, '/api/threads/new') && preg_match('#^/api/threads/new(?:\\.(?P<_format>json|xml|html))?$#sD', $pathinfo, $matches)) {
+                    $ret = $this->mergeDefaults(array_replace($matches, ['_route' => 'fos_comment_new_threads']), array (  '_controller' => 'fos_comment.controller.thread:newThreadsAction',  '_format' => 'html',));
+                    if (!in_array($canonicalMethod, ['GET'])) {
+                        $allow = array_merge($allow, ['GET']);
+                        goto not_fos_comment_new_threads;
+                    }
+
+                    return $ret;
                 }
+                not_fos_comment_new_threads:
 
-                return $ret;
-            }
-            not_fos_comment_edit_thread_commentable:
+                // fos_comment_edit_thread_commentable
+                if (preg_match('#^/api/threads/(?P<id>[^/]++)/commentable/edit(?:\\.(?P<_format>json|xml|html))?$#sD', $pathinfo, $matches)) {
+                    $ret = $this->mergeDefaults(array_replace($matches, ['_route' => 'fos_comment_edit_thread_commentable']), array (  '_controller' => 'fos_comment.controller.thread:editThreadCommentableAction',  '_format' => 'html',));
+                    if (!in_array($canonicalMethod, ['GET'])) {
+                        $allow = array_merge($allow, ['GET']);
+                        goto not_fos_comment_edit_thread_commentable;
+                    }
 
-            // fos_comment_new_thread_comments
-            if (preg_match('#^/api/threads/(?P<id>[^/]++)/comments/new(?:\\.(?P<_format>json|xml|html))?$#sD', $pathinfo, $matches)) {
-                $ret = $this->mergeDefaults(array_replace($matches, ['_route' => 'fos_comment_new_thread_comments']), array (  '_controller' => 'fos_comment.controller.thread:newThreadCommentsAction',  '_format' => 'html',));
-                if (!in_array($canonicalMethod, ['GET'])) {
-                    $allow = array_merge($allow, ['GET']);
-                    goto not_fos_comment_new_thread_comments;
+                    return $ret;
                 }
+                not_fos_comment_edit_thread_commentable:
 
-                return $ret;
-            }
-            not_fos_comment_new_thread_comments:
+                // fos_comment_new_thread_comments
+                if (preg_match('#^/api/threads/(?P<id>[^/]++)/comments/new(?:\\.(?P<_format>json|xml|html))?$#sD', $pathinfo, $matches)) {
+                    $ret = $this->mergeDefaults(array_replace($matches, ['_route' => 'fos_comment_new_thread_comments']), array (  '_controller' => 'fos_comment.controller.thread:newThreadCommentsAction',  '_format' => 'html',));
+                    if (!in_array($canonicalMethod, ['GET'])) {
+                        $allow = array_merge($allow, ['GET']);
+                        goto not_fos_comment_new_thread_comments;
+                    }
 
-            // fos_comment_remove_thread_comment
-            if (preg_match('#^/api/threads/(?P<id>[^/]++)/comments/(?P<commentId>[^/]++)/remove(?:\\.(?P<_format>json|xml|html))?$#sD', $pathinfo, $matches)) {
-                $ret = $this->mergeDefaults(array_replace($matches, ['_route' => 'fos_comment_remove_thread_comment']), array (  '_controller' => 'fos_comment.controller.thread:removeThreadCommentAction',  '_format' => 'html',));
-                if (!in_array($canonicalMethod, ['GET'])) {
-                    $allow = array_merge($allow, ['GET']);
-                    goto not_fos_comment_remove_thread_comment;
+                    return $ret;
                 }
+                not_fos_comment_new_thread_comments:
 
-                return $ret;
-            }
-            not_fos_comment_remove_thread_comment:
+                // fos_comment_remove_thread_comment
+                if (preg_match('#^/api/threads/(?P<id>[^/]++)/comments/(?P<commentId>[^/]++)/remove(?:\\.(?P<_format>json|xml|html))?$#sD', $pathinfo, $matches)) {
+                    $ret = $this->mergeDefaults(array_replace($matches, ['_route' => 'fos_comment_remove_thread_comment']), array (  '_controller' => 'fos_comment.controller.thread:removeThreadCommentAction',  '_format' => 'html',));
+                    if (!in_array($canonicalMethod, ['GET'])) {
+                        $allow = array_merge($allow, ['GET']);
+                        goto not_fos_comment_remove_thread_comment;
+                    }
 
-            // fos_comment_edit_thread_comment
-            if (preg_match('#^/api/threads/(?P<id>[^/]++)/comments/(?P<commentId>[^/]++)/edit(?:\\.(?P<_format>json|xml|html))?$#sD', $pathinfo, $matches)) {
-                $ret = $this->mergeDefaults(array_replace($matches, ['_route' => 'fos_comment_edit_thread_comment']), array (  '_controller' => 'fos_comment.controller.thread:editThreadCommentAction',  '_format' => 'html',));
-                if (!in_array($canonicalMethod, ['GET'])) {
-                    $allow = array_merge($allow, ['GET']);
-                    goto not_fos_comment_edit_thread_comment;
+                    return $ret;
                 }
+                not_fos_comment_remove_thread_comment:
 
-                return $ret;
-            }
-            not_fos_comment_edit_thread_comment:
+                // fos_comment_edit_thread_comment
+                if (preg_match('#^/api/threads/(?P<id>[^/]++)/comments/(?P<commentId>[^/]++)/edit(?:\\.(?P<_format>json|xml|html))?$#sD', $pathinfo, $matches)) {
+                    $ret = $this->mergeDefaults(array_replace($matches, ['_route' => 'fos_comment_edit_thread_comment']), array (  '_controller' => 'fos_comment.controller.thread:editThreadCommentAction',  '_format' => 'html',));
+                    if (!in_array($canonicalMethod, ['GET'])) {
+                        $allow = array_merge($allow, ['GET']);
+                        goto not_fos_comment_edit_thread_comment;
+                    }
 
-            // fos_comment_new_thread_comment_votes
-            if (preg_match('#^/api/threads/(?P<id>[^/]++)/comments/(?P<commentId>[^/]++)/votes/new(?:\\.(?P<_format>json|xml|html))?$#sD', $pathinfo, $matches)) {
-                $ret = $this->mergeDefaults(array_replace($matches, ['_route' => 'fos_comment_new_thread_comment_votes']), array (  '_controller' => 'fos_comment.controller.thread:newThreadCommentVotesAction',  '_format' => 'html',));
-                if (!in_array($canonicalMethod, ['GET'])) {
-                    $allow = array_merge($allow, ['GET']);
-                    goto not_fos_comment_new_thread_comment_votes;
+                    return $ret;
                 }
+                not_fos_comment_edit_thread_comment:
 
-                return $ret;
-            }
-            not_fos_comment_new_thread_comment_votes:
+                // fos_comment_new_thread_comment_votes
+                if (preg_match('#^/api/threads/(?P<id>[^/]++)/comments/(?P<commentId>[^/]++)/votes/new(?:\\.(?P<_format>json|xml|html))?$#sD', $pathinfo, $matches)) {
+                    $ret = $this->mergeDefaults(array_replace($matches, ['_route' => 'fos_comment_new_thread_comment_votes']), array (  '_controller' => 'fos_comment.controller.thread:newThreadCommentVotesAction',  '_format' => 'html',));
+                    if (!in_array($canonicalMethod, ['GET'])) {
+                        $allow = array_merge($allow, ['GET']);
+                        goto not_fos_comment_new_thread_comment_votes;
+                    }
 
-            // fos_comment_get_thread
-            if (preg_match('#^/api/threads/(?P<id>[^/\\.]++)(?:\\.(?P<_format>json|xml|html))?$#sD', $pathinfo, $matches)) {
-                $ret = $this->mergeDefaults(array_replace($matches, ['_route' => 'fos_comment_get_thread']), array (  '_controller' => 'fos_comment.controller.thread:getThreadAction',  '_format' => 'html',));
-                if (!in_array($canonicalMethod, ['GET'])) {
-                    $allow = array_merge($allow, ['GET']);
-                    goto not_fos_comment_get_thread;
+                    return $ret;
                 }
+                not_fos_comment_new_thread_comment_votes:
 
-                return $ret;
-            }
-            not_fos_comment_get_thread:
+                // fos_comment_get_thread
+                if (preg_match('#^/api/threads/(?P<id>[^/\\.]++)(?:\\.(?P<_format>json|xml|html))?$#sD', $pathinfo, $matches)) {
+                    $ret = $this->mergeDefaults(array_replace($matches, ['_route' => 'fos_comment_get_thread']), array (  '_controller' => 'fos_comment.controller.thread:getThreadAction',  '_format' => 'html',));
+                    if (!in_array($canonicalMethod, ['GET'])) {
+                        $allow = array_merge($allow, ['GET']);
+                        goto not_fos_comment_get_thread;
+                    }
 
-            // fos_comment_get_threads
-            if (preg_match('#^/api/threads(?:\\.(?P<_format>json|xml|html))?$#sD', $pathinfo, $matches)) {
-                $ret = $this->mergeDefaults(array_replace($matches, ['_route' => 'fos_comment_get_threads']), array (  '_controller' => 'fos_comment.controller.thread:getThreadsActions',  '_format' => 'html',));
-                if (!in_array($canonicalMethod, ['GET'])) {
-                    $allow = array_merge($allow, ['GET']);
-                    goto not_fos_comment_get_threads;
+                    return $ret;
                 }
+                not_fos_comment_get_thread:
 
-                return $ret;
-            }
-            not_fos_comment_get_threads:
+                // fos_comment_get_threads
+                if (preg_match('#^/api/threads(?:\\.(?P<_format>json|xml|html))?$#sD', $pathinfo, $matches)) {
+                    $ret = $this->mergeDefaults(array_replace($matches, ['_route' => 'fos_comment_get_threads']), array (  '_controller' => 'fos_comment.controller.thread:getThreadsActions',  '_format' => 'html',));
+                    if (!in_array($canonicalMethod, ['GET'])) {
+                        $allow = array_merge($allow, ['GET']);
+                        goto not_fos_comment_get_threads;
+                    }
 
-            // fos_comment_post_threads
-            if (preg_match('#^/api/threads(?:\\.(?P<_format>json|xml|html))?$#sD', $pathinfo, $matches)) {
-                $ret = $this->mergeDefaults(array_replace($matches, ['_route' => 'fos_comment_post_threads']), array (  '_controller' => 'fos_comment.controller.thread:postThreadsAction',  '_format' => 'html',));
-                if (!in_array($requestMethod, ['POST'])) {
-                    $allow = array_merge($allow, ['POST']);
-                    goto not_fos_comment_post_threads;
+                    return $ret;
                 }
+                not_fos_comment_get_threads:
 
-                return $ret;
-            }
-            not_fos_comment_post_threads:
+                // fos_comment_post_threads
+                if (preg_match('#^/api/threads(?:\\.(?P<_format>json|xml|html))?$#sD', $pathinfo, $matches)) {
+                    $ret = $this->mergeDefaults(array_replace($matches, ['_route' => 'fos_comment_post_threads']), array (  '_controller' => 'fos_comment.controller.thread:postThreadsAction',  '_format' => 'html',));
+                    if (!in_array($requestMethod, ['POST'])) {
+                        $allow = array_merge($allow, ['POST']);
+                        goto not_fos_comment_post_threads;
+                    }
 
-            // fos_comment_patch_thread_commentable
-            if (preg_match('#^/api/threads/(?P<id>[^/]++)/commentable(?:\\.(?P<_format>json|xml|html))?$#sD', $pathinfo, $matches)) {
-                $ret = $this->mergeDefaults(array_replace($matches, ['_route' => 'fos_comment_patch_thread_commentable']), array (  '_controller' => 'fos_comment.controller.thread:patchThreadCommentableAction',  '_format' => 'html',));
-                if (!in_array($requestMethod, ['PATCH'])) {
-                    $allow = array_merge($allow, ['PATCH']);
-                    goto not_fos_comment_patch_thread_commentable;
+                    return $ret;
                 }
+                not_fos_comment_post_threads:
 
-                return $ret;
-            }
-            not_fos_comment_patch_thread_commentable:
+                // fos_comment_patch_thread_commentable
+                if (preg_match('#^/api/threads/(?P<id>[^/]++)/commentable(?:\\.(?P<_format>json|xml|html))?$#sD', $pathinfo, $matches)) {
+                    $ret = $this->mergeDefaults(array_replace($matches, ['_route' => 'fos_comment_patch_thread_commentable']), array (  '_controller' => 'fos_comment.controller.thread:patchThreadCommentableAction',  '_format' => 'html',));
+                    if (!in_array($requestMethod, ['PATCH'])) {
+                        $allow = array_merge($allow, ['PATCH']);
+                        goto not_fos_comment_patch_thread_commentable;
+                    }
 
-            // fos_comment_get_thread_comment
-            if (preg_match('#^/api/threads/(?P<id>[^/]++)/comments/(?P<commentId>[^/\\.]++)(?:\\.(?P<_format>json|xml|html))?$#sD', $pathinfo, $matches)) {
-                $ret = $this->mergeDefaults(array_replace($matches, ['_route' => 'fos_comment_get_thread_comment']), array (  '_controller' => 'fos_comment.controller.thread:getThreadCommentAction',  '_format' => 'html',));
-                if (!in_array($canonicalMethod, ['GET'])) {
-                    $allow = array_merge($allow, ['GET']);
-                    goto not_fos_comment_get_thread_comment;
+                    return $ret;
                 }
+                not_fos_comment_patch_thread_commentable:
 
-                return $ret;
-            }
-            not_fos_comment_get_thread_comment:
+                // fos_comment_get_thread_comment
+                if (preg_match('#^/api/threads/(?P<id>[^/]++)/comments/(?P<commentId>[^/\\.]++)(?:\\.(?P<_format>json|xml|html))?$#sD', $pathinfo, $matches)) {
+                    $ret = $this->mergeDefaults(array_replace($matches, ['_route' => 'fos_comment_get_thread_comment']), array (  '_controller' => 'fos_comment.controller.thread:getThreadCommentAction',  '_format' => 'html',));
+                    if (!in_array($canonicalMethod, ['GET'])) {
+                        $allow = array_merge($allow, ['GET']);
+                        goto not_fos_comment_get_thread_comment;
+                    }
 
-            // fos_comment_patch_thread_comment_state
-            if (preg_match('#^/api/threads/(?P<id>[^/]++)/comments/(?P<commentId>[^/]++)/state(?:\\.(?P<_format>json|xml|html))?$#sD', $pathinfo, $matches)) {
-                $ret = $this->mergeDefaults(array_replace($matches, ['_route' => 'fos_comment_patch_thread_comment_state']), array (  '_controller' => 'fos_comment.controller.thread:patchThreadCommentStateAction',  '_format' => 'html',));
-                if (!in_array($requestMethod, ['PATCH'])) {
-                    $allow = array_merge($allow, ['PATCH']);
-                    goto not_fos_comment_patch_thread_comment_state;
+                    return $ret;
                 }
+                not_fos_comment_get_thread_comment:
 
-                return $ret;
-            }
-            not_fos_comment_patch_thread_comment_state:
+                // fos_comment_patch_thread_comment_state
+                if (preg_match('#^/api/threads/(?P<id>[^/]++)/comments/(?P<commentId>[^/]++)/state(?:\\.(?P<_format>json|xml|html))?$#sD', $pathinfo, $matches)) {
+                    $ret = $this->mergeDefaults(array_replace($matches, ['_route' => 'fos_comment_patch_thread_comment_state']), array (  '_controller' => 'fos_comment.controller.thread:patchThreadCommentStateAction',  '_format' => 'html',));
+                    if (!in_array($requestMethod, ['PATCH'])) {
+                        $allow = array_merge($allow, ['PATCH']);
+                        goto not_fos_comment_patch_thread_comment_state;
+                    }
 
-            // fos_comment_put_thread_comments
-            if (preg_match('#^/api/threads/(?P<id>[^/]++)/comments/(?P<commentId>[^/\\.]++)(?:\\.(?P<_format>json|xml|html))?$#sD', $pathinfo, $matches)) {
-                $ret = $this->mergeDefaults(array_replace($matches, ['_route' => 'fos_comment_put_thread_comments']), array (  '_controller' => 'fos_comment.controller.thread:putThreadCommentsAction',  '_format' => 'html',));
-                if (!in_array($requestMethod, ['PUT'])) {
-                    $allow = array_merge($allow, ['PUT']);
-                    goto not_fos_comment_put_thread_comments;
+                    return $ret;
                 }
+                not_fos_comment_patch_thread_comment_state:
 
-                return $ret;
-            }
-            not_fos_comment_put_thread_comments:
+                // fos_comment_put_thread_comments
+                if (preg_match('#^/api/threads/(?P<id>[^/]++)/comments/(?P<commentId>[^/\\.]++)(?:\\.(?P<_format>json|xml|html))?$#sD', $pathinfo, $matches)) {
+                    $ret = $this->mergeDefaults(array_replace($matches, ['_route' => 'fos_comment_put_thread_comments']), array (  '_controller' => 'fos_comment.controller.thread:putThreadCommentsAction',  '_format' => 'html',));
+                    if (!in_array($requestMethod, ['PUT'])) {
+                        $allow = array_merge($allow, ['PUT']);
+                        goto not_fos_comment_put_thread_comments;
+                    }
 
-            // fos_comment_get_thread_comments
-            if (preg_match('#^/api/threads/(?P<id>[^/]++)/comments(?:\\.(?P<_format>json|xml|html))?$#sD', $pathinfo, $matches)) {
-                $ret = $this->mergeDefaults(array_replace($matches, ['_route' => 'fos_comment_get_thread_comments']), array (  '_controller' => 'fos_comment.controller.thread:getThreadCommentsAction',  '_format' => 'html',));
-                if (!in_array($canonicalMethod, ['GET'])) {
-                    $allow = array_merge($allow, ['GET']);
-                    goto not_fos_comment_get_thread_comments;
+                    return $ret;
                 }
+                not_fos_comment_put_thread_comments:
 
-                return $ret;
-            }
-            not_fos_comment_get_thread_comments:
+                // fos_comment_get_thread_comments
+                if (preg_match('#^/api/threads/(?P<id>[^/]++)/comments(?:\\.(?P<_format>json|xml|html))?$#sD', $pathinfo, $matches)) {
+                    $ret = $this->mergeDefaults(array_replace($matches, ['_route' => 'fos_comment_get_thread_comments']), array (  '_controller' => 'fos_comment.controller.thread:getThreadCommentsAction',  '_format' => 'html',));
+                    if (!in_array($canonicalMethod, ['GET'])) {
+                        $allow = array_merge($allow, ['GET']);
+                        goto not_fos_comment_get_thread_comments;
+                    }
 
-            // fos_comment_post_thread_comments
-            if (preg_match('#^/api/threads/(?P<id>[^/]++)/comments(?:\\.(?P<_format>json|xml|html))?$#sD', $pathinfo, $matches)) {
-                $ret = $this->mergeDefaults(array_replace($matches, ['_route' => 'fos_comment_post_thread_comments']), array (  '_controller' => 'fos_comment.controller.thread:postThreadCommentsAction',  '_format' => 'html',));
-                if (!in_array($requestMethod, ['POST'])) {
-                    $allow = array_merge($allow, ['POST']);
-                    goto not_fos_comment_post_thread_comments;
+                    return $ret;
                 }
+                not_fos_comment_get_thread_comments:
 
-                return $ret;
-            }
-            not_fos_comment_post_thread_comments:
+                // fos_comment_post_thread_comments
+                if (preg_match('#^/api/threads/(?P<id>[^/]++)/comments(?:\\.(?P<_format>json|xml|html))?$#sD', $pathinfo, $matches)) {
+                    $ret = $this->mergeDefaults(array_replace($matches, ['_route' => 'fos_comment_post_thread_comments']), array (  '_controller' => 'fos_comment.controller.thread:postThreadCommentsAction',  '_format' => 'html',));
+                    if (!in_array($requestMethod, ['POST'])) {
+                        $allow = array_merge($allow, ['POST']);
+                        goto not_fos_comment_post_thread_comments;
+                    }
 
-            // fos_comment_get_thread_comment_votes
-            if (preg_match('#^/api/threads/(?P<id>[^/]++)/comments/(?P<commentId>[^/]++)/votes(?:\\.(?P<_format>json|xml|html))?$#sD', $pathinfo, $matches)) {
-                $ret = $this->mergeDefaults(array_replace($matches, ['_route' => 'fos_comment_get_thread_comment_votes']), array (  '_controller' => 'fos_comment.controller.thread:getThreadCommentVotesAction',  '_format' => 'html',));
-                if (!in_array($canonicalMethod, ['GET'])) {
-                    $allow = array_merge($allow, ['GET']);
-                    goto not_fos_comment_get_thread_comment_votes;
+                    return $ret;
                 }
+                not_fos_comment_post_thread_comments:
 
-                return $ret;
-            }
-            not_fos_comment_get_thread_comment_votes:
+                // fos_comment_get_thread_comment_votes
+                if (preg_match('#^/api/threads/(?P<id>[^/]++)/comments/(?P<commentId>[^/]++)/votes(?:\\.(?P<_format>json|xml|html))?$#sD', $pathinfo, $matches)) {
+                    $ret = $this->mergeDefaults(array_replace($matches, ['_route' => 'fos_comment_get_thread_comment_votes']), array (  '_controller' => 'fos_comment.controller.thread:getThreadCommentVotesAction',  '_format' => 'html',));
+                    if (!in_array($canonicalMethod, ['GET'])) {
+                        $allow = array_merge($allow, ['GET']);
+                        goto not_fos_comment_get_thread_comment_votes;
+                    }
 
-            // fos_comment_post_thread_comment_votes
-            if (preg_match('#^/api/threads/(?P<id>[^/]++)/comments/(?P<commentId>[^/]++)/votes(?:\\.(?P<_format>json|xml|html))?$#sD', $pathinfo, $matches)) {
-                $ret = $this->mergeDefaults(array_replace($matches, ['_route' => 'fos_comment_post_thread_comment_votes']), array (  '_controller' => 'fos_comment.controller.thread:postThreadCommentVotesAction',  '_format' => 'html',));
-                if (!in_array($requestMethod, ['POST'])) {
-                    $allow = array_merge($allow, ['POST']);
-                    goto not_fos_comment_post_thread_comment_votes;
+                    return $ret;
                 }
+                not_fos_comment_get_thread_comment_votes:
 
-                return $ret;
+                // fos_comment_post_thread_comment_votes
+                if (preg_match('#^/api/threads/(?P<id>[^/]++)/comments/(?P<commentId>[^/]++)/votes(?:\\.(?P<_format>json|xml|html))?$#sD', $pathinfo, $matches)) {
+                    $ret = $this->mergeDefaults(array_replace($matches, ['_route' => 'fos_comment_post_thread_comment_votes']), array (  '_controller' => 'fos_comment.controller.thread:postThreadCommentVotesAction',  '_format' => 'html',));
+                    if (!in_array($requestMethod, ['POST'])) {
+                        $allow = array_merge($allow, ['POST']);
+                        goto not_fos_comment_post_thread_comment_votes;
+                    }
+
+                    return $ret;
+                }
+                not_fos_comment_post_thread_comment_votes:
+
             }
-            not_fos_comment_post_thread_comment_votes:
 
         }
 
@@ -1079,21 +1097,6 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
             return $ret;
         }
         not_user_default_index:
-
-        // homepage
-        if ('' === $trimmedPathinfo) {
-            $ret = array (  '_controller' => 'AppBundle\\Controller\\DefaultController::indexAction',  '_route' => 'homepage',);
-            if ('/' === substr($pathinfo, -1)) {
-                // no-op
-            } elseif ('GET' !== $canonicalMethod) {
-                goto not_homepage;
-            } else {
-                return array_replace($ret, $this->redirect($rawPathinfo.'/', 'homepage'));
-            }
-
-            return $ret;
-        }
-        not_homepage:
 
         if (0 === strpos($pathinfo, '/login')) {
             // fos_user_security_login

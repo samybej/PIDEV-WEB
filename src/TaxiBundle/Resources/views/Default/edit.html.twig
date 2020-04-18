@@ -1,57 +1,7 @@
 {% extends 'base.html.twig' %}
 
-{% block body %}
-    <section id="page-title-area" class="section-padding overlay">
-        <div class="container">
-            <div class="row">
-                <!-- Page Title Start -->
-                <div class="col-lg-12">
-                    <div class="section-title  text-center">
-                        <h2>Modifier résérvation</h2>
-                        <span class="title-line"><i class="fa fa-car"></i></span>
-                        <p>Vous pouvez modifier votre reservation sur cette page.</p>
-                    </div>
-                </div>
-                <!-- Page Title End -->
-            </div>
-        </div>
-
-    </section>
-    {% if date(reservation.date)|date('Y-m-d') == date()|date('Y-m-d') %}
-        <section id="service-page-wrapper" class="section-padding">
-            <div class="container text-center">
-
-
-                {{ form_start(edit_form) }}
-
-                {{ form_widget(edit_form) }}
-
-                <input type="submit" value="Edit" onclick="return validerReservation(this.form)" />
-                {{ form_end(edit_form) }}
-            </div>
-        </section>
-    {% else %}
-        <script>
-            alert("Modification de la réservation impossible! Vous avez dépassé les 24 heures.")
-            window.location.replace('{{ path('reservation_index') }}')
-        </script>
-
-
-    {% endif %}
-
-    <ul>
-        <li>
-            <a href="{{ path('reservation_index') }}">Back to the list</a>
-        </li>
-        <li>
-            {{ form_start(delete_form) }}
-            <input type="submit" value="Delete">
-            {{ form_end(delete_form) }}
-        </li>
-    </ul>
-{% endblock %}
-
 {% block stylesheets %}
+    {{ parent() }}
     <style>
 
         body { background: #F5F5F5; font: 18px/1.5 sans-serif; }
@@ -81,6 +31,110 @@
     </style>
 {% endblock %}
 
-{% block myJs %}
-    <script src="{{ asset('js/ControleSaisie.js') }}"></script>
+
+
+
+
+
+{% block body %}
+    <section id="page-title-area" class="section-padding overlay">
+        <div class="container">
+            <div class="row">
+                <!-- Page Title Start -->
+                <div class="col-lg-12">
+                    <div class="section-title  text-center">
+                        <h2>Modifier résérvation</h2>
+                        <span class="title-line"><i class="fa fa-car"></i></span>
+                        <p>Vous pouvez modifier votre reservation sur cette page.</p>
+                    </div>
+                </div>
+                <!-- Page Title End -->
+            </div>
+        </div>
+
+    </section>
+    {% if date(reservation.date)|date('Y-m-d') == date()|date('Y-m-d') %}
+        <ul>
+            <li>
+                <a href="{{ path('taxi_homepage') }}" style="text-decoration: none;background-color: dimgrey;font-weight: bold;color: yellow">Back to the list</a>
+            </li>
+
+        </ul>
+        <section id="service-page-wrapper" class="section-padding">
+
+            <div class="col-lg-5 col-md-8 m-auto">
+                <div class="login-form">
+
+                    <h2 style="text-align: center;font-weight: bold;">Modification</h2>
+
+                    {{ form_start(edit_form) }}
+                    <div id="error_div" >
+                        <p style="color : red ;" id="error_message"></p>
+                    </div>
+
+                    {{ form_widget(edit_form) }}
+
+
+                    <input type="submit" value="Edit" style="background-color: dimgrey;border: #0d0d0d;font-weight: bold;" onclick="return validerReservation(this.form)" />
+
+                    {{ form_end(edit_form) }}
+                    <li>
+                        {{ form_start(delete_form) }}
+                        <input type="submit" value="Delete" style="background-color: dimgrey; border: #0d0d0d;font-weight: bold; " />
+                        {{ form_end(delete_form) }}
+                    </li>
+                </div>
+            </div>
+
+        </section>
+    {% else %}
+        <script>
+            alert("Modification de la réservation impossible! Vous avez dépassé les 24 heures.")
+            window.location.replace('{{ path('taxi_homepage') }}')
+        </script>
+
+
+    {% endif %}
+
+
 {% endblock %}
+
+{% block javascripts %}
+
+    {{ parent() }}
+    <script>
+        function validerReservation(form) {
+            console.log(form)    ;
+            if(form.elements['entitiesbundle_reservation_depart'].value ==''  )
+            {
+                //alert('champ depart est vide');
+                document.getElementById('error_message').innerText =  "champ depart est vide !";
+                return false ;
+            }
+            else if (form.elements['entitiesbundle_reservation_depart'].value.match(/\d+/g))
+            {
+                //alert('champ depart ne doit pas contenir des chiffres');
+                document.getElementById('error_message').innerText =  "champ depart ne doit pas contenir des chiffres !";
+                return false ;
+            }
+            if(form.elements['entitiesbundle_reservation_arrive'].value ==''  )
+            {
+                //alert('champ depart est vide');
+                document.getElementById('error_message').innerText =  "champ arrive est vide !";
+                return false ;
+            }
+            else if (form.elements['entitiesbundle_reservation_arrive'].value.match(/\d+/g))
+            {
+                //alert('champ arrive ne doit pas contenir des chiffres');
+                document.getElementById('error_message').innerText =  "champ arrive ne doit pas contenir des chiffres !";
+                return false ;
+            }
+            else{
+                return true ;
+            }
+        };
+
+
+    </script>
+{% endblock %}
+

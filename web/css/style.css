@@ -149,13 +149,13 @@
 }
 
 .scroll-top {
-    bottom: 50px;
-    cursor: pointer;
-    display: none;
-    position: fixed;
-    right: 30px;
-    width: 30px;
-    z-index: 9999;
+	bottom: 50px;
+	cursor: pointer;
+	display: none;
+	position: fixed;
+	right: 30px;
+	width: 30px;
+	z-index: 9999;
 }
 
 /*== Theme Defualt CSS ==*/
@@ -1140,7 +1140,7 @@ a.slicknav_btn {
 }
 
 #mobile-app-area::after {
-	background-image: url("assets/img/mobile-app.png");
+	background-image: url("../bundleAdmin/img/mobile-app.png");
 	background-position: center center;
 	background-repeat: no-repeat;
 	background-size: contain;
