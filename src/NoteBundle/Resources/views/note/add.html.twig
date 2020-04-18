@@ -1,0 +1,68 @@
+{% extends 'base.html.twig' %}
+{% block styles %}
+    {{ parent() }}
+    <link rel="stylesheet" type="text/css" href="{{ asset('bundles/starrating/css/rating.css') }}" />
+{% endblock %}
+{% block body %}
+    <section id="page-title-area" class="section-padding overlay">
+        <div class="container">
+            <div class="row">
+                <!-- Page Title Start -->
+                <div class="col-lg-12">
+                    <div class="section-title  text-center">
+                        <h2>Ajouter une note</h2>
+                        <span class="title-line"><i class="fa fa-car"></i></span>
+                        <p>Vous pouvez ajouter les notes ici.</p>
+                    </div>
+                </div>
+                <!-- Page Title End -->
+            </div>
+        </div>
+    </section>
+
+    <section  id="service-page-wrapper" class="section-padding" >
+        <div  class="container text-center" >
+            <div class="col-md-12">
+                <div class="box box-primary">
+                    <div class="box-header">
+                    </div><!-- /.box-header -->
+                    <!-- form start -->
+
+
+                    {{ form_start(f) }}
+                    <div class="box-body" align="centre">
+                        <div class="form-group">
+                            <h2><label for="exampleInputEmail1">Evaluez votre trajet </label></h2>
+                            {{ form_widget(f.note )}}
+
+                        </div>
+
+<br><br>
+                        <div class="form-group">
+                            <h5><label for="exampleInputPassword1" >Nom du chauffeur </label></h5>
+                            {{ form_widget(f.idChauffeur ) }}
+                        </div>
+
+                    </div>
+                    <!-- /.box-body -->
+                    <div type="submit"  >
+                        {{ form_widget (f.Ajouter) }}
+                    </div>
+
+
+                    {{ form_end(f) }}
+                </div><!-- /.box -->
+
+
+            </div>
+        </div>
+    </section>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script src="{{ asset('bundles/starrating/js/rating.js') }}"></script>
+{% endblock %}
+
+

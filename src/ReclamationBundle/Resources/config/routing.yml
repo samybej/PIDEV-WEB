@@ -1,0 +1,16 @@
+reclamation_homepage:
+    path:     /
+    defaults: { _controller: ReclamationBundle:Default:index }
+reclamation_add:
+    path:     /add
+    defaults: { _controller: ReclamationBundle:Reclamation:add }
+reclamation_list:
+    path:     /list
+    defaults: { _controller: ReclamationBundle:Reclamation:list }
+
+reclamation_delete:
+    path:     /delete/{id}
+    defaults: { _controller: ReclamationBundle:Reclamation:delete }
+reclamation_update:
+    path:     /update/{id}
+    defaults: { _controller: ReclamationBundle:Reclamation:update }
