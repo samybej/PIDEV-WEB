@@ -112,15 +112,7 @@ knp_paginator:
         sortable: KnpPaginatorBundle:Pagination:sortable_link.html.twig                         # sort link template
         filtration: '@KnpPaginator/Pagination/filtration.html.twig'  # filters templ
 
-knp_snappy:
-            pdf:
-                enabled:    true
-                binary:     "\"C:\\Program Files\\wkhtmltopdf\\bin\\wkhtmltopdf.exe\""
-                options:    []
-            image:
-                enabled:    true
-                binary:     "\"C:\\Program Files\\wkhtmltopdf\\bin\\wkhtmltoimage.exe\""
-                options:    []
+
 fos_comment:
     db_driver: orm
     class:
