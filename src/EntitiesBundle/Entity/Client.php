@@ -3,12 +3,12 @@
 namespace EntitiesBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-
+use UserBundle\Entity\User;
 /**
  * Client
  *
  * @ORM\Table(name="client")
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="EntitiesBundle\Repository\ClientRepository")
  */
 class Client
 {
@@ -34,6 +34,12 @@ class Client
      * @ORM\Column(name="prenom", type="string", length=20, nullable=false)
      */
     private $prenom;
+
+    /**
+     *@ORM\OneToOne(targetEntity="UserBundle\Entity\User")
+     *@ORM\JoinColumn(name="id_fos", referencedColumnName="id")
+     */
+    private $idFOS;
 
     /**
      * @var integer
@@ -187,6 +193,22 @@ class Client
     }
 
     /**
+     * @return mixed
+     */
+    public function getIdFOS()
+    {
+        return $this->idFOS;
+    }
+
+    /**
+     * @param mixed $idFOS
+     */
+    public function setIdFOS($idFOS)
+    {
+        $this->idFOS = $idFOS;
+    }
+
+    /**
      * @param string $mdp
      */
     public function setMdp($mdp)
@@ -289,6 +311,12 @@ class Client
     {
         $this->cadeau = $cadeau;
     }
+
+    public function __toString()
+    {
+        return (string) $this->id;
+    }
+
 
 
 

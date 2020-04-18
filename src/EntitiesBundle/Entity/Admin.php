@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Admin
  *
  * @ORM\Table(name="admin")
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="EntitiesBundle\Repository\AdminRepository")
  */
 class Admin
 {
@@ -22,11 +22,19 @@ class Admin
     private $login;
 
     /**
+     *@ORM\OneToOne(targetEntity="UserBundle\Entity\User")
+     *@ORM\JoinColumn(name="id_fos", referencedColumnName="id")
+     */
+    private $idFOS;
+
+    /**
      * @var string
      *
      * @ORM\Column(name="mdp", type="string", length=20, nullable=false)
      */
     private $mdp;
+
+
 
     /**
      * @var integer
@@ -41,6 +49,8 @@ class Admin
      * @ORM\Column(name="mail", type="string", length=50, nullable=false)
      */
     private $mail;
+
+
 
 
 }

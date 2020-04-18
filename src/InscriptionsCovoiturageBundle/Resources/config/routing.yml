@@ -1,0 +1,18 @@
+inscriptions_covoiturage_homepage:
+    path:     /rechercher
+    defaults: { _controller: InscriptionsCovoiturageBundle:InscriptionsCovoiturage:Rechercher }
+ajouter_inscription:
+    path:     /ajouter/{id_offre}/{id_conducteur}
+    defaults: { _controller: InscriptionsCovoiturageBundle:InscriptionsCovoiturage:Ajout }
+inscriptions_covoiturage_resultat:
+    path:    /resultat/{departLower}/{arriveLower}/{newDate}
+    defaults: { _controller: InscriptionsCovoiturageBundle:InscriptionsCovoiturage:Resultat }
+inscriptions_covoiturage_supprimer:
+    path:   /annuler/{id}
+    defaults: { _controller: InscriptionsCovoiturageBundle:InscriptionsCovoiturage:Supprimer }
+inscriptions_covoiturage_mesinscriptions:
+    path:   /mesInscriptions/
+    defaults: { _controller: InscriptionsCovoiturageBundle:InscriptionsCovoiturage:ListInscriptions }
+inscriptions_covoiturage_details:
+    path:   /details/{id}
+    defaults: { _controller: InscriptionsCovoiturageBundle:InscriptionsCovoiturage:Details }

@@ -1,0 +1,12 @@
+
+<script>
+    var ask = window.confirm("Si vous supprimez cette offre , vous risquez d'avoir votre compte bloqué");
+    if (ask) {
+        window.location.replace('{{ path('covoiturage_bloquer_delete',{'id':id}) }}')
+    }
+    else
+    {
+        window.location.replace('{{ path('covoiturage_liste') }}')
+    }
+
+</script>

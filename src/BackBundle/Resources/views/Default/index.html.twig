@@ -25,13 +25,11 @@
      <td>{{ reservation.etat }}</td>
      <td>
       <ul>
-       <li>
+
         <a class="btn btn-success" href="{{ path('reservation_show', { 'id': reservation.id }) }}">show</a>
-       </li>
-       <li>
-        <a class="btn btn-warning" href="{{ path('reservation_edit', { 'id': reservation.id }) }}">edit</a>
-       </li>
+       <a class="btn btn-warning" href="{{ path('reservation_edit', { 'id': reservation.id }) }}">edit</a>
       </ul>
+
      </td>
     </tr>
   {% endfor %}

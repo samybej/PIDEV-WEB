@@ -1,0 +1,44 @@
+formation_list:
+    path:     /list
+    defaults: { _controller: FormationBundle:Formation:listFormation }
+
+
+formation_add:
+        path:    /add
+        defaults: { _controller: FormationBundle:Formation:add }
+
+
+formation_delete:
+    path:     /delete/{id}
+    defaults: { _controller: FormationBundle:Formation:delete }
+formation_update:
+    path:     /update/{id}
+    defaults: { _controller: FormationBundle:Formation:update }
+
+
+theemes_list:
+    path:     /listtheemes
+    defaults: { _controller: FormationBundle:Theemes:listFormation }
+
+
+theemes_add:
+    path:    /addtheemes
+    defaults: { _controller: FormationBundle:Theemes:add }
+
+
+theemes_delete:
+    path:     /deletetheemes/{id}
+    defaults: { _controller: FormationBundle:Theemes:delete }
+theemes_update:
+    path:     /updatetheemes/{id}
+    defaults: { _controller: FormationBundle:Theemes:update }
+
+formation_listFront:
+    path:     /list1
+    defaults: { _controller: FormationBundle:Formation:listFormation1}
+
+Postulation_list:
+    path:     /listpostulation
+    defaults: { _controller: FormationBundle:Postulation:listPostulation }
+
+

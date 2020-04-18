@@ -1,0 +1,6 @@
+garage_homepage:
+    path:     /
+    defaults: { _controller: GarageBundle:Default:index }
+garage_add:
+    path:     /addVtoG
+    defaults: { _controller: GarageBundle:Garage:add}

@@ -20,14 +20,14 @@ class ReservationType extends AbstractType
         $builder
         ->add('depart' , TextType::class ,
             array('label' => 'Départ' ,
-                    'attr' => array( 'placeholder' => 'Départ' ,  'oninvalid' => "setCustomValidity('Merci de saisir un endroit de départ')" ) ,
-                'required' => true
+                    'attr' => array( 'placeholder' => 'Départ' ) ,
+                'required' => false
                  )
             )
         ->add('arrive' , TextType::class ,
             array('label' => 'Arrivé' ,
-                'attr' => array( 'placeholder' => 'Arrivé' , 'oninvalid' => "setCustomValidity('Merci de saisir un endroit d'arrivé')" ) ,
-                'required' => true
+                'attr' => array( 'placeholder' => 'Arrivé'  ) ,
+                'required' => false
                 )
         )
             ->add('idChauffeur', EntityType::class, [

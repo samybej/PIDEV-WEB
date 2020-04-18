@@ -3,7 +3,7 @@
 namespace EntitiesBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-
+use UserBundle\Entity\User;
 /**
  * Chauffeur
  *
@@ -128,6 +128,12 @@ class Chauffeur
      * })
      */
     private $idVehicule;
+
+    /**
+     *@ORM\OneToOne(targetEntity="UserBundle\Entity\User")
+     *@ORM\JoinColumn(name="id_fos", referencedColumnName="id")
+     */
+    private $idFOS;
 
     /**
      * @return int
@@ -384,7 +390,6 @@ class Chauffeur
     {
         $this->idVehicule = $idVehicule;
     }
-
 
 
 

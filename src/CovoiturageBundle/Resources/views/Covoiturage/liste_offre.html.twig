@@ -1,0 +1,101 @@
+{% extends 'base.html.twig' %}
+
+{% block styles %}
+    {{ parent() }}
+    <link rel="stylesheet" type="text/css" href="{{ asset('tableResponsive/vendor/bootstrap/css/bootstrap.min.css') }}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{{ asset('tableResponsive/fonts/font-awesome-4.7.0/css/font-awesome.min.css') }}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{{ asset('tableResponsive/vendor/animate/animate.css') }}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{{ asset('tableResponsive/vendor/select2/select2.min.css') }}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{{ asset('tableResponsive/vendor/perfect-scrollbar/perfect-scrollbar.css') }}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{{ asset('tableResponsive/css/util.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('tableResponsive/css/main.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+{% endblock %}
+
+{% block body %}
+
+    <div class="limiter">
+
+        <div class="container-table100">
+
+            <div class="wrap-table100">
+                <div class="table100">
+                    {% if offreList is empty %}
+                    <strong> Tableau vide!</strong>
+                    {% else %}
+                    <table>
+                        <thead>
+                        <tr class="table100-head">
+                            <th class="column1">Nombre de places</th>
+                            <th class="column2">Depart</th>
+                            <th class="column3">Arrivee</th>
+                            <th class="column4">{{ knp_pagination_sortable(offreList , 'Date', 'idOffre.date')}}</th>
+                            <th class="column5">Heure</th>
+                            <th class="column6">Tarif</th>
+                            <th class="column6">Vehicule</th>
+                            <th class="column6">Bagage</th>
+                            <th class="column6">Vitesse</th>
+                            <th class="column6">Nombre D'arrets</th>
+                            <th class="column6">Temps d'arret</th>
+
+                            <th class="column6">Modifier/Supprimer</th>
+
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for offre in offreList %}
+                        <tr>
+                            <td class="column1">{{ offre.idOffre.nbPlace }}</td>
+                            <td class="column2">{{ offre.idOffre.depart }}</td>
+                            <td class="column3">{{ offre.idOffre.arrive }}</td>
+                            <td class="column4">{{ offre.idOffre.date|date("Y-m-d") }}</td>
+                            <td class="column5">{{ offre.idOffre.time }}</td>
+                            <td class="column6">{{ offre.idOffre.tarif }}</td>
+                            <td class="column6">{{ offre.idOffre.vehicule }}</td>
+                            <td class="column6">{{ offre.idOffre.bagage }}</td>
+                            <td class="column6">{{ offre.vitesse }}</td>
+                            <td class="column6">{{ offre.nbrArrets }}</td>
+                            <td class="column6">{{ offre.tmpArret }}</td>
+                            <td class="column6"><a href="{{ path('covoiturage_modifier', { 'offree':offre.idOffre,'i':0}) }}"><i class="fa fa-edit" style="font-size:42px"></i></a><a href="{{ path('covoiturage_supprimer', {'id':offre.idOffre.id,'i':0}) }}"><i class="fa fa-remove" style="font-size:42px"></i></a></td>
+
+                        </tr>
+                        {% endfor %}
+
+                        </tbody>
+                    </table>
+                        {% for message in app.flashes('info')  %}
+                            <div class="alert alert-success">
+                                {{ message }}
+                            </div>
+                        {% endfor %}
+                        <div class="page-pagi">
+                            <nav aria-label="Page navigation example">
+                            {{ knp_pagination_render(offreList) }}
+                            </nav>
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="{{ asset('tableResponsive/vendor/jquery/jquery-3.2.1.min.js') }}"></script>
+    <!--===============================================================================================-->
+    <script src="{{ asset('tableResponsive/vendor/bootstrap/js/popper.js') }}"></script>
+    <script src="{{ asset('tableResponsive/vendor/bootstrap/js/bootstrap.min.js') }}"></script>
+    <!--===============================================================================================-->
+    <script src="{{ asset('tableResponsive/vendor/bootstrap/js/bootstrap.min.js') }}"></script>
+    <!--===============================================================================================-->
+    <script src="{{ asset('tableResponsive/vendor/bootstrap/js/bootstrap.min.js') }}"></script>
+{% endblock %}

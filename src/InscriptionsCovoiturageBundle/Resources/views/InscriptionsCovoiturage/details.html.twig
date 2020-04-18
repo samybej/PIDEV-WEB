@@ -1,0 +1,96 @@
+{% extends 'base.html.twig' %}
+
+{% block styles %}
+    {{ parent() }}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ asset('../vendor/friendsofsymfony/comment-bundle/Resources/public/css/comments.css') }}" type="text/css" />
+{% endblock %}
+
+{% block body %}
+    <section id="car-list-area" class="section-padding">
+        <div class="container">
+            <div class="row">
+                <!-- Car List Content Start -->
+                <div class="col-lg-12">
+                    <div class="car-list-content">
+                        <div class="row">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <div class="section-title  text-center container2">
+                                            <h2 style="size: 70px">Details de l'offre</h2>
+                                            <span class="title-line"><i class="fa fa-car"></i></span>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                        </div>
+                    </div>
+
+                    <div class="car-details-info">
+                        <h4 style="text-decoration: underline">Infos du conducteur</h4>
+                        <p>Nom et Prenom : {{ offre.idClient.nom }} {{ offre.idClient.prenom }}</p>
+                        <p>Nume de telephone: {{ offre.idClient.tel }}</p>
+                        <p>Adresse Mail : {{ offre.idClient.mail }}</p>
+                        <div class="technical-info">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="tech-info-table">
+                                        <table class="table table-bordered">
+                                            <tr>
+                                                <th>Depart</th>
+                                                <td>{{ offre.depart }}</td>
+                                            </tr>
+                                            <tr>
+                                                <th>Destination</th>
+                                                <td>{{ offre.arrive }}</td>
+                                            </tr>
+                                            <tr>
+                                                <th>Heure</th>
+                                                <td>{{offre.time}}</td>
+                                            </tr>
+                                            <tr>
+                                                <th>Tarif</th>
+                                                <td>{{offre.tarif}}</td>
+                                            </tr>
+                                            <tr>
+                                                <th>Vehicule</th>
+                                                <td>{{offre.vehicule}}</td>
+                                            </tr>
+                                            <tr>
+                                                <th>Bagage</th>
+                                                <td>{{offre.bagage}}</td>
+                                            </tr>
+                                            <tr>
+                                                <th>Tarif</th>
+                                                <td>Automatic</td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-6">
+                                    {% include '@FOSComment/Thread/async.html.twig' with {'id': 'foo'} %}
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                </div>
+                <!-- Car List Content End -->
+            </div>
+        </div>
+    </section>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+{% endblock %}

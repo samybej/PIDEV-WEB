@@ -21,6 +21,7 @@ class Vehicule
      */
     private $id;
 
+
     /**
      * @var string
      *
@@ -150,6 +151,11 @@ class Vehicule
     public function setEtat($etat)
     {
         $this->etat = $etat;
+    }
+
+    public function __toString()
+    {
+        return $this->immatriculation;
     }
 
 

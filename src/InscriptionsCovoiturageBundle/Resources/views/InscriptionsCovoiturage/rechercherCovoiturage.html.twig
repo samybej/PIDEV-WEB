@@ -1,0 +1,58 @@
+{% extends 'base.html.twig' %}
+{% block styles %}
+    <link href="{{ asset('css/cssCov.css') }}" rel="stylesheet" />
+{{ parent() }}
+    <link rel="stylesheet" href="{{ asset('vegasSlide/vegas.min.css') }}">
+{% endblock %}
+{% block body %}
+    <section id="slideslow-bg">
+        <div class="container2">
+            <img src="{{ asset('img/covoiturage.jpg') }}" style="width: 100%; height: 140% ;opacity: 0.65">
+
+            <div class="centered2">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <div class="slideshowcontent">
+                        <div class="display-table">
+                            <div class="display-table-cell">
+                                <h1></h1>
+                                <p style="color: #0b0b0b; font-size: 28px">
+
+                                    Notre mission est de rendre le covoiturage plus facile d'accès et faisable en quelques clics.</p>
+                                <span class="title-line"><i class="fa fa-car"></i></span>
+
+                                <div class="book-ur-car">
+                                    {{ form_start(form) }}
+
+                                        <div class="retern-date bookinput-item">
+                                            {{ form_widget(form.date, { 'id': 'endDate2' ,'placeholder': 'La Date'}) }}
+
+                                        </div>
+                                    <div class="retern-date bookinput-item">
+                                            {{ form_widget(form.depart , { 'placeholder': 'Lieu de depart'}) }}
+                                    </div>
+                                    <div class="retern-date bookinput-item">
+                                            {{ form_widget(form.arrive , {'placeholder': 'Lieu d arrivee'}) }}
+                                    </div>
+                                    <div class="retern-date bookinput-item">
+                                        {{ form_widget(form.rechercher) }}
+                                    </div>
+
+                                        {{ form_end(form) }}
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="http://code.jquery.com/jquery.min.js"></script>
+
+{% endblock %}

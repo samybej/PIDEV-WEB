@@ -7,16 +7,18 @@ imports:
     - { resource: "@EntitiesBundle/Resources/config/services.yml" }
     - { resource: "@TransportBundle/Resources/config/services.yml" }
     - { resource: "@TaxiBundle/Resources/config/services.yml" }
-
+    - { resource: "@InscriptionsCovoiturageBundle/Resources/config/services.yml" }
+    - { resource: "@TypeBundle/Resources/config/services.yml" }
     - { resource: "@VehiculeBundle/Resources/config/services.yml" }
+    - { resource: "@GarageBundle/Resources/config/services.yml" }
     - { resource: "@BackBundle/Resources/config/services.yml" }
-
+    - { resource: "@FormationBundle/Resources/config/services.yml" }
 
 # Put parameters here that don't need to change on each machine where the app is deployed
 # https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
     locale: fr
-
+    image_directory: '%kernel.project_dir%/web/uploads/images'
 framework:
     #esi: ~
     templating:
@@ -93,3 +95,52 @@ fos_user:
     registration:
         form:
             type: UserBundle\Form\RegistrationType
+    service:
+        mailer: 'fos_user.mailer.noop'
+
+knp_paginator:
+    page_range:                 5          # default page range used in pagination control
+    default_options:
+        page_name:              page       # page query parameter name
+        sort_field_name:        sort       # sort field query parameter name
+        sort_direction_name:    direction  # sort direction query parameter name
+        distinct:               true       # ensure distinct results, useful when ORM queries are using GROUP BY statements
+        filter_field_name: filterField  # filter field query parameter name
+        filter_value_name: filterValue  # filter value query parameter name
+    template:
+        pagination: KnpPaginatorBundle:Pagination:twitter_bootstrap_v3_pagination.html.twig     # sliding pagination controls template
+        sortable: KnpPaginatorBundle:Pagination:sortable_link.html.twig                         # sort link template
+        filtration: '@KnpPaginator/Pagination/filtration.html.twig'  # filters templ
+fos_comment:
+    db_driver: orm
+    class:
+        model:
+            comment: EntitiesBundle\Entity\Comment
+            thread: EntitiesBundle\Entity\Thread
+    acl: true
+    service:
+        acl:
+            thread:  fos_comment.acl.thread.roles
+            comment: fos_comment.acl.comment.roles
+            vote:    fos_comment.acl.vote.roles
+        manager:
+            thread:  fos_comment.manager.thread.acl
+            comment: fos_comment.manager.comment.acl
+            vote:    fos_comment.manager.vote.acl
+    acl_roles:
+        comment:
+            create: IS_AUTHENTICATED_ANONYMOUSLY
+            view: IS_AUTHENTICATED_ANONYMOUSLY
+            edit: ROLE_ADMIN
+            delete: ROLE_ADMIN
+        thread:
+            create: IS_AUTHENTICATED_ANONYMOUSLY
+            view: IS_AUTHENTICATED_ANONYMOUSLY
+            edit: ROLE_ADMIN
+            delete: ROLE_ADMIN
+
+
+assetic:
+    bundles:
+        - FOSCommentBundle
+        - FpJsFormValidatorBundle

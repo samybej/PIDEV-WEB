@@ -198,7 +198,7 @@ img {
   background-color: #0073b7 !important;
 }
 .bg-light-blue {
-  background-color: #3c8dbc !important;
+  background-color: #ffd000 !important;
 }
 .bg-green {
   background-color: #00a65a !important;
@@ -879,7 +879,7 @@ body > .header .logo .icon {
 .navbar-nav > .user-menu > .dropdown-menu > li.user-header > p {
   z-index: 5;
   color: #f9f9f9;
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(0, 0, 0, 0.8);
   font-size: 17px;
   text-shadow: 2px 2px 3px #333333;
   margin-top: 10px;
@@ -905,7 +905,7 @@ body > .header .logo .icon {
   color: #0073b7;
 }
 .navbar-nav > .user-menu > .dropdown-menu > li.user-footer {
-  background-color: #f9f9f9;
+  background-color: #333;
   padding: 10px;
 }
 .navbar-nav > .user-menu > .dropdown-menu > li.user-footer:before,
@@ -2646,7 +2646,7 @@ Component: timeline
 }
 .skin-black .sidebar > .sidebar-menu > li > a:hover,
 .skin-black .sidebar > .sidebar-menu > li.active > a {
-  color: #f6f6f6;
+  color: #ffd000;
   background: #444;
 }
 .skin-black .sidebar > .sidebar-menu > li > .treeview-menu {
@@ -2656,9 +2656,11 @@ Component: timeline
 .skin-black .left-side {
   background: #333;
 }
+
 .skin-black .sidebar a {
-  color: #eee;
+  color: #ffd000;
 }
+
 .skin-black .sidebar a:hover {
   text-decoration: none;
 }
@@ -2708,7 +2710,7 @@ Component: timeline
   border-left: 0;
 }
 .skin-black .sidebar-form .btn {
-  color: #999;
+  color: #ffd000;
   -webkit-border-top-left-radius: 0 !important;
   -webkit-border-top-right-radius: 2px !important;
   -webkit-border-bottom-right-radius: 2px !important;

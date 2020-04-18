@@ -1,0 +1,9 @@
+type_homepage:
+    path:     /
+    defaults: { _controller: TypeBundle:Default:index }
+type_ajout:
+    path:   /ajout/{id}
+    defaults: { _controller: TypeBundle:Type:Ajout }
+type_modifier:
+    path:   /modifier/{id}
+    defaults: { _controller: TypeBundle:Type:Modifier }

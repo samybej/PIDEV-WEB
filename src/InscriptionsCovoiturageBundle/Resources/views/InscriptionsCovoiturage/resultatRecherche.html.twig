@@ -1,0 +1,71 @@
+{% extends 'base.html.twig' %}
+
+{% block styles %}
+    {{ parent() }}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+{% endblock %}
+
+{% block body %}
+    <section id="car-list-area" class="section-padding">
+        <div class="container">
+            <div class="row">
+                <!-- Car List Content Start -->
+                <div class="col-lg-12">
+                    <div class="car-list-content">
+                        <div class="row">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <div class="section-title  text-center container2">
+                                            <h2 style="size: 70px">Resultat De La Recherche</h2>
+                                            <span class="title-line"><i class="fa fa-car"></i></span>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                        {% for l in ListeRecherche %}
+                            <!-- Single Car Start -->
+                            <div class="col-lg-6 col-md-6">
+                                <div class="single-car-wrap">
+
+                                    <div class="car-list-info without-bar">
+                                        <h2><a href="#"> {{ l.depart }} <span class="glyphicon glyphicon-arrow-right"></span> {{ l.arrive }}</a></h2>
+                                        <h5>{{ l.tarif }}$ / {{ l.nbPlace }} places restantes</h5>
+                                        <p>Nom du conducteur : {{ l.idClient.nom }} {{ l.idClient.prenom }}</p>
+                                        <p>Bagage : {{ l.bagage }}  </p>
+                                        <p>Heure : {{ l.time }}  </p>
+
+                                        <a href="{{ path('ajouter_inscription', {'id_offre':l.id ,'id_conducteur':l.idOffreur}) }}" class="rent-btn">S'inscrire</a>
+                                        <a href="#" class="rent-btn">Details</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Single Car End -->
+                        {% endfor %}
+
+
+                        </div>
+                    </div>
+
+                    <!-- Page Pagination Start -->
+                    <div class="page-pagi">
+                        <nav aria-label="Page navigation example">
+                            {{ knp_pagination_render(ListeRecherche) }}
+                        </nav>
+                    </div>
+                    <!-- Page Pagination End -->
+                </div>
+                <!-- Car List Content End -->
+            </div>
+        </div>
+    </section>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+{% endblock %}

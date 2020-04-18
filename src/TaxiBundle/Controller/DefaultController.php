@@ -65,12 +65,17 @@ class DefaultController extends Controller
 
         $form->handleRequest($request);
 
+        $utilisateur = $this->getUser();
+
+
+        $client = $this->getDoctrine()->getRepository(Client::class)->getIdClient($utilisateur);
+
         if ($form->isSubmitted() && $form->isValid()) {
 
             /**** Get current connected user ***/
-            $client1 = new Client();
-            $client1 = $em->getRepository('EntitiesBundle:Client')->find(2);
-            $reservation->setIdClient($client1);
+            //$client1 = new Client();
+            //$client1 = $em->getRepository('EntitiesBundle:Client')->find(2);
+            $reservation->setIdClient($client[0]);
 
             /********* *****/
 
@@ -97,11 +102,11 @@ class DefaultController extends Controller
             $mailer = new \Swift_Mailer($transport);
 
 // Create a message
-            $body = 'Hello '. $client1->getNom(). ', <p>Votre réservation a été accepté <span style="color:#ff0010;">Driver</span>.</p>';
+            $body = 'Hello '. $client[0]->getPrenom(). ', <p>Votre réservation a été accepté <span style="color:#ff0010;">Driver</span>.</p>';
 
             $message = (new \Swift_Message('Driver Application'))
                 ->setFrom(['mohamediyadhtajouri@gmail.com' => 'Driver'])
-                ->setTo([$client1->getMail()])
+                ->setTo([$client[0]->getMail()])
                 ->setBody($body)
                 ->setContentType('text/html')
             ;

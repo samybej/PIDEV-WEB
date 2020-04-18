@@ -1,0 +1,78 @@
+{% extends 'back.html.twig' %}
+{% block body %}
+    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+
+
+    <div class="box">
+        <div class="box-header">
+            <h3 class="box-title">Liste des formations</h3>
+        </div><!-- /.box-header -->
+        <div class="box-body table-responsive">
+            <div id="example1_wrapper" class="dataTables_wrapper form-inline" role="grid">
+
+                <table id="example1" class="table table-bordered table-striped dataTable" aria-describedby="example1_info">
+                    <thead>
+                    <tr role="row">
+                        <th class="sorting_desc" role="columnheader" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" style="width: 81px;" aria-sort="descending" aria-label="Rendering engine: activate to sort column ascending">ID</th>
+                        <th class="sorting" role="columnheader" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" style="width: 167px;" aria-label="Browser: activate to sort column ascending">Date Debut</th>
+                        <th class="sorting" role="columnheader" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" style="width: 110px;" aria-label="Browser: activate to sort column ascending">Date Fin</th>
+                        <th class="sorting" role="columnheader" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" style="width: 84px;" aria-label="Engine version: activate to sort column ascending">Thème</th>
+                        <th class="sorting" role="columnheader" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" style="width: 98px;" aria-label="CSS grade: activate to sort column ascending">Time</th>
+                        <th class="sorting" role="columnheader" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" style="width: 98px;" aria-label="CSS grade: activate to sort column ascending">Lieu</th>
+                        <th class="sorting" role="columnheader" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" style="width: 98px;" aria-label="CSS grade: activate to sort column ascending">Nombre de place</th>
+                        <th class="sorting" role="columnheader" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" style="width: 78px;" aria-label="CSS grade: activate to sort column ascending">Modifier</th>
+                        <th class="sorting" role="columnheader" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" style="width: 78px;" aria-label="CSS grade: activate to sort column ascending">Supprimer</th>
+                    </tr>
+
+                    </thead>
+
+                    <tfoot>
+                    <tr>
+                        <th rowspan="1" colspan="1">ID</th>
+                        <th rowspan="1" colspan="1">Date Debut</th>
+                        <th rowspan="1" colspan="1">Date Fin</th>
+                        <th rowspan="1" colspan="1">Thème</th>
+                        <th rowspan="1" colspan="1">Heure</th>
+                        <th rowspan="1" colspan="1">Lieu</th>
+                        <th rowspan="1" colspan="1">Nombre de place</th>
+
+                        <th rowspan="1" colspan="1">Modifier</th>
+                        <th rowspan="1" colspan="1">Supprimer</th>
+                    </tr>
+                    </tfoot>
+                    <tbody role="alert" aria-live="polite" aria-relevant="all">
+                    <tr class="odd">
+                        {% for l in list %}
+                    <tr>
+                        <td class="  sorting_1">{{ l.id }}</td>
+                        <td class=" ">{{ l.dateDebut|date('d/m/y') }}</td>
+                        <td class=" ">{{ l.dateFin|date('d/m/y')}}</td>
+                        <td class=" ">{{ l.typeTheme.titre}}</td>
+                        <td class=" ">{{ l.time }}</td>
+                        <td class=" ">{{ l.lieu }}</td>
+
+                        <td class=" ">{{ l.nbrPlace }}</td>
+
+                        <td class=" ">
+                            <a href="{{ path("formation_update", {"id":l.id}) }}" class="btn btn-mini btn-info">
+                                <i class="icon-edit"> </i>
+                            </a>
+                        </td>
+                        <td class=" ">
+                            <a href="{{ path("formation_delete", {"id":l.id}) }}" class="btn btn-mini btn-danger">
+                                <i class="icon-trash"></i>
+                            </a>
+                        </td>
+
+
+                        {% endfor %}  </tr>
+                    </tr>
+
+                    </tbody>
+                </table>
+
+            </div>
+        </div><!-- /.box-body -->
+    </div>
+{% endblock %}

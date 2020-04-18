@@ -24,7 +24,18 @@ class AppKernel extends Kernel
             new TransportBundle\TransportBundle(),
             new TaxiBundle\TaxiBundle(),
             new VehiculeBundle\VehiculeBundle(),
+            new FormationBundle\FormationBundle(),
             new BackBundle\BackBundle(),
+            new TypeBundle\TypeBundle(),
+            new CMEN\GoogleChartsBundle\CMENGoogleChartsBundle(),
+            new Symfony\Bundle\AsseticBundle\AsseticBundle(),
+            new FOS\RestBundle\FOSRestBundle(),
+            new FOS\CommentBundle\FOSCommentBundle(),
+            new JMS\SerializerBundle\JMSSerializerBundle($this),
+            new Fp\JsFormValidatorBundle\FpJsFormValidatorBundle(),
+            new InscriptionsCovoiturageBundle\InscriptionsCovoiturageBundle(),
+            new Knp\Bundle\PaginatorBundle\KnpPaginatorBundle(),
+            new GarageBundle\GarageBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {
