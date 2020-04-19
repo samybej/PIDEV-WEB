@@ -58,7 +58,7 @@
 <script src="https://cdn.rawgit.com/PascaleBeier/bootstrap-validate/v2.2.0/dist/bootstrap-validate.js" ></script>
 <script>
     bootstrapValidate('#imm','regex:^([0-9]{3})Tunis([0-9]{4})$:Immatriculation doit être 000Tunis0000')
-    bootstrapValidate('#ass','numeric:entrez une valeur numérique')
+    bootstrapValidate('#ass','regex:^([0-9]{8}):Valeur numérique de 8 chiffres')
 
 </script>
 <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.1/dist/jquery.validate.min.js"></script>
