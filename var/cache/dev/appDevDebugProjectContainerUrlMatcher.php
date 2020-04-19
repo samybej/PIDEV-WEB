@@ -190,7 +190,7 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
         if (0 === strpos($pathinfo, '/Back')) {
             // back_homepage
             if ('/Back' === $trimmedPathinfo) {
-                $ret = array (  '_controller' => 'BackBundle\\Controller\\DefaultController::reservations_allAction',  '_route' => 'back_homepage',);
+                $ret = array (  '_controller' => 'BackBundle\\Controller\\DefaultController::backAction',  '_route' => 'back_homepage',);
                 if ('/' === substr($pathinfo, -1)) {
                     // no-op
                 } elseif ('GET' !== $canonicalMethod) {

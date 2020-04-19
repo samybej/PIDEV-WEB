@@ -1,6 +1,6 @@
 back_homepage:
     path:     /
-    defaults: { _controller: BackBundle:Default:reservations_all }
+    defaults: { _controller: BackBundle:Default:back }
 
 taxis_back:
     path:   /taxi
