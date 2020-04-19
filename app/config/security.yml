@@ -35,6 +35,7 @@ security:
         - { path: ^/InscriptionsCovoiturage/ajouter/, role: ROLE_USER}
         - { path: ^/InscriptionsCovoiturage/annuler/, role: ROLE_USER}
         - { path: ^/InscriptionsCovoiturage/mesInscriptions/, role: ROLE_USER}
+        - { path: ^/covoiturage/statistiques/, role: ROLE_ADMIN}
         - { path: ^/taxi/, role: ROLE_USER }
         - { path: ^/garage/, role: ROLE_ADMIN }
         - { path: ^/vehicule/, role: ROLE_ADMIN}

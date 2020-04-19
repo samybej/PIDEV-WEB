@@ -52,7 +52,11 @@
                             {% endif %}
 
                             <div>
+                                {% if is_granted('IS_AUTHENTICATED_FULLY') %}
                                 <a href="{{ logout_path('main') }}">Logout</a>
+                                {% else %}
+                                <a class="link" href="{{ logout_path('main') }}">Login</a>
+                                {% endif %}
                             </div>
                         </div>
                     </div>
