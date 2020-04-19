@@ -5,8 +5,10 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Resources/FOSUserBundle/views/Registration/register_content.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/FOSUserBundle/views/Registration/register_content.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Resources/FOSUserBundle/views/Security/login_content.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/FOSUserBundle/views/Security/login_content.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/config/services.yml" beforeDir="false" afterPath="$PROJECT_DIR$/app/config/services.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/index.csv" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/profiler/index.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/var/logs/dev.log" beforeDir="false" afterPath="$PROJECT_DIR$/var/logs/dev.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/friendsofsymfony/user-bundle/Controller/RegistrationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/friendsofsymfony/user-bundle/Controller/RegistrationController.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -205,7 +207,7 @@
       <workItem from="1587226245211" duration="3028000" />
       <workItem from="1587236011942" duration="13906000" />
       <workItem from="1587259177128" duration="221000" />
-      <workItem from="1587296906784" duration="5736000" />
+      <workItem from="1587296906784" duration="9213000" />
     </task>
     <task id="LOCAL-00001" summary="fix accueil">
       <created>1587254039826</created>
@@ -242,7 +244,14 @@
       <option name="project" value="LOCAL" />
       <updated>1587259292742</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="fix page login">
+      <created>1587302804371</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1587302804371</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -252,7 +261,8 @@
     <MESSAGE value="reclamation + note Fix" />
     <MESSAGE value="fix accueil" />
     <MESSAGE value="fix back" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix back" />
+    <MESSAGE value="fix page login" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix page login" />
   </component>
   <component name="WindowStateProjectService">
     <state x="552" y="182" key="#Notifications" timestamp="1586972556080">
@@ -271,10 +281,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="610" y="375" width="791" height="463" key="#com.jetbrains.php.framework.ui.FailedToParseDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1587115589088" />
-    <state x="339" y="0" width="967" height="921" key="CommitChangelistDialog2" timestamp="1587259289066">
+    <state x="339" y="0" width="967" height="921" key="CommitChangelistDialog2" timestamp="1587302786948">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="339" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1587259289066" />
+    <state x="339" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1587302786948" />
     <state x="476" y="0" width="967" height="921" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1587229938879" />
     <state x="480" y="237" key="ComposerCompositePathDialog" timestamp="1587297130050">
       <screen x="0" y="0" width="1366" height="728" />
