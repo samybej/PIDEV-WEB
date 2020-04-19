@@ -15,6 +15,14 @@
     left: 50%;
     transform: translate(-50%, -50%);
 }
+
+.centered3 {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
 .select2 {
     color: black;
     font-size: 21px;
