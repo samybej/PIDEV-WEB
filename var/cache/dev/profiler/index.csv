@@ -201,3 +201,15 @@ dfd27e,::1,GET,http://localhost/PIDEV-WEB/web/app_dev.php/Back/,1587257958,,200
 4eff16,::1,GET,http://localhost/PIDEV-WEB/web/app_dev.php/Back/,1587258190,,200
 4fba9b,::1,GET,http://localhost/PIDEV-WEB/web/app_dev.php/Back/,1587258587,,200
 57476c,::1,GET,http://localhost/PIDEV-WEB/web/app_dev.php/vehicule/list,1587258594,,200
+61084b,::1,GET,http://localhost/PIDEV-WEB/web/app_dev.php/vehicule/list,1587258918,,200
+82c7b2,::1,GET,http://localhost/PIDEV-WEB/web/app_dev.php/Back,1587258918,,301
+e14c36,::1,GET,http://localhost/PIDEV-WEB/web/app_dev.php/Back/,1587258920,,200
+f11686,::1,GET,http://localhost/PIDEV-WEB/web/app_dev.php/Back/,1587258961,,200
+5a73c9,::1,GET,http://localhost/PIDEV-WEB/web/app_dev.php/vehicule/add,1587258968,,200
+80b265,::1,GET,http://localhost/PIDEV-WEB/web/app_dev.php/logout,1587258976,,302
+22acc3,::1,GET,http://localhost/PIDEV-WEB/web/app_dev.php/login,1587258977,,200
+88ec82,::1,POST,http://localhost/PIDEV-WEB/web/app_dev.php/login_check,1587258987,,302
+0f6062,::1,GET,http://localhost/PIDEV-WEB/web/app_dev.php/accueil,1587258988,,301
+c5a0c7,::1,GET,http://localhost/PIDEV-WEB/web/app_dev.php/accueil/,1587258990,,200
+801ee5,::1,GET,http://localhost/PIDEV-WEB/web/app_dev.php/accueil,1587259001,,301
+5ed8cc,::1,GET,http://localhost/PIDEV-WEB/web/app_dev.php/accueil/,1587259003,,200

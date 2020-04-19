@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="f478919a-a688-4300-ac7e-583e24eecf4d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/index.csv" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/profiler/index.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/logs/dev.log" beforeDir="false" afterPath="$PROJECT_DIR$/var/logs/dev.log" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -201,7 +199,7 @@
       <workItem from="1587148121937" duration="2692000" />
       <workItem from="1587209514951" duration="2603000" />
       <workItem from="1587226245211" duration="3028000" />
-      <workItem from="1587236011942" duration="13784000" />
+      <workItem from="1587236011942" duration="13906000" />
     </task>
     <task id="LOCAL-00001" summary="fix accueil">
       <created>1587254039826</created>
@@ -224,7 +222,14 @@
       <option name="project" value="LOCAL" />
       <updated>1587258311029</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="fix back">
+      <created>1587258838732</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1587258838732</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -253,10 +258,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="610" y="375" width="791" height="463" key="#com.jetbrains.php.framework.ui.FailedToParseDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1587115589088" />
-    <state x="339" y="0" width="967" height="921" key="CommitChangelistDialog2" timestamp="1587258278300">
+    <state x="339" y="0" width="967" height="921" key="CommitChangelistDialog2" timestamp="1587258836821">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="339" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1587258278300" />
+    <state x="339" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1587258836821" />
     <state x="476" y="0" width="967" height="921" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1587229938879" />
     <state x="480" y="237" key="ComposerCompositePathDialog" timestamp="1587247632740">
       <screen x="0" y="0" width="1366" height="728" />
