@@ -59,29 +59,6 @@ class Type
         return $this->id;
     }
 
-    /**
-     * Set type
-     *
-     * @param string $type
-     *
-     * @return Type
-     */
-    public function setType($type)
-    {
-        $this->type = $type;
-    
-        return $this;
-    }
-
-    /**
-     * Get type
-     *
-     * @return string
-     */
-    public function getType()
-    {
-        return $this->type;
-    }
 
     /**
      * Set vitesse

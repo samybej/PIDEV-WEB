@@ -1,0 +1,6 @@
+api_homepage:
+    path:     /
+    defaults: { _controller: ApiBundle:Default:index }
+api_liste_covoiturage:
+    path:     /covoiturages
+    defaults: { _controller: ApiBundle:Api:getOffresDuClient }

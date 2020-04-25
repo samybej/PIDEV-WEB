@@ -39,6 +39,7 @@ class AppKernel extends Kernel
             new NoteBundle\NoteBundle(),
             new ReclamationBundle\ReclamationBundle(),
             new blackknight467\StarRatingBundle\StarRatingBundle(),
+            new ApiBundle\ApiBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {
