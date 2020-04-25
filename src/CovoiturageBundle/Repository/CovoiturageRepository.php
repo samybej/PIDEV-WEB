@@ -22,7 +22,7 @@ class CovoiturageRepository extends \Doctrine\ORM\EntityRepository
     public function recupererCovoiturage($client)
     {
         $qb = $this->getEntityManager()->
-            createQuery("select o,t from EntitiesBundle:Type t JOIN t.idOffre o WHERE o.idOffreur= :idO and o.date >= CURRENT_DATE()")
+            createQuery("select o,t from EntitiesBundle:Type t JOIN t.idOffre o WHERE o.idOffreur= :idO")
             ->setParameter('idO', $client);
 
         return $query = $qb->getResult();

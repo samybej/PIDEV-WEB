@@ -8,6 +8,9 @@ use EntitiesBundle\Entity\Type;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Serializer\Encoder\JsonEncoder;
+use Symfony\Component\Serializer\Normalizer\DateTimeNormalizer;
 use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
 use Symfony\Component\Serializer\Serializer;
 
@@ -19,19 +22,20 @@ class ApiController extends Controller
         $utilisateur = $this->getUser();
 
         $client = $this->getDoctrine()->getRepository(Client::class)->getIdClient($utilisateur);
-
         $offre = $this->getDoctrine()->getRepository(Offre::class)->recupererCovoiturage($client[0]);
-        $normalizer = new ObjectNormalizer();
-        $normalizer->setCircularReferenceLimit(2);
 
-        $normalizer->setCircularReferenceHandler(function ($object){
+        $normalizer = array(new DateTimeNormalizer("yy-m-d") ,new ObjectNormalizer());
+        $normalizer[1]->setCircularReferenceLimit(2);
+
+        $normalizer[1]->setCircularReferenceHandler(function ($object){
             return $object->getId();
         });
 
-        $serializer = new Serializer([$normalizer]);
-        $formatted = $serializer->normalize($offre);
 
-        return new JsonResponse($formatted);
+        $serializer = new Serializer($normalizer,array(new JsonEncoder()));
+        $formatted = $serializer->serialize($offre,'json');
+
+        return new Response($formatted);
     }
 
     public function addCovoiturage(Request $request)
