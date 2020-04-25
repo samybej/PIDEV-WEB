@@ -16,7 +16,7 @@ class NoteType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('note', RatingType::class, ['label' => 'Rating'])->add('idChauffeur')-> add('Ajouter', SubmitType::class);
+        $builder->add('note', RatingType::class, ['label' => 'Rating'])->add('idChauffeur')-> add('Ajouter', SubmitType::class,['attr'=>['class'=>'btn btn-primary' ]]);
     }/**
      * {@inheritdoc}
      */

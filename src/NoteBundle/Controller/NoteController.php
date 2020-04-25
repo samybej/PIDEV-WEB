@@ -31,9 +31,14 @@ class NoteController extends Controller
             {
                 return $this->render('@Note/note/note_erreur.html.twig');
             }
+
             $em=$this->getDoctrine()->getManager();
             $em-> persist($note);
             $em-> flush();
+            if ($form->get('note')->getData() < 4 ) {
+                return $this->redirectToRoute('reclamation_add');
+
+            }
             //return $this->redirectToRoute("club_list1");
 
         }

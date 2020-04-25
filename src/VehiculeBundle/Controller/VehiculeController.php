@@ -62,6 +62,7 @@ class VehiculeController extends Controller
         $vehicule  = $this->getDoctrine()->getRepository(Vehicule::class)->find($id);
         $form = $this->createForm(VehiculeType::class,$vehicule);
         $form->handleRequest($request);
+
         if ($form->isSubmitted() && $form->isValid())
         {
             $em=$this->getDoctrine()->getManager();

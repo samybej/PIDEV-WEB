@@ -1,5 +1,8 @@
 {% extends 'base.html.twig' %}
 {% trans_default_domain 'FOSUserBundle' %}
+{% block styles %}
+    {{ parent() }}
+{% endblock %}
 {%  block body %}
 <!DOCTYPE html>
 <html class="bg-black">
@@ -12,7 +15,7 @@
     <!-- font Awesome -->
     <link href="{{ asset('bundleAdmin/css/font-awesome.min.css')}}" rel="stylesheet" type="text/css" />
     <!-- Theme style -->
-    <link href="{{ asset('bundleAdmin//css/AdminLTE.css')}}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('bundleAdmin//css/AdminlTE.css')}}" rel="stylesheet" type="text/css" />
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -63,8 +66,8 @@
         </div>
         <div class="footer">
             <input type="submit" class="btn bg-light-blue btn-block" id="_submit" name="_submit" value="{{ 'security.login.submit'|trans }}" />
-            <p><a href="#">J'ai oublié mon mot de passe</a></p>
-            <a href="../register" class="text-center">S'inscrire en tant que nouveau client</a>
+
+            <a href="register" class="text-center">S'inscrire en tant que nouveau client</a>
         </div>
     </form>
 
@@ -109,4 +112,8 @@
 
 </html>
 
+{% endblock %}
+
+{% block javascripts %}
+{{ parent() }}
 {% endblock %}

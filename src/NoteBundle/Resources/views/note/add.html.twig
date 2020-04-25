@@ -1,7 +1,7 @@
 {% extends 'base.html.twig' %}
 {% block styles %}
     {{ parent() }}
-    <link rel="stylesheet" type="text/css" href="{{ asset('bundles/starrating/css/rating.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('bundles/starrating/css/ratings.css') }}" />
 {% endblock %}
 {% block body %}
     <section id="page-title-area" class="section-padding overlay">
@@ -32,15 +32,18 @@
                     {{ form_start(f) }}
                     <div class="box-body" align="centre">
                         <div class="form-group">
-                            <h2><label for="exampleInputEmail1">Evaluez votre trajet </label></h2>
-                            {{ form_widget(f.note )}}
+                            <h2>
+                                <label for="exampleInputEmail1">Evaluez votre trajet  <br> <br></label>
+                            </h2>
+
 
                         </div>
+                        <div>  {{ form_widget(f.note )}}</div>
 
-<br><br>
+<br>
                         <div class="form-group">
                             <h5><label for="exampleInputPassword1" >Nom du chauffeur </label></h5>
-                            {{ form_widget(f.idChauffeur ) }}
+                            {{ form_widget(f.idChauffeur , { 'attr': { 'class':'form-control' , 'placeholder': 'Chauffeur'} }) }}
                         </div>
 
                     </div>

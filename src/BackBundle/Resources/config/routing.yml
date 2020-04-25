@@ -18,3 +18,7 @@ transportbackshow:
     path:     /{id}/showTr
     defaults: { _controller: BackBundle:Default:transport }
     methods:  GET
+
+all_reservation:
+    path:   /reservations
+    defaults: { _controller: BackBundle:Default:reservations_all }
