@@ -15,7 +15,7 @@ class ReclamationType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('message')->add('dateRec')->add('type')->add('idChauffeur')-> add('Ajouter', SubmitType::class);
+        $builder->add('message')->add('type')->add('idChauffeur')   ->add('Ajouter', SubmitType::class,['attr'=>['class'=>'btn btn-primary' ]]);
     }/**
      * {@inheritdoc}
      */

@@ -38,8 +38,9 @@ class AppKernel extends Kernel
             new GarageBundle\GarageBundle(),
             new NoteBundle\NoteBundle(),
             new ReclamationBundle\ReclamationBundle(),
-            new blackknight467\StarRatingBundle\StarRatingBundle(),
+            new Knp\Bundle\SnappyBundle\KnpSnappyBundle(),
             new ApiBundle\ApiBundle(),
+            new blackknight467\StarRatingBundle\StarRatingBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {

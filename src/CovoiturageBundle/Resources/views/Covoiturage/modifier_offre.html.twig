@@ -24,7 +24,7 @@
                 </div>
             </div>
         </div>
-        <div class="centered3">
+        <div class="centered2">
             {% set difference = date(offre.date|date('Y-m-d')).diff(date('now'|date('Y-m-d'))) %}
             {% set leftDays = difference.days %}
             {% if leftDays < 2 and offre.nbPlace < 2 and  i == 0  %}

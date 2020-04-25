@@ -32,24 +32,20 @@
                     <div class="box-body" align="centre" >
                         <div class="form-group">
                            <h5><label for="exampleInputEmail1">Description</label></h5>
-                            {{ form_widget(f.message , { 'attr': { 'placeholder': 'Description'}}) }}
+                            {{ form_widget(f.message , { 'attr': { 'class':'form-control','placeholder': 'Description'}}) }}
                         </div>
                         <br>
-                        <div class="form-group">
-                            <h5><label for="exampleInputdate">DateRec</label></h5>
-                            {{ form_widget(f.dateRec , { 'attr': { 'placeholder': 'dateRec'}}) }}
-                        </div>
-                        <br>
+
                         <div class="form-group">
                             <h5><label  for="exampleInputPassword1" >A Propos</label></h5>
-                            {{ form_widget(f.type , { 'attr': { 'placeholder': 'Application/Chauffeur'}}) }}
+                            {{ form_widget(f.type , { 'attr': { 'class':'form-control', 'placeholder': 'Application/Chauffeur'}}) }}
                         </div>
 
 
 <br>
                         <div class="form-group">
                             <h5><label for="exampleInputPassword1">Nom du chauffeur</label></h5>
-                            {{ form_widget(f.idChauffeur , { 'attr': { 'placeholder': 'idChauffeur'}}) }}
+                            {{ form_widget(f.idChauffeur , { 'attr': {'class':'form-control', 'placeholder': 'idChauffeur'}}) }}
                         </div>
 
                     </div>

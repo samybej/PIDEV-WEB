@@ -51,7 +51,7 @@ class FormationController extends Controller
             $em = $this->getDoctrine()->getManager();
             $em->persist($formation);
             $em->flush();
-            return $this - redirectToRoute("formation_list");
+            return $this->redirectToRoute("formation_list");
         }
 
         return $this->render('@Formation/Formation/update.html.twig', array('f' => $form->createView()));

@@ -158,5 +158,10 @@ class Reclamation
         $this->idClient = $idClient;
     }
 
+    public function __construct()
+    {
+        $this->setDateRec(new \DateTime('now'));
+    }
+
 
 }
