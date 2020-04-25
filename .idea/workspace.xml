@@ -19,13 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f478919a-a688-4300-ac7e-583e24eecf4d" name="Default Changelist" comment="1er essai API">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ApiBundle/Controller/ApiController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/ApiBundle/Controller/ApiController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CovoiturageBundle/Repository/CovoiturageRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/CovoiturageBundle/Repository/CovoiturageRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/index.csv" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/profiler/index.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/logs/dev.log" beforeDir="false" afterPath="$PROJECT_DIR$/var/logs/dev.log" afterDir="false" />
-    </list>
+    <list default="true" id="f478919a-a688-4300-ac7e-583e24eecf4d" name="Default Changelist" comment="2eme essai API" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -224,7 +218,7 @@
       <workItem from="1587296906784" duration="9213000" />
       <workItem from="1587832590484" duration="7377000" />
       <workItem from="1587848874690" duration="3167000" />
-      <workItem from="1587852670701" duration="3933000" />
+      <workItem from="1587852670701" duration="4108000" />
     </task>
     <task id="LOCAL-00001" summary="fix accueil">
       <created>1587254039826</created>
@@ -275,7 +269,14 @@
       <option name="project" value="LOCAL" />
       <updated>1587844895945</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="2eme essai API">
+      <created>1587857081294</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1587857081294</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -299,7 +300,8 @@
     <MESSAGE value="fix back" />
     <MESSAGE value="fix page login" />
     <MESSAGE value="1er essai API" />
-    <option name="LAST_COMMIT_MESSAGE" value="1er essai API" />
+    <MESSAGE value="2eme essai API" />
+    <option name="LAST_COMMIT_MESSAGE" value="2eme essai API" />
   </component>
   <component name="WindowStateProjectService">
     <state x="552" y="182" key="#Notifications" timestamp="1586972556080">
@@ -360,10 +362,10 @@
     </state>
     <state x="0" y="38" key="MergeDialog/0.0.1366.728@0.0.1366.728" timestamp="1587246208866" />
     <state x="0" y="54" width="1920" height="856" key="MergeDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1587150013750" />
-    <state x="88" y="60" width="889" height="567" key="MultipleFileMergeDialog" timestamp="1587258773975">
+    <state x="88" y="60" width="889" height="567" key="MultipleFileMergeDialog" timestamp="1587857202092">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="88" y="60" width="889" height="567" key="MultipleFileMergeDialog/0.0.1366.728@0.0.1366.728" timestamp="1587258773975" />
+    <state x="88" y="60" width="889" height="567" key="MultipleFileMergeDialog/0.0.1366.728@0.0.1366.728" timestamp="1587857202092" />
     <state x="123" y="85" width="1558" height="726" key="MultipleFileMergeDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1587226378547" />
     <state x="727" y="355" key="NewPhpClassDialog" timestamp="1586625071659">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -383,10 +385,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="798" y="297" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1587230040612" />
-    <state x="549" y="308" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1587297008024">
+    <state x="549" y="308" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1587857166697">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="549" y="308" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.728@0.0.1366.728" timestamp="1587297008024" />
+    <state x="549" y="308" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.728@0.0.1366.728" timestamp="1587857166697" />
     <state x="771" y="440" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1587226353248" />
     <state x="542" y="165" width="672" height="474" key="run.anything.popup" timestamp="1587835755982">
       <screen x="0" y="0" width="1366" height="728" />
