@@ -139,6 +139,11 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
                     return $this->mergeDefaults(array_replace($matches, ['_route' => 'api_ajout_covoiturage']), array (  '_controller' => 'ApiBundle\\Controller\\ApiController::addCovoiturageAction',));
                 }
 
+                // api_ajout_type
+                if (0 === strpos($pathinfo, '/api/type') && preg_match('#^/api/type/(?P<vitesse>[^/]++)/(?P<nbrArrets>[^/]++)/(?P<tmpArret>[^/]++)/(?P<idOffre>[^/]++)$#sD', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, ['_route' => 'api_ajout_type']), array (  '_controller' => 'ApiBundle\\Controller\\ApiTypeController::addTypeAction',));
+                }
+
                 if (0 === strpos($pathinfo, '/api/threads')) {
                     // fos_comment_new_threads
                     if (0 === strpos($pathinfo, '/api/threads/new') && preg_match('#^/api/threads/new(?:\\.(?P<_format>json|xml|html))?$#sD', $pathinfo, $matches)) {
@@ -344,6 +349,11 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
                     }
                     not_fos_comment_post_thread_comment_votes:
 
+                }
+
+                // api_rechercher_covoiturage
+                if (0 === strpos($pathinfo, '/api/rechercherCovoiturage') && preg_match('#^/api/rechercherCovoiturage/(?P<date>[^/]++)/(?P<depart>[^/]++)/(?P<arrive>[^/]++)$#sD', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, ['_route' => 'api_rechercher_covoiturage']), array (  '_controller' => 'ApiBundle\\Controller\\ApiController::rechercherCovoiturageAction',));
                 }
 
             }

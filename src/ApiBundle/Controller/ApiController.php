@@ -66,5 +66,23 @@ class ApiController extends Controller
         return new JsonResponse($formatted);
     }
 
+    public function rechercherCovoiturageAction($date,$depart,$arrive)
+    {
+        $offre = $this->getDoctrine()->getRepository(Offre::class)->rechercherCovoiturage($depart,$arrive,$date);
+
+        $normalizer = array(new DateTimeNormalizer("yy-m-d") ,new ObjectNormalizer());
+        $normalizer[1]->setCircularReferenceLimit(2);
+
+        $normalizer[1]->setCircularReferenceHandler(function ($object){
+            return $object->getId();
+        });
+
+
+        $serializer = new Serializer($normalizer,array(new JsonEncoder()));
+        $formatted = $serializer->serialize($offre,'json');
+
+        return new Response($formatted);
+    }
+
 
 }
