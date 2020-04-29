@@ -35,8 +35,6 @@ class CovoiturageRepository extends \Doctrine\ORM\EntityRepository
             ->setParameter('date',$date)
             ->getSingleScalarResult());
 
-
-
     }
 
     public function CheckOffre($idOffreur,$date)

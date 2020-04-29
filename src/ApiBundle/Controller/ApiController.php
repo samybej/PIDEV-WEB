@@ -17,12 +17,12 @@ use Symfony\Component\Serializer\Serializer;
 class ApiController extends Controller
 {
 
-    public function getOffresDuClientAction()
+    public function getOffresDuClientAction($id)
     {
-        $utilisateur = $this->getUser();
+        //$utilisateur = $this->getUser();
 
-        $client = $this->getDoctrine()->getRepository(Client::class)->getIdClient($utilisateur);
-        $offre = $this->getDoctrine()->getRepository(Offre::class)->recupererCovoiturage($client[0]);
+        $client = $this->getDoctrine()->getRepository(Client::class)->find($id);
+        $offre = $this->getDoctrine()->getRepository(Offre::class)->recupererCovoiturage($client);
 
         $normalizer = array(new DateTimeNormalizer("yy-m-d") ,new ObjectNormalizer());
         $normalizer[1]->setCircularReferenceLimit(2);
@@ -38,22 +38,24 @@ class ApiController extends Controller
         return new Response($formatted);
     }
 
-    public function addCovoiturage(Request $request)
+    public function addCovoiturageAction($nbPlace,$depart,$arrive,$date,$time,$tarif,$idOffreur,$vehicule,$bagage)
     {
+        $date_conv = \DateTime::createFromFormat("Y-m-d", $date);
         $em = $this->getDoctrine()->getManager();
 
+        $client = $this->getDoctrine()->getRepository(Client::class)->find($idOffreur);
         $offre = new Offre();
 
-        $offre->setNbPlace($request->get('nbPlace'));
-        $offre->setDepart($request->get('depart'));
-        $offre->setArrive($request->get('arrive'));
-        $offre->setDate($request->get('date'));
-        $offre->setTime($request->get('time'));
-        $offre->setTarif($request->get('tarif'));
-        $offre->setIdOffreur($request->get('idOffreur'));
-        $offre->setIdClient($request->get('idClient'));
-        $offre->setVehicule($request->get('vehicule'));
-        $offre->setBagage($request->get('bagage'));
+        $offre->setNbPlace($nbPlace);
+        $offre->setDepart($depart);
+        $offre->setArrive($arrive);
+        $offre->setDate($date_conv);
+        $offre->setTime($time);
+        $offre->setTarif($tarif);
+        $offre->setIdOffreur($client);
+        $offre->setIdClient($client);
+        $offre->setVehicule($vehicule);
+        $offre->setBagage($bagage);
 
         $em->persist($offre);
         $em->flush();

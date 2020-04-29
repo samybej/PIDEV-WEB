@@ -2,5 +2,8 @@ api_homepage:
     path:     /
     defaults: { _controller: ApiBundle:Default:index }
 api_liste_covoiturage:
-    path:     /covoiturages
+    path:     /covoiturages/{id}
     defaults: { _controller: ApiBundle:Api:getOffresDuClient }
+api_ajout_covoiturage:
+    path:     /ajoutCovoiturages/{nbPlace}/{depart}/{arrive}/{date}/{time}/{tarif}/{idOffreur}/{vehicule}/{bagage}
+    defaults: { _controller: ApiBundle:Api:addCovoiturage }

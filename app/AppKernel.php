@@ -38,7 +38,7 @@ class AppKernel extends Kernel
             new GarageBundle\GarageBundle(),
             new NoteBundle\NoteBundle(),
             new ReclamationBundle\ReclamationBundle(),
-            new Knp\Bundle\SnappyBundle\KnpSnappyBundle(),
+            #new Knp\Bundle\SnappyBundle\KnpSnappyBundle(),
             new ApiBundle\ApiBundle(),
             new blackknight467\StarRatingBundle\StarRatingBundle(),
         ];
