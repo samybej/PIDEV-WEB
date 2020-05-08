@@ -6,19 +6,6 @@
       <change afterPath="$PROJECT_DIR$/.idea/commandlinetools/Symfony_19_04_2020_18_45_s.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/commandlinetools/Composer_25_04_2020_19_28_c.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/commandlinetools/Composer_25_04_2020_19_28_c.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/commandlinetools/Symfony_25_04_2020_19_28_s.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/commandlinetools/Symfony_25_04_2020_19_28_s.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ApiBundle/Controller/ApiController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/ApiBundle/Controller/ApiController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ApiBundle/Resources/config/routing.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/ApiBundle/Resources/config/routing.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainer.php" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainer.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainer.php.meta" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainer.php.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainer.xml" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainer.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainer.xml.meta" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainer.xml.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainerUrlGenerator.php" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainerUrlGenerator.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainerUrlGenerator.php.meta" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainerUrlGenerator.php.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainerUrlMatcher.php" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainerUrlMatcher.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainerUrlMatcher.php.meta" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainerUrlMatcher.php.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/index.csv" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/profiler/index.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/logs/dev.log" beforeDir="false" afterPath="$PROJECT_DIR$/var/logs/dev.log" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -206,7 +193,7 @@
       <workItem from="1587297367993" duration="8845000" />
       <workItem from="1587318128161" duration="12156000" />
       <workItem from="1587854702430" duration="12401000" />
-      <workItem from="1588118706286" duration="3268000" />
+      <workItem from="1588118706286" duration="3631000" />
     </task>
     <task id="LOCAL-00001" summary="reclamation + note Fix">
       <created>1587232495878</created>
@@ -229,7 +216,14 @@
       <option name="project" value="LOCAL" />
       <updated>1587855439860</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Intégration webservices login">
+      <created>1588976428163</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1588976428163</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -238,7 +232,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="reclamation + note Fix" />
     <MESSAGE value="Intégration Finale" />
-    <option name="LAST_COMMIT_MESSAGE" value="Intégration Finale" />
+    <MESSAGE value="Intégration webservices login" />
+    <option name="LAST_COMMIT_MESSAGE" value="Intégration webservices login" />
   </component>
   <component name="WindowStateProjectService">
     <state x="552" y="182" key="#Notifications" timestamp="1587256516994">
@@ -262,9 +257,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="677" y="326" width="635" height="446" key="#com.jetbrains.php.framework.ui.FailedToParseDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1587243742724" />
-    <state x="230" y="87" width="967" height="921" key="CommitChangelistDialog2" timestamp="1587855436008">
-      <screen x="0" y="0" width="1366" height="768" />
+    <state x="230" y="0" width="967" height="728" key="CommitChangelistDialog2" timestamp="1588976423085">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
+    <state x="230" y="0" width="967" height="728" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1588976423085" />
     <state x="230" y="87" key="CommitChangelistDialog2/0.0.1366.768@0.0.1366.768" timestamp="1587855436008" />
     <state x="323" y="119" width="967" height="921" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1587257978923" />
     <state x="480" y="237" key="ComposerCompositePathDialog" timestamp="1587318271501">
