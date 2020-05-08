@@ -7,9 +7,15 @@ api_liste_covoiturage:
 api_ajout_covoiturage:
     path:     /ajoutCovoiturages/{nbPlace}/{depart}/{arrive}/{date}/{time}/{tarif}/{idOffreur}/{vehicule}/{bagage}
     defaults: { _controller: ApiBundle:Api:addCovoiturage }
+api_liste_client:
+  path:     /client/{id}
+  defaults: { _controller: ApiBundle:ApiLogin:listClient }
+api_add_client:
+  path:     /addclient/{nom}/{prenom}/{tel}/{mail}/{mdp}/{adresse}
+  defaults: { _controller: ApiBundle:ApiLogin:addClient }
 api_ajout_type:
-    path:     /type/{vitesse}/{nbrArrets}/{tmpArret}/{idOffre}
-    defaults: { _controller: ApiBundle:ApiType:addType }
+  path:     /type/{vitesse}/{nbrArrets}/{tmpArret}/{idOffre}
+  defaults: { _controller: ApiBundle:ApiType:addType }
 api_rechercher_covoiturage:
-    path:     /rechercherCovoiturage/{date}/{depart}/{arrive}
-    defaults: { _controller: ApiBundle:Api:rechercherCovoiturage }
+  path:     /rechercherCovoiturage/{date}/{depart}/{arrive}
+  defaults: { _controller: ApiBundle:Api:rechercherCovoiturage }

@@ -139,9 +139,14 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
                     return $this->mergeDefaults(array_replace($matches, ['_route' => 'api_ajout_covoiturage']), array (  '_controller' => 'ApiBundle\\Controller\\ApiController::addCovoiturageAction',));
                 }
 
-                // api_ajout_type
-                if (0 === strpos($pathinfo, '/api/type') && preg_match('#^/api/type/(?P<vitesse>[^/]++)/(?P<nbrArrets>[^/]++)/(?P<tmpArret>[^/]++)/(?P<idOffre>[^/]++)$#sD', $pathinfo, $matches)) {
-                    return $this->mergeDefaults(array_replace($matches, ['_route' => 'api_ajout_type']), array (  '_controller' => 'ApiBundle\\Controller\\ApiTypeController::addTypeAction',));
+                // api_liste_client
+                if (0 === strpos($pathinfo, '/api/client') && preg_match('#^/api/client/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, ['_route' => 'api_liste_client']), array (  '_controller' => 'ApiBundle\\Controller\\ApiLoginController::listClientAction',));
+                }
+
+                // api_add_client
+                if ('/api/addclient' === $pathinfo) {
+                    return array (  '_controller' => 'ApiBundle\\Controller\\ApiLoginController::addClientAction',  '_route' => 'api_add_client',);
                 }
 
                 if (0 === strpos($pathinfo, '/api/threads')) {
@@ -349,11 +354,6 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
                     }
                     not_fos_comment_post_thread_comment_votes:
 
-                }
-
-                // api_rechercher_covoiturage
-                if (0 === strpos($pathinfo, '/api/rechercherCovoiturage') && preg_match('#^/api/rechercherCovoiturage/(?P<date>[^/]++)/(?P<depart>[^/]++)/(?P<arrive>[^/]++)$#sD', $pathinfo, $matches)) {
-                    return $this->mergeDefaults(array_replace($matches, ['_route' => 'api_rechercher_covoiturage']), array (  '_controller' => 'ApiBundle\\Controller\\ApiController::rechercherCovoiturageAction',));
                 }
 
             }
