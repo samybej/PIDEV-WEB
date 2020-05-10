@@ -10,10 +10,36 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
 use Symfony\Component\Serializer\Serializer;
 use EntitiesBundle\Entity\Client;
+use UserBundle\Entity\User;
 
 
 class ApiLoginController extends Controller
 {
+    public function loginAction($email,$password)
+    {
+        $client = $this->getDoctrine()->getManager()
+            ->getRepository(Client::class)
+            ->checkLoginMobile($email,$password);
+
+        $user = $client[0]->getIdFOS();
+
+        $encoder_service = $this->get('security.encoder_factory');
+        $encoder = $encoder_service->getEncoder($user);
+        $encoded_pass = $encoder->encodePassword($password, $user->getSalt());
+
+        $true = 'NO';
+        if ($encoder->isPasswordValid($user->getPassword(), $password, $user->getSalt() ))
+        {
+            $serializer = new Serializer([new ObjectNormalizer()]);
+            $formatted = $serializer->normalize($client[0]->getId());
+            return new JsonResponse($formatted);
+        }
+
+
+        $serializer = new Serializer([new ObjectNormalizer()]);
+        $formatted = $serializer->normalize($true);
+        return new JsonResponse($formatted);
+    }
     public function listClientAction($id)
     {
         $tasks = $this->getDoctrine()->getManager()

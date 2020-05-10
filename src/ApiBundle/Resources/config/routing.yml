@@ -10,12 +10,18 @@ api_ajout_covoiturage:
 api_liste_client:
   path:     /client/{id}
   defaults: { _controller: ApiBundle:ApiLogin:listClient }
+api_get_client:
+    path:     /getClient/{email}/{password}
+    defaults:  {_controller: ApiBundle:ApiLogin:login}
 api_add_client:
   path:     /addclient/{nom}/{prenom}/{tel}/{mail}/{mdp}/{adresse}
   defaults: { _controller: ApiBundle:ApiLogin:addClient }
 api_ajout_type:
-  path:     /type/{vitesse}/{nbrArrets}/{tmpArret}/{idOffre}
-  defaults: { _controller: ApiBundle:ApiType:addType }
+    path:     /type/{vitesse}/{nbrArrets}/{tmpArret}/{idOffre}
+    defaults: { _controller: ApiBundle:ApiType:addType }
 api_rechercher_covoiturage:
-  path:     /rechercherCovoiturage/{date}/{depart}/{arrive}
-  defaults: { _controller: ApiBundle:Api:rechercherCovoiturage }
+    path:     /rechercherCovoiturage/{date}/{depart}/{arrive}
+    defaults: { _controller: ApiBundle:Api:rechercherCovoiturage }
+api_inscri_covoiturage:
+  path:     /inscriCovoiturage/{idOffre}/{idClient}/{idOffreur}
+  defaults: { _controller: ApiBundle:Api:InscriptionCovoiturage }

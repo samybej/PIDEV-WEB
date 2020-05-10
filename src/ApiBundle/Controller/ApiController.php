@@ -3,6 +3,7 @@
 namespace ApiBundle\Controller;
 
 use EntitiesBundle\Entity\Client;
+use EntitiesBundle\Entity\InscriOffre;
 use EntitiesBundle\Entity\Offre;
 use EntitiesBundle\Entity\Type;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -82,6 +83,35 @@ class ApiController extends Controller
         $formatted = $serializer->serialize($offre,'json');
 
         return new Response($formatted);
+    }
+
+    public function InscriptionCovoiturageAction($idOffre,$idClient,$idOffreur)
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $offre = $this->getDoctrine()->getRepository(Offre::class)->find($idOffre);
+        $client = $this->getDoctrine()->getRepository(Client::class)->find($idClient);
+        $offreur = $this->getDoctrine()->getRepository(Client::class)->find($idOffreur);
+
+        $inscriOffre = new InscriOffre($client,$offre,$offreur);
+
+
+        $em->persist($inscriOffre);
+        $em->flush();
+
+        $normalizer = array(new DateTimeNormalizer("yy-m-d") ,new ObjectNormalizer());
+        $normalizer[1]->setCircularReferenceLimit(2);
+
+        $normalizer[1]->setCircularReferenceHandler(function ($object){
+            return $object->getId();
+        });
+
+
+        $serializer = new Serializer($normalizer,array(new JsonEncoder()));
+        $formatted = $serializer->serialize($inscriOffre,'json');
+
+        return new Response($formatted);
+
     }
 
 

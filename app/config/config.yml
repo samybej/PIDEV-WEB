@@ -144,6 +144,10 @@ fos_comment:
 
 
 
+
+
+
+
 assetic:
     bundles:
         - FOSCommentBundle

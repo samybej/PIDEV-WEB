@@ -18,4 +18,13 @@ class ClientRepository extends \Doctrine\ORM\EntityRepository
 
         return $query = $qb->getResult();
     }
+
+    public function checkLoginMobile($mail,$pw)
+    {
+        $qb = $this->getEntityManager()
+            ->createQuery("select c,u from EntitiesBundle:Client c JOIN c.idFOS u WHERE u.username = :mail")
+            ->setParameter('mail', $mail);
+
+        return $query = $qb->getResult();
+    }
 }
