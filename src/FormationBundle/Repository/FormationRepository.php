@@ -45,6 +45,16 @@ class FormationRepository extends \Doctrine\ORM\EntityRepository
     }
 
 
+    public function Mesparticipation($id)
+    {
+        $qb = $this->getEntityManager()->
+        createQuery(" select p,f from EntitiesBundle:Participation p JOIN p.idFormation f Where p.idChauffeur=:id ")
+            ->setParameters(array('id' => $id));
+
+        return $query = $qb->getResult();
+    }
+
+
 
 
 }

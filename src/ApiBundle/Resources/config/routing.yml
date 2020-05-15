@@ -4,6 +4,7 @@ api_homepage:
 api_liste_covoiturage:
     path:     /covoiturages/{id}
     defaults: { _controller: ApiBundle:Api:getOffresDuClient }
+
 api_ajout_covoiturage:
     path:     /ajoutCovoiturages/{nbPlace}/{depart}/{arrive}/{date}/{time}/{tarif}/{idOffreur}/{vehicule}/{bagage}
     defaults: { _controller: ApiBundle:Api:addCovoiturage }
@@ -17,11 +18,27 @@ api_add_client:
   path:     /addclient/{nom}/{prenom}/{tel}/{mail}/{mdp}/{adresse}
   defaults: { _controller: ApiBundle:ApiLogin:addClient }
 api_ajout_type:
-    path:     /type/{vitesse}/{nbrArrets}/{tmpArret}/{idOffre}
-    defaults: { _controller: ApiBundle:ApiType:addType }
+  path:     /type/{vitesse}/{nbrArrets}/{tmpArret}/{idOffre}
+  defaults: { _controller: ApiBundle:ApiType:addType }
 api_rechercher_covoiturage:
     path:     /rechercherCovoiturage/{date}/{depart}/{arrive}
     defaults: { _controller: ApiBundle:Api:rechercherCovoiturage }
 api_inscri_covoiturage:
   path:     /inscriCovoiturage/{idOffre}/{idClient}/{idOffreur}
   defaults: { _controller: ApiBundle:Api:InscriptionCovoiturage }
+
+api_liste_formation:
+  path:     /formation/{id}
+  defaults: { _controller: ApiBundle:Formation:getlistFormationByClient }
+
+api_list_formation2:
+  path:     /listformation
+  defaults: { _controller: ApiBundle:Formation:getlistFormation }
+
+api_Participer:
+  path:     /participer/{idChauffeur}/{idFormation}
+  defaults: { _controller: ApiBundle:Formation:addParticipation }
+
+api_Postuler:
+  path:     /postuler/{nom}/{prenom}/{cin}/{numPermis}/{experience}/{tel}/{langue}/{idClient}/{sexe}
+  defaults: { _controller: ApiBundle:Formation:addPostulation }

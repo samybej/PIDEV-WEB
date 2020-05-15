@@ -93,23 +93,7 @@ class Formation
 
 
 
-    /**
-     * @return int
-     */
-    public function getIdTheme()
-    {
-        return $this->idTheme;
-    }
 
-    /**
-     * @param int $idTheme
-     * @return Formation
-     */
-    public function setIdTheme($idTheme)
-    {
-        $this->idTheme = $idTheme;
-        return $this;
-    }
 
 
 
@@ -163,21 +147,7 @@ public function getId()
         $this->dateFin = $dateFin;
     }
 
-    /**
-     * @return string
-     */
-    public function getTitre()
-    {
-        return $this->titre;
-    }
 
-    /**
-     * @param string $titre
-     */
-    public function setTitre($titre)
-    {
-        $this->titre = $titre;
-    }
 
     /**
      * @return string

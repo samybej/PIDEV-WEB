@@ -8,7 +8,7 @@ use UserBundle\Entity\User;
  * Chauffeur
  *
  * @ORM\Table(name="chauffeur", indexes={@ORM\Index(name="id_vehicule", columns={"id_vehicule"})})
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="EntitiesBundle\Repository\ChauffeurRepository")
  */
 class Chauffeur
 {
@@ -138,6 +138,7 @@ class Chauffeur
     /**
      * @return int
      */
+
     public function getId()
     {
         return $this->id;
@@ -395,6 +396,23 @@ class Chauffeur
     {
         return $this->nom;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getIdFOS()
+    {
+        return $this->idFOS;
+    }
+
+    /**
+     * @param mixed $idFOS
+     */
+    public function setIdFOS($idFOS)
+    {
+        $this->idFOS = $idFOS;
+    }
+
 
 }
 

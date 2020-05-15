@@ -56,19 +56,7 @@ class Theemes
     }
 
 
-    /**
-     * Set nom
-     *
-     * @param string $nom
-     *
-     * @return Theemes
-     */
-    public function setNom($nom)
-    {
-        $this->nom = $nom;
-    
-        return $this;
-    }
+
 
     /**
      * @return string
@@ -88,15 +76,7 @@ class Theemes
         return $this;
     }
 
-    /**
-     * Get nom
-     *
-     * @return string
-     */
-    public function getNom()
-    {
-        return $this->nom;
-    }
+
 
     /**
      * Set formateur

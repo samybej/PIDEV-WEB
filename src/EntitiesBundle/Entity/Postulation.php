@@ -94,6 +94,9 @@ class Postulation
      */
     private $idClient;
 
+
+
+
     /**
      * @return int
      */

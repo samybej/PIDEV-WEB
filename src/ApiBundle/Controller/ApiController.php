@@ -17,7 +17,7 @@ use Symfony\Component\Serializer\Serializer;
 
 class ApiController extends Controller
 {
-
+    
     public function getOffresDuClientAction($id)
     {
         //$utilisateur = $this->getUser();
