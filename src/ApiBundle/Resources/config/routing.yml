@@ -4,7 +4,12 @@ api_homepage:
 api_liste_covoiturage:
     path:     /covoiturages/{id}
     defaults: { _controller: ApiBundle:Api:getOffresDuClient }
-
+api_liste_reservation:
+  path:     /reservations/{id}
+  defaults: { _controller: ApiBundle:ApiReservation:getReservation }
+api_ajout_reservation:
+  path:    /ajoutReservation/{depart}/{arrive}/{id_chauffeur}/{idClient}
+  defaults: { _controller: ApiBundle:ApiReservation:addReservation }
 api_ajout_covoiturage:
     path:     /ajoutCovoiturages/{nbPlace}/{depart}/{arrive}/{date}/{time}/{tarif}/{idOffreur}/{vehicule}/{bagage}
     defaults: { _controller: ApiBundle:Api:addCovoiturage }
