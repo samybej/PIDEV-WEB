@@ -58,8 +58,23 @@ class ApiReservationController extends Controller
 
         $chauffeur = $this->getDoctrine()->getRepository(Chauffeur::class)->find($id_chauffeur);
         $reservation->setType("Taxi");
-        $reservation->setDistance(RandomCompat_intval(40));
-        $reservation->setTarif(4);
+        if ($depart == "tunis" && $arrive = "mannouba")
+        {
+            $reservation->setDistance(11);
+            $reservation->setTarif(20);
+        }
+        else if ($depart == "menzah" && $arrive == "ariana")
+        {
+            $reservation->setDistance(5);
+            $reservation->setTarif(9);
+        }
+        else if ($depart == "nasser" && $arrive == "lac")
+        {
+            $reservation->setDistance(9);
+            $reservation->setTarif(12);
+        }
+        $reservation->setDistance(10);
+        $reservation->setTarif(15);
         $reservation->setIdChauffeur($chauffeur);
 
         $client = $this->getDoctrine()->getRepository(Client::class)->find($idClient);

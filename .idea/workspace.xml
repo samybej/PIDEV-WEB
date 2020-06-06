@@ -2,21 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f478919a-a688-4300-ac7e-583e24eecf4d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/ApiBundle/Controller/ApiReservationController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/config/parameters.yml" beforeDir="false" afterPath="$PROJECT_DIR$/app/config/parameters.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ApiBundle/Resources/config/routing.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/ApiBundle/Resources/config/routing.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainer.php" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainer.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainer.php.meta" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainer.php.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainer.xml" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainer.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainer.xml.meta" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainer.xml.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainerCompiler.log" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainerCompiler.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainerDeprecations.log" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainerDeprecations.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ApiBundle/Controller/ApiLoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/ApiBundle/Controller/ApiLoginController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ApiBundle/Controller/ApiReservationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/ApiBundle/Controller/ApiReservationController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainerUrlGenerator.php" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainerUrlGenerator.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainerUrlGenerator.php.meta" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainerUrlGenerator.php.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainerUrlMatcher.php" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainerUrlMatcher.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainerUrlMatcher.php.meta" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainerUrlMatcher.php.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/index.csv" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/profiler/index.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/translations/catalogue.fr.XOL5yM+.php.meta" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/translations/catalogue.fr.XOL5yM+.php.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/var/logs/dev.log" beforeDir="false" afterPath="$PROJECT_DIR$/var/logs/dev.log" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -209,7 +201,10 @@
       <workItem from="1588972609650" duration="2079000" />
       <workItem from="1589032158681" duration="9266000" />
       <workItem from="1590231675925" duration="1621000" />
-      <workItem from="1590236047203" duration="883000" />
+      <workItem from="1590236047203" duration="7236000" />
+      <workItem from="1590841918858" duration="1292000" />
+      <workItem from="1591263291177" duration="788000" />
+      <workItem from="1591436759463" duration="656000" />
     </task>
     <task id="LOCAL-00001" summary="reclamation + note Fix">
       <created>1587232495878</created>
@@ -239,7 +234,14 @@
       <option name="project" value="LOCAL" />
       <updated>1589071550990</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="taxi api">
+      <created>1590236992549</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1590236992549</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -250,7 +252,8 @@
     <MESSAGE value="Intégration Finale" />
     <MESSAGE value="Intégration Finale+api" />
     <MESSAGE value="hApih" />
-    <option name="LAST_COMMIT_MESSAGE" value="hApih" />
+    <MESSAGE value="taxi api" />
+    <option name="LAST_COMMIT_MESSAGE" value="taxi api" />
   </component>
   <component name="WindowStateProjectService">
     <state x="552" y="182" key="#Notifications" timestamp="1587256516994">
@@ -269,10 +272,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="677" y="326" width="635" height="446" key="#com.jetbrains.php.framework.ui.FailedToParseDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1587243742724" />
-    <state x="375" y="100" width="967" height="921" key="CommitChangelistDialog2" timestamp="1589071549686">
+    <state x="375" y="100" width="967" height="921" key="CommitChangelistDialog2" timestamp="1590236985033">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="375" y="100" width="967" height="921" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1589071549686" />
+    <state x="375" y="100" width="967" height="921" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1590236985033" />
     <state x="675" y="338" key="ComposerCompositePathDialog" timestamp="1587257579857">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -317,10 +320,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="735" y="370" key="SymfonyPathDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1587257593973" />
-    <state x="679" y="219" key="com.intellij.ide.util.TipDialog" timestamp="1590236047084">
+    <state x="679" y="219" key="com.intellij.ide.util.TipDialog" timestamp="1591436815774">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="679" y="219" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1590236047084" />
+    <state x="679" y="219" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1591436815774" />
     <state x="771" y="440" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1590234949689">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

@@ -139,14 +139,32 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
                     return $this->mergeDefaults(array_replace($matches, ['_route' => 'api_liste_client']), array (  '_controller' => 'ApiBundle\\Controller\\ApiLoginController::listClientAction',));
                 }
 
-                // api_ajout_covoiturage
-                if (0 === strpos($pathinfo, '/api/ajoutCovoiturages') && preg_match('#^/api/ajoutCovoiturages/(?P<nbPlace>[^/]++)/(?P<depart>[^/]++)/(?P<arrive>[^/]++)/(?P<date>[^/]++)/(?P<time>[^/]++)/(?P<tarif>[^/]++)/(?P<idOffreur>[^/]++)/(?P<vehicule>[^/]++)/(?P<bagage>[^/]++)$#sD', $pathinfo, $matches)) {
-                    return $this->mergeDefaults(array_replace($matches, ['_route' => 'api_ajout_covoiturage']), array (  '_controller' => 'ApiBundle\\Controller\\ApiController::addCovoiturageAction',));
+                // api_liste_reservation
+                if (0 === strpos($pathinfo, '/api/reservations') && preg_match('#^/api/reservations/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, ['_route' => 'api_liste_reservation']), array (  '_controller' => 'ApiBundle\\Controller\\ApiReservationController::getReservationAction',));
                 }
 
-                // api_add_client
-                if (0 === strpos($pathinfo, '/api/addclient') && preg_match('#^/api/addclient/(?P<nom>[^/]++)/(?P<prenom>[^/]++)/(?P<tel>[^/]++)/(?P<mail>[^/]++)/(?P<mdp>[^/]++)/(?P<adresse>[^/]++)$#sD', $pathinfo, $matches)) {
-                    return $this->mergeDefaults(array_replace($matches, ['_route' => 'api_add_client']), array (  '_controller' => 'ApiBundle\\Controller\\ApiLoginController::addClientAction',));
+                // api_rechercher_covoiturage
+                if (0 === strpos($pathinfo, '/api/rechercherCovoiturage') && preg_match('#^/api/rechercherCovoiturage/(?P<date>[^/]++)/(?P<depart>[^/]++)/(?P<arrive>[^/]++)$#sD', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, ['_route' => 'api_rechercher_covoiturage']), array (  '_controller' => 'ApiBundle\\Controller\\ApiController::rechercherCovoiturageAction',));
+                }
+
+                if (0 === strpos($pathinfo, '/api/a')) {
+                    // api_ajout_reservation
+                    if (0 === strpos($pathinfo, '/api/ajoutReservation') && preg_match('#^/api/ajoutReservation/(?P<depart>[^/]++)/(?P<arrive>[^/]++)/(?P<id_chauffeur>[^/]++)/(?P<idClient>[^/]++)$#sD', $pathinfo, $matches)) {
+                        return $this->mergeDefaults(array_replace($matches, ['_route' => 'api_ajout_reservation']), array (  '_controller' => 'ApiBundle\\Controller\\ApiReservationController::addReservationAction',));
+                    }
+
+                    // api_ajout_covoiturage
+                    if (0 === strpos($pathinfo, '/api/ajoutCovoiturages') && preg_match('#^/api/ajoutCovoiturages/(?P<nbPlace>[^/]++)/(?P<depart>[^/]++)/(?P<arrive>[^/]++)/(?P<date>[^/]++)/(?P<time>[^/]++)/(?P<tarif>[^/]++)/(?P<idOffreur>[^/]++)/(?P<vehicule>[^/]++)/(?P<bagage>[^/]++)$#sD', $pathinfo, $matches)) {
+                        return $this->mergeDefaults(array_replace($matches, ['_route' => 'api_ajout_covoiturage']), array (  '_controller' => 'ApiBundle\\Controller\\ApiController::addCovoiturageAction',));
+                    }
+
+                    // api_add_client
+                    if (0 === strpos($pathinfo, '/api/addclient') && preg_match('#^/api/addclient/(?P<nom>[^/]++)/(?P<prenom>[^/]++)/(?P<tel>[^/]++)/(?P<mail>[^/]++)/(?P<mdp>[^/]++)/(?P<adresse>[^/]++)$#sD', $pathinfo, $matches)) {
+                        return $this->mergeDefaults(array_replace($matches, ['_route' => 'api_add_client']), array (  '_controller' => 'ApiBundle\\Controller\\ApiLoginController::addClientAction',));
+                    }
+
                 }
 
                 // api_get_client
@@ -364,11 +382,6 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
                     }
                     not_fos_comment_post_thread_comment_votes:
 
-                }
-
-                // api_rechercher_covoiturage
-                if (0 === strpos($pathinfo, '/api/rechercherCovoiturage') && preg_match('#^/api/rechercherCovoiturage/(?P<date>[^/]++)/(?P<depart>[^/]++)/(?P<arrive>[^/]++)$#sD', $pathinfo, $matches)) {
-                    return $this->mergeDefaults(array_replace($matches, ['_route' => 'api_rechercher_covoiturage']), array (  '_controller' => 'ApiBundle\\Controller\\ApiController::rechercherCovoiturageAction',));
                 }
 
                 // api_inscri_covoiturage

@@ -4,6 +4,7 @@
 namespace ApiBundle\Controller;
 
 
+use FOS\UserBundle\Util\UserManipulator;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
@@ -53,6 +54,14 @@ class ApiLoginController extends Controller
     public function addClientAction($nom, $prenom, $tel, $mail, $mdp, $adresse)
     {
         $em = $this->getDoctrine()->getManager();
+        $userManager = new UserManipulator();
+
+        $user = new User();
+        $user = $userManager->create($mail,$mdp,$mail,true,false);
+        $user->setNom($nom);
+        $user->setPrenom($prenom);
+        $user->setTel($tel);
+        $user->setAdresse($adresse);
 
         $client = new Client();
         $client->setNom($nom);
