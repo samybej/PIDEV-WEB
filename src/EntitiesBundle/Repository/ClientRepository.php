@@ -27,4 +27,22 @@ class ClientRepository extends \Doctrine\ORM\EntityRepository
 
         return $query = $qb->getResult();
     }
+
+    public function checkLoginChauffeurMobile($cin,$pw)
+    {
+        $qb = $this->getEntityManager()
+            ->createQuery("select c from EntitiesBundle:Chauffeur c where c.cin= :cin and c.mdp = :pw")
+            ->setParameters(array('cin' => $cin , 'pw' => $pw));
+
+        return $query = $qb->getResult();
+    }
+
+    public function checkLoginClientMobile($mail,$pw)
+    {
+        $qb = $this->getEntityManager()
+            ->createQuery("select c from EntitiesBundle:Client c where c.mail = :mail and c.mdp = :pw")
+            ->setParameters(array('mail' => $mail , 'pw' => $pw));
+
+        return $query = $qb->getResult();
+    }
 }

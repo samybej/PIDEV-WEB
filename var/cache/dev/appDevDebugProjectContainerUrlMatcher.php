@@ -167,6 +167,11 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
 
                 }
 
+                // api_statistiques
+                if ('/api/statistiquesCov' === $pathinfo) {
+                    return array (  '_controller' => 'ApiBundle\\Controller\\ApiController::statistiquesAction',  '_route' => 'api_statistiques',);
+                }
+
                 // api_get_client
                 if (0 === strpos($pathinfo, '/api/getClient') && preg_match('#^/api/getClient/(?P<email>[^/]++)/(?P<password>[^/]++)$#sD', $pathinfo, $matches)) {
                     return $this->mergeDefaults(array_replace($matches, ['_route' => 'api_get_client']), array (  '_controller' => 'ApiBundle\\Controller\\ApiLoginController::loginAction',));

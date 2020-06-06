@@ -21,25 +21,58 @@ class ApiLoginController extends Controller
         $client = $this->getDoctrine()->getManager()
             ->getRepository(Client::class)
             ->checkLoginMobile($email,$password);
-
-        $user = $client[0]->getIdFOS();
-
-        $encoder_service = $this->get('security.encoder_factory');
-        $encoder = $encoder_service->getEncoder($user);
-        $encoded_pass = $encoder->encodePassword($password, $user->getSalt());
-
-        $true = 'NO';
-        if ($encoder->isPasswordValid($user->getPassword(), $password, $user->getSalt() ))
+        if ($client == false)
         {
+
+            $chauffeur = $this->getDoctrine()->getManager()
+                ->getRepository(Client::class)
+                ->checkLoginChauffeurMobile($email,$password);
+
+            if ($chauffeur == false)
+            {
+
+                $client = $this->getDoctrine()->getManager()
+                    ->getRepository(Client::class)
+                    ->checkLoginClientMobile($email,$password);
+                if ($client == false)
+                {
+                    $true = 'NO';
+                    $serializer = new Serializer([new ObjectNormalizer()]);
+                    $formatted = $serializer->normalize($true);
+                    return new JsonResponse($formatted);
+                }
+                $serializer = new Serializer([new ObjectNormalizer()]);
+                $formatted = $serializer->normalize($client[0]->getId());
+                return new JsonResponse($formatted);
+            }
+
             $serializer = new Serializer([new ObjectNormalizer()]);
-            $formatted = $serializer->normalize($client[0]->getId());
+            $formatted = $serializer->normalize($chauffeur[0]->getId());
+            return new JsonResponse($formatted);
+
+        }
+        if ($client == true)
+        {
+            $user = $client[0]->getIdFOS();
+
+            $encoder_service = $this->get('security.encoder_factory');
+            $encoder = $encoder_service->getEncoder($user);
+            $encoded_pass = $encoder->encodePassword($password, $user->getSalt());
+
+            $true = 'NO';
+            if ($encoder->isPasswordValid($user->getPassword(), $password, $user->getSalt() ))
+            {
+                $serializer = new Serializer([new ObjectNormalizer()]);
+                $formatted = $serializer->normalize($client[0]->getId());
+                return new JsonResponse($formatted);
+            }
+
+
+            $serializer = new Serializer([new ObjectNormalizer()]);
+            $formatted = $serializer->normalize($true);
             return new JsonResponse($formatted);
         }
 
-
-        $serializer = new Serializer([new ObjectNormalizer()]);
-        $formatted = $serializer->normalize($true);
-        return new JsonResponse($formatted);
     }
     public function listClientAction($id)
     {

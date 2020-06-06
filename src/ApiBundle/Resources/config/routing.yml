@@ -13,6 +13,9 @@ api_ajout_reservation:
 api_ajout_covoiturage:
     path:     /ajoutCovoiturages/{nbPlace}/{depart}/{arrive}/{date}/{time}/{tarif}/{idOffreur}/{vehicule}/{bagage}
     defaults: { _controller: ApiBundle:Api:addCovoiturage }
+api_statistiques:
+    path:     /statistiquesCov
+    defaults: { _controller: ApiBundle:Api:statistiques}
 api_liste_client:
   path:     /client/{id}
   defaults: { _controller: ApiBundle:ApiLogin:listClient }

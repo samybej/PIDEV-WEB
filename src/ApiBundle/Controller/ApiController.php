@@ -114,6 +114,27 @@ class ApiController extends Controller
 
     }
 
+    public function statistiquesAction()
+    {
+        $mois = '04';
+        $year = '2020';
+
+        for ($i=0; $i < 30; $i++)
+        {
+            $day=$i + 1;
+            $date = $year.'-'.$mois.'-'.$day;
+            $nbr = $this->getDoctrine()->getRepository(Offre::class)->getStatistiques($date);
+            $array[] = $nbr;
+        }
+
+
+        $serializer = new Serializer([new ObjectNormalizer()]);
+        $formatted = $serializer->normalize($array);
+
+        return new JsonResponse($formatted);
+
+    }
+
 
 
 
