@@ -25,6 +25,7 @@ api_get_client:
 api_add_client:
   path:     /addclient/{nom}/{prenom}/{tel}/{mail}/{mdp}/{adresse}
   defaults: { _controller: ApiBundle:ApiLogin:addClient }
+
 api_ajout_type:
   path:     /type/{vitesse}/{nbrArrets}/{tmpArret}/{idOffre}
   defaults: { _controller: ApiBundle:ApiType:addType }

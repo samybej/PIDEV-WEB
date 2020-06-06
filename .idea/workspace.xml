@@ -3,12 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="f478919a-a688-4300-ac7e-583e24eecf4d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ApiBundle/Controller/ApiController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/ApiBundle/Controller/ApiController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ApiBundle/Controller/ApiLoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/ApiBundle/Controller/ApiLoginController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ApiBundle/Resources/config/routing.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/ApiBundle/Resources/config/routing.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/EntitiesBundle/Repository/ClientRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/EntitiesBundle/Repository/ClientRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainerUrlGenerator.php" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainerUrlGenerator.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainerUrlMatcher.php" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainerUrlMatcher.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/EntitiesBundle/Entity/Client.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/EntitiesBundle/Entity/Client.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/index.csv" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/profiler/index.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/var/logs/dev.log" beforeDir="false" afterPath="$PROJECT_DIR$/var/logs/dev.log" afterDir="false" />
     </list>
@@ -205,7 +202,7 @@
       <workItem from="1590236047203" duration="7236000" />
       <workItem from="1590841918858" duration="1292000" />
       <workItem from="1591263291177" duration="788000" />
-      <workItem from="1591436759463" duration="8606000" />
+      <workItem from="1591436759463" duration="12380000" />
     </task>
     <task id="LOCAL-00001" summary="reclamation + note Fix">
       <created>1587232495878</created>
@@ -249,7 +246,14 @@
       <option name="project" value="LOCAL" />
       <updated>1591437970741</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="api 06-06 2">
+      <created>1591471511927</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1591471511927</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -262,7 +266,8 @@
     <MESSAGE value="hApih" />
     <MESSAGE value="taxi api" />
     <MESSAGE value="api 06-06" />
-    <option name="LAST_COMMIT_MESSAGE" value="api 06-06" />
+    <MESSAGE value="api 06-06 2" />
+    <option name="LAST_COMMIT_MESSAGE" value="api 06-06 2" />
   </component>
   <component name="WindowStateProjectService">
     <state x="552" y="182" key="#Notifications" timestamp="1587256516994">

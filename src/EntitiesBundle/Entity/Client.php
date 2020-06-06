@@ -70,9 +70,9 @@ class Client
     private $etatCompte = '0';
 
     /**
-     * @var binary
+     * @var string
      *
-     * @ORM\Column(name="image", type="binary", nullable=true)
+     * @ORM\Column(name="image", type="string", nullable=true)
      */
     private $image;
 
