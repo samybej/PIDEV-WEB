@@ -139,17 +139,25 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
                     return $this->mergeDefaults(array_replace($matches, ['_route' => 'api_liste_client']), array (  '_controller' => 'ApiBundle\\Controller\\ApiLoginController::listClientAction',));
                 }
 
-                // api_liste_reservation
-                if (0 === strpos($pathinfo, '/api/reservations') && preg_match('#^/api/reservations/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
-                    return $this->mergeDefaults(array_replace($matches, ['_route' => 'api_liste_reservation']), array (  '_controller' => 'ApiBundle\\Controller\\ApiReservationController::getReservationAction',));
+                if (0 === strpos($pathinfo, '/api/re')) {
+                    // api_liste_reservation
+                    if (0 === strpos($pathinfo, '/api/reservations') && preg_match('#^/api/reservations/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
+                        return $this->mergeDefaults(array_replace($matches, ['_route' => 'api_liste_reservation']), array (  '_controller' => 'ApiBundle\\Controller\\ApiReservationController::getReservationAction',));
+                    }
+
+                    // api_rechercher_covoiturage
+                    if (0 === strpos($pathinfo, '/api/rechercherCovoiturage') && preg_match('#^/api/rechercherCovoiturage/(?P<date>[^/]++)/(?P<depart>[^/]++)/(?P<arrive>[^/]++)$#sD', $pathinfo, $matches)) {
+                        return $this->mergeDefaults(array_replace($matches, ['_route' => 'api_rechercher_covoiturage']), array (  '_controller' => 'ApiBundle\\Controller\\ApiController::rechercherCovoiturageAction',));
+                    }
+
+                    // api_reclamation
+                    if (0 === strpos($pathinfo, '/api/reclamation') && preg_match('#^/api/reclamation/(?P<description>[^/]++)/(?P<aPropos>[^/]++)/(?P<idClient>[^/]++)/(?P<idChauffeur>[^/]++)$#sD', $pathinfo, $matches)) {
+                        return $this->mergeDefaults(array_replace($matches, ['_route' => 'api_reclamation']), array (  '_controller' => 'ApiBundle\\Controller\\ApiReclamationController::addReclamationAction',));
+                    }
+
                 }
 
-                // api_rechercher_covoiturage
-                if (0 === strpos($pathinfo, '/api/rechercherCovoiturage') && preg_match('#^/api/rechercherCovoiturage/(?P<date>[^/]++)/(?P<depart>[^/]++)/(?P<arrive>[^/]++)$#sD', $pathinfo, $matches)) {
-                    return $this->mergeDefaults(array_replace($matches, ['_route' => 'api_rechercher_covoiturage']), array (  '_controller' => 'ApiBundle\\Controller\\ApiController::rechercherCovoiturageAction',));
-                }
-
-                if (0 === strpos($pathinfo, '/api/a')) {
+                elseif (0 === strpos($pathinfo, '/api/a')) {
                     // api_ajout_reservation
                     if (0 === strpos($pathinfo, '/api/ajoutReservation') && preg_match('#^/api/ajoutReservation/(?P<depart>[^/]++)/(?P<arrive>[^/]++)/(?P<id_chauffeur>[^/]++)/(?P<idClient>[^/]++)$#sD', $pathinfo, $matches)) {
                         return $this->mergeDefaults(array_replace($matches, ['_route' => 'api_ajout_reservation']), array (  '_controller' => 'ApiBundle\\Controller\\ApiReservationController::addReservationAction',));
@@ -412,6 +420,11 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
                 // api_Postuler
                 if (0 === strpos($pathinfo, '/api/postuler') && preg_match('#^/api/postuler/(?P<nom>[^/]++)/(?P<prenom>[^/]++)/(?P<cin>[^/]++)/(?P<numPermis>[^/]++)/(?P<experience>[^/]++)/(?P<tel>[^/]++)/(?P<langue>[^/]++)/(?P<idClient>[^/]++)/(?P<sexe>[^/]++)$#sD', $pathinfo, $matches)) {
                     return $this->mergeDefaults(array_replace($matches, ['_route' => 'api_Postuler']), array (  '_controller' => 'ApiBundle\\Controller\\FormationController::addPostulationAction',));
+                }
+
+                // api_note
+                if (0 === strpos($pathinfo, '/api/noter') && preg_match('#^/api/noter/(?P<note>[^/]++)/(?P<idClient>[^/]++)/(?P<idChauffeur>[^/]++)$#sD', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, ['_route' => 'api_note']), array (  '_controller' => 'ApiBundle\\Controller\\ApiNoteController::addNoteAction',));
                 }
 
             }

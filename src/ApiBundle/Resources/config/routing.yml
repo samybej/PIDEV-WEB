@@ -51,3 +51,11 @@ api_Participer:
 api_Postuler:
   path:     /postuler/{nom}/{prenom}/{cin}/{numPermis}/{experience}/{tel}/{langue}/{idClient}/{sexe}
   defaults: { _controller: ApiBundle:Formation:addPostulation }
+
+api_note:
+  path:     /noter/{note}/{idClient}/{idChauffeur}
+  defaults: { _controller: ApiBundle:ApiNote:addNote }
+
+api_reclamation:
+  path:    /reclamation/{description}/{aPropos}/{idClient}/{idChauffeur}
+  defaults: { _controller: ApiBundle:ApiReclamation:addReclamation }

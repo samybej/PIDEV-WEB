@@ -3,9 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="f478919a-a688-4300-ac7e-583e24eecf4d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ApiBundle/Controller/ApiLoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/ApiBundle/Controller/ApiLoginController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ApiBundle/Resources/config/routing.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/ApiBundle/Resources/config/routing.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/EntitiesBundle/Entity/Client.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/EntitiesBundle/Entity/Client.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainerUrlGenerator.php" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainerUrlGenerator.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainerUrlMatcher.php" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainerUrlMatcher.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/index.csv" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/profiler/index.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/var/logs/dev.log" beforeDir="false" afterPath="$PROJECT_DIR$/var/logs/dev.log" afterDir="false" />
     </list>
@@ -202,7 +202,8 @@
       <workItem from="1590236047203" duration="7236000" />
       <workItem from="1590841918858" duration="1292000" />
       <workItem from="1591263291177" duration="788000" />
-      <workItem from="1591436759463" duration="12380000" />
+      <workItem from="1591436759463" duration="13021000" />
+      <workItem from="1591614056715" duration="2884000" />
     </task>
     <task id="LOCAL-00001" summary="reclamation + note Fix">
       <created>1587232495878</created>
@@ -253,7 +254,14 @@
       <option name="project" value="LOCAL" />
       <updated>1591471511927</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="api 06-06 3">
+      <created>1591487328903</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1591487328903</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -267,7 +275,8 @@
     <MESSAGE value="taxi api" />
     <MESSAGE value="api 06-06" />
     <MESSAGE value="api 06-06 2" />
-    <option name="LAST_COMMIT_MESSAGE" value="api 06-06 2" />
+    <MESSAGE value="api 06-06 3" />
+    <option name="LAST_COMMIT_MESSAGE" value="api 06-06 3" />
   </component>
   <component name="WindowStateProjectService">
     <state x="552" y="182" key="#Notifications" timestamp="1587256516994">
@@ -286,10 +295,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="677" y="326" width="635" height="446" key="#com.jetbrains.php.framework.ui.FailedToParseDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1587243742724" />
-    <state x="375" y="100" width="967" height="921" key="CommitChangelistDialog2" timestamp="1591471480360">
+    <state x="375" y="100" width="967" height="921" key="CommitChangelistDialog2" timestamp="1591487325520">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="375" y="100" width="967" height="921" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1591471480360" />
+    <state x="375" y="100" width="967" height="921" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1591487325520" />
     <state x="675" y="338" key="ComposerCompositePathDialog" timestamp="1587257579857">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -326,6 +335,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="727" y="355" key="NewPhpClassDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1586625071659" />
+    <state x="794" y="452" key="NewPhpFileDialog" timestamp="1591614698712">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="794" y="452" key="NewPhpFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1591614698712" />
     <state x="213" y="138" width="1523" height="708" key="SettingsEditor" timestamp="1587306744482">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -334,10 +347,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="735" y="370" key="SymfonyPathDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1587257593973" />
-    <state x="679" y="219" key="com.intellij.ide.util.TipDialog" timestamp="1591436815774">
+    <state x="679" y="219" key="com.intellij.ide.util.TipDialog" timestamp="1591614072004">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="679" y="219" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1591436815774" />
+    <state x="679" y="219" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1591614072004" />
     <state x="771" y="440" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1590234949689">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
